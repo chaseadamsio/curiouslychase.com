@@ -3,9 +3,6 @@ dist/
 # generated types
 .astro/
 
-public/
-
-src/content/
 
 # dependencies
 node_modules/
