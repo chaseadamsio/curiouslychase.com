@@ -1,0 +1,32 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+import MaybeLink from "../../components/MaybeLink.astro";
+import Paragraph from "../../components/Paragraph.astro";
+import Blockquote from "../../components/Blockquote.astro";
+import UnorderedList from "../../components/UnorderedList.astro";
+import OrderedList from "../../components/OrderedList.astro";
+import Table from "../../components/Table.astro";
+
+export async function getStaticPaths() {
+	const posts = await getCollection("posts");
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: post,
+	}));
+}
+type Props = CollectionEntry<"posts">;
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<Content
+	components={{
+		a: MaybeLink,
+		blockquote: Blockquote,
+		p: Paragraph,
+		ul: UnorderedList,
+		ol: OrderedList,
+		table: Table,
+	}}
+/>

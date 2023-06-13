@@ -1,0 +1,20 @@
+---
+import { social } from "../../consts";
+
+const infrequentSocial = social.filter(
+	(s) => !(s.type === "frequent" || s.type === "often")
+);
+---
+
+<p class="mt-2">
+	Places I have a presence but I'm not active:
+	<ul>
+		{
+			infrequentSocial.map((s) => (
+				<li>
+					<a href={`${s.link}`}>{s.network}</a>
+				</li>
+			))
+		}
+	</ul>
+</p>

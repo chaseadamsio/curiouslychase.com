@@ -1,0 +1,7 @@
+[submodule "content"]
+	path = src/content
+	url = git@github.com:curiouslychase/content.git
+
+[submodule "public"]
+	path = public
+	url = git@github.com:curiouslychase/public.git

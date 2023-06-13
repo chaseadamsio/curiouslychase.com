@@ -1,0 +1,23 @@
+---
+import { social } from "../../consts";
+import OnlineFrequent from "./OnlineFrequent.astro";
+import OnlineInfrequent from "./OnlineInfrequent.astro";
+
+const frequentSocial = social.filter(
+	(s) => s.type === "frequent" || s.type === "often"
+);
+
+const infrequentSocial = social.filter(
+	(s) => !(s.type === "frequent" || s.type === "often")
+);
+---
+
+<main class="mt-12 max-w-5xl mx-auto">
+	<div class="pb-4">
+		<h2 class="uppercase my-0 text-2xl">Online</h2>
+	</div>
+	<section>
+		<OnlineFrequent />
+		<OnlineInfrequent />
+	</section>
+</main>

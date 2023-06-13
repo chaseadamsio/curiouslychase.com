@@ -1,0 +1,44 @@
+---
+const work = [
+	{
+		company: "Murmur",
+		blurb: "Building the future of decision making.",
+		link: "/posts/murmur",
+	},
+	{
+		company: "Webflow",
+		blurb: "Building the future of building software with no code.",
+		link: "/posts/webflow",
+	},
+	{
+		company: "Walmart Labs",
+		blurb: "Building ecommerce at scale.",
+		link: "/posts/walmart-labs",
+	},
+	{
+		company: "Zappos",
+		blurb: "Building the future of retail.",
+		link: "/posts/zappos",
+	},
+];
+---
+
+<main class="mt-8 max-w-5xl mx-auto">
+	<div class="pb-4">
+		<h2 class="uppercase my-0 text-2xl">At Work</h2>
+		<span class="text-lg"
+			>I've been building better software and better teams for 15 years.
+		</span>
+	</div>
+	<section>
+		<ul>
+			{
+				work.map((c) => (
+					<li>
+						<a href={c.link}>{c.company}</a>: {c.blurb}
+					</li>
+				))
+			}
+		</ul>
+	</section>
+</main>

@@ -1,0 +1,41 @@
+{
+  "name": "astro",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^0.19.5",
+    "@astrojs/preact": "^2.2.1",
+    "@astrojs/rss": "^2.4.3",
+    "@astrojs/sitemap": "^1.3.2",
+    "@astrojs/tailwind": "^3.1.3",
+    "@fontsource/archivo": "^5.0.3",
+    "@fontsource/ibm-plex-sans": "^5.0.3",
+    "@fontsource/jetbrains-mono": "^5.0.3",
+    "@fontsource/lexend": "^5.0.3",
+    "@fontsource/public-sans": "^5.0.3",
+    "@jsdevtools/rehype-toc": "^3.0.2",
+    "@types/rimraf": "^4.0.5",
+    "astro": "^2.6.3",
+    "astro-auto-import": "^0.3.0",
+    "date-fns": "^2.30.0",
+    "html-escaper": "^3.0.3",
+    "mdast": "^3.0.0",
+    "mdast-util-mdx-jsx": "^2.1.4",
+    "preact": "^10.15.1",
+    "rehype-prism": "^2.2.2",
+    "rehype-shiki": "^0.0.9",
+    "rehype-slug": "^5.1.0",
+    "remark-gfm": "^3.0.1",
+    "remark-wiki-link": "^1.0.4",
+    "rimraf": "^5.0.1",
+    "tailwindcss": "^3.3.2",
+    "unist-util-visit": "^4.1.2"
+  }
+}

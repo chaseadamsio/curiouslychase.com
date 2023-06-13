@@ -1,0 +1,20 @@
+---
+const props = Astro.props;
+
+const posts: Array<{ frontmatter: { slug: string } }> = await Astro.glob(
+	"../content/posts/*.mdx"
+);
+
+if (!props.href.startsWith("#") && !props.href.startsWith("https://")) {
+	const postsByKey = posts.reduce<Record<string, boolean>>((acc, post) => {
+		acc[`/posts/${post.frontmatter.slug}`] = true;
+		return acc;
+	}, {});
+
+	if (!postsByKey[props.href]) {
+		props.href = `#unpublished?href=${props.href}`;
+	}
+}
+---
+
+<a {...props}><slot /></a>

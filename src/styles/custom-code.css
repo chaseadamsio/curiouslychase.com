@@ -1,0 +1,121 @@
+pre {
+  position: relative;
+  padding-top: 3.2rem;
+}
+
+pre[class*="language-"]::before {
+  top: 0;
+  padding: 0.4rem 2rem;
+  position: absolute;
+  left: 0;
+  text-align: left;
+  width: 100%;
+  border-bottom: 1px solid #444;
+}
+
+pre[class*="language-"] {
+  margin: 1.6rem 0;
+  padding-top: 3rem;
+}
+
+pre[class*="language-"] code {
+  padding: 0.2rem;
+  line-height: 1.5rem;
+}
+
+pre[class*="language-text"] code {
+  white-space: break-spaces;
+}
+
+pre[class*="language-asciidoc"]::before {
+  content: "asciidoc";
+}
+pre[class*="language-bash"]::before {
+  content: "bash";
+}
+pre[class*="language-css"]::before {
+  content: "css";
+  text-transform: uppercase;
+}
+pre[class*="language-diff"]::before {
+  content: "diff";
+}
+pre[class*="language-flow"]::before {
+  content: "flow";
+}
+pre[class*="language-graphql"]::before {
+  content: "GraphQL";
+}
+pre[class*="language-go"]::before {
+  content: "golang";
+}
+pre[class*="language-html"]::before {
+  content: "html";
+  text-transform: uppercase;
+}
+
+pre[class*="language-javascript"]::before,
+pre[class*="language-js"]::before {
+  content: "js";
+  text-transform: uppercase;
+}
+
+pre[class*="language-dataviewjs"]::before {
+  content: "dataviewjs";
+  text-transform: uppercase;
+}
+pre[class*="language-typescript"]::before {
+  content: "typescript";
+  text-transform: uppercase;
+}
+pre[class*="language-json"]::before,
+pre[class*="language-json5"]::before {
+  content: "json";
+  text-transform: uppercase;
+}
+pre[class*="language-jsx"]::before {
+  content: "jsx";
+  text-transform: uppercase;
+}
+pre[class*="language-lisp"]::before {
+  content: "lisp";
+}
+pre[class*="language-logs"]::before {
+  content: "logs";
+}
+pre[class*="language-md"]::before,
+pre[class*="language-markdown"]::before {
+  content: "markdown";
+}
+pre[class*="language-mdx"]::before {
+  content: "mdx";
+  text-transform: uppercase;
+}
+pre[class*="language-sh"]::before {
+  content: "sh";
+}
+pre[class*="language-shell"]::before {
+  content: "shell";
+}
+pre[class*="language-text"]::before {
+  content: "text";
+}
+pre[class*="language-toml"]::before {
+  content: "toml";
+  text-transform: uppercase;
+}
+pre[class*="language-tsx"]::before {
+  content: "tsx";
+}
+pre[class*="language-typescript"]::before,
+pre[class*="language-ts"]::before {
+  content: "ts";
+}
+pre[class*="language-yaml"]::before {
+  content: "yaml";
+  text-transform: uppercase;
+}
+
+pre[class*="language-md"] code {
+  white-space: break-spaces;
+}

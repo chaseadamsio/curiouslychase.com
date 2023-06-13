@@ -1,0 +1,20 @@
+---
+import { social } from "../../consts";
+
+const frequentSocial = social.filter(
+	(s) => s.type === "frequent" || s.type === "often"
+);
+---
+
+<p>I'm on almost all social media as <strong>@curiouslychase</strong></p>
+<ul class="flex flex-row gap-2">
+	{
+		frequentSocial.map((s) => (
+			<li class="after:content-['/'] after:last-of-type:content-['']">
+				<a class="hover:font-bold" href={`${s.link}`}>
+					{s.network}
+				</a>
+			</li>
+		))
+	}
+</ul>

@@ -1,0 +1,56 @@
+---
+import FormattedDate from "../../components/FormattedDate.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("posts")).sort(
+	(a, b) =>
+		// @ts-ignore
+		new Date(b.data.pubDate.valueOf()) - new Date(a.data.pubDate.valueOf())
+);
+
+const selectedPosts = posts.slice(0, 6);
+---
+
+<main class="mt-12 max-w-5xl mx-auto">
+	<div class="pb-4">
+		<h2 class="uppercase my-0 text-2xl">What I'm Writing</h2>
+	</div>
+	<section>
+		<ul>
+			{
+				selectedPosts.map((post) => (
+					<li>
+						<FormattedDate date={post.data.pubDate} />
+						<a href={`/posts/${post.slug}/`}>{post.data.title}</a>
+					</li>
+				))
+			}
+		</ul>
+		<div class="mt-8">
+			<a href="/posts/" class="text-md">See all {posts.length} posts</a>
+		</div>
+	</section>
+</main>
+
+<style>
+	ul {
+		display: flex;
+		flex-direction: column;
+		list-style-type: none;
+		padding: unset;
+		gap: 0.5rem;
+	}
+	ul li {
+		display: flex;
+	}
+	ul li :global(time) {
+		flex: 0 0 130px;
+		font-size: 0.8rem;
+
+		font-family: "JetBrains Mono", monospace;
+		color: #595959;
+	}
+	ul li a:visited {
+		color: #8e32dc;
+	}
+</style>

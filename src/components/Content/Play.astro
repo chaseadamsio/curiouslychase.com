@@ -1,0 +1,35 @@
+---
+const activities = [
+	{
+		activity: "Climbing",
+		blurb:
+			"Climbing is my favorite way to exercise, meet new people and level up my craft.",
+	},
+	{
+		activity: "LEGO",
+		blurb: "LEGO is my favorite way to get my creative energy flowing.",
+	},
+	{
+		activity: "Doodling",
+		blurb:
+			"I love to communicate my ideas with doodles, scribbles, diagrams and arrows.",
+	},
+];
+---
+
+<main class="mt-8 max-w-5xl mx-auto">
+	<div class="pb-4">
+		<h2 class="uppercase my-0 text-2xl">At Play</h2>
+	</div>
+	<section>
+		<ul>
+			{
+				activities.map((c) => (
+					<li>
+						<strong>{c.activity}</strong>: {c.blurb}
+					</li>
+				))
+			}
+		</ul>
+	</section>
+</main>
