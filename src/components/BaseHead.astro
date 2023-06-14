@@ -56,3 +56,18 @@ const { title, description, image = "/placeholder-social.jpg" } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<script
+	type="text/partytown"
+	async
+	src="https://www.googletagmanager.com/gtag/js?id=G-EPXF24DJ86"></script>
+
+<script type="text/partytown">
+window.dataLayer = window.dataLayer || [];
+
+function gtag() {
+	window.dataLayer.push(arguments);
+}
+gtag("js", new Date());
+gtag("config", "G-EPXF24DJ86");
+</script>
