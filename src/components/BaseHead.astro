@@ -18,7 +18,9 @@ import "../styles/prism-github-dark.css";
 
 import "../styles/custom-code.css";
 
-const IS_PROD = import.meta.env.PROD;
+const IS_DEV = !!import.meta.env.DEV;
+
+console.log(import.meta.env.DEV);
 
 export interface Props {
 	title: string;
@@ -70,7 +72,7 @@ window.dataLayer = window.dataLayer || [];
 function gtag() {
 	window.dataLayer.push(arguments);
 }
-if (IS_PROD) {
+if (!IS_DEV) {
 	gtag("js", new Date());
 	gtag("config", "G-EPXF24DJ86");
 }
@@ -123,7 +125,7 @@ if (IS_PROD) {
 			}),
 			(e.__SV = 1));
 })(document, window.posthog || []);
-if (IS_PROD) {
+if (!IS_DEV) {
 	posthog.init("phc_tI9exCHyiVIHBZw0UpaU1AQvatZCnJ26BzeBsH6Iwl5", {
 		api_host: "https://app.posthog.com",
 	});
