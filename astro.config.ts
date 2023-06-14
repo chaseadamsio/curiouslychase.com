@@ -12,9 +12,9 @@ import rehypeSlug from "rehype-slug";
 import { rehypeHeadingIds } from "@astrojs/markdown-remark";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { autolinkConfig } from "./src/plugins/rehype-autolink-config";
-import rehypePrism from "rehype-prism";
 
 import partytown from "@astrojs/partytown";
+import rehypePrism from "@mapbox/rehype-prism";
 
 // https://astro.build/config
 export default defineConfig({
@@ -25,7 +25,10 @@ export default defineConfig({
       rehypeHeadingIds,
       [rehypeAutolinkHeadings, autolinkConfig],
       rehypeSlug,
-      rehypePrism,
+      [
+        rehypePrism,
+        { alias: { javascript: ["dataviewjs"], plaintext: ["text"] } },
+      ],
     ],
     remarkPlugins: [
       [

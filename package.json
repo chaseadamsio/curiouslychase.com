@@ -20,6 +20,7 @@
     "@fontsource/jetbrains-mono": "^5.0.3",
     "@fontsource/public-sans": "^5.0.3",
     "@jsdevtools/rehype-toc": "^3.0.2",
+    "@mapbox/rehype-prism": "^0.8.0",
     "@types/rimraf": "^4.0.5",
     "astro": "^2.6.3",
     "astro-auto-import": "^0.3.0",
@@ -41,6 +42,7 @@
     "unist-util-visit": "^4.1.2"
   },
   "devDependencies": {
+    "@types/mapbox__rehype-prism": "^0.8.0",
     "ts-node": "^10.9.1"
   }
 }
