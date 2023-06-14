@@ -10,7 +10,6 @@ import AutoImport from "astro-auto-import";
 import remarkObsidianImage from "./src/utils/remark/remarkObsidianImage/remarkObsidianImage";
 import remarkResizeHeaderLevel from "./src/utils/remark/remarkResizeHeaderLevel/remarkResizeHeaderLevel";
 import remarkObsidianEnhancedQuotes from "./src/utils/remark/remarkObsidianEnhancedQuotes/remarkObsidianEnhancedQuotes";
-import remarkCustomCodeBlock from "./src/utils/remark/remarkCustomCodeBlock/remarkCustomCodeBlock";
 import rehypeSlug from "rehype-slug";
 import { rehypeHeadingIds } from "@astrojs/markdown-remark";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
