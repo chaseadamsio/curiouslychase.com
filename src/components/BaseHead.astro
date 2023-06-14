@@ -18,6 +18,8 @@ import "../styles/prism-github-dark.css";
 
 import "../styles/custom-code.css";
 
+const NODE_ENV = import.meta.env.NODE_ENV;
+
 export interface Props {
 	title: string;
 	description: string;
@@ -68,15 +70,18 @@ window.dataLayer = window.dataLayer || [];
 function gtag() {
 	window.dataLayer.push(arguments);
 }
-gtag("js", new Date());
-gtag("config", "G-EPXF24DJ86");
+
+if (NODE_ENV === "production") {
+	gtag("js", new Date());
+	gtag("config", "G-EPXF24DJ86");
+}
 </script>
 
 <script type="" text partytown>
 !(function (t, e) {
 	var o, n, p, r;
 	e.__SV ||
-			((window.posthog = e),
+		((window.posthog = e),
 			(e._i = []),
 			(e.init = function (i, s, a) {
 				function g(t, e) {
@@ -96,21 +101,21 @@ gtag("config", "G-EPXF24DJ86");
 				var u = e;
 				for (
 					void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
-						u.people = u.people || [],
-						u.toString = function (t) {
-							var e = "posthog";
-							return (
-								"posthog" !== a && (e += "." + a), t || (e += " (stub)"), e
-							);
-						},
-						u.people.toString = function () {
-							return u.toString(1) + ".people (stub)";
-						},
-						o =
-							"capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(
-								" "
-							),
-						n = 0;
+					u.people = u.people || [],
+					u.toString = function (t) {
+						var e = "posthog";
+						return (
+							"posthog" !== a && (e += "." + a), t || (e += " (stub)"), e
+						);
+					},
+					u.people.toString = function () {
+						return u.toString(1) + ".people (stub)";
+					},
+					o =
+					"capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(
+						" "
+					),
+					n = 0;
 					n < o.length;
 					n++
 				)
@@ -118,8 +123,10 @@ gtag("config", "G-EPXF24DJ86");
 				e._i.push([i, s, a]);
 			}),
 			(e.__SV = 1));
-	})(document, window.posthog || []);
+})(document, window.posthog || []);
+if (NODE_ENV === "production") {
 	posthog.init("phc_tI9exCHyiVIHBZw0UpaU1AQvatZCnJ26BzeBsH6Iwl5", {
 		api_host: "https://app.posthog.com",
 	});
+}
 </script>
