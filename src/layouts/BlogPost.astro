@@ -12,7 +12,15 @@ import { SITE_URL } from "../consts";
 type Props = CollectionEntry<"posts">["data"];
 
 const {
-	frontmatter: { title, description, pubDate, updatedDate, heroImage, slug },
+	frontmatter: {
+		title,
+		description,
+		image,
+		pubDate,
+		updatedDate,
+		heroImage,
+		slug,
+	},
 	headings = [],
 } = Astro.props;
 
@@ -21,7 +29,7 @@ const permalink = `${SITE_URL}/posts/${slug}/`;
 
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead title={title} description={description} image={image} />
 		<style>
 			.title {
 				font-size: 2em;
