@@ -5,7 +5,6 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import remarkWikiLink from "remark-wiki-link";
 import { getSlugFromTitle } from "./src/utils/getSlugFromTitle";
-import AutoImport from "astro-auto-import";
 
 import remarkObsidianImage from "./src/utils/remark/remarkObsidianImage/remarkObsidianImage";
 import remarkResizeHeaderLevel from "./src/utils/remark/remarkResizeHeaderLevel/remarkResizeHeaderLevel";
