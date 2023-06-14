@@ -18,6 +18,8 @@ import "../styles/prism-github-dark.css";
 
 import "../styles/custom-code.css";
 
+const IS_PROD = import.meta.env.PROD;
+
 export interface Props {
 	title: string;
 	description: string;
@@ -68,9 +70,10 @@ window.dataLayer = window.dataLayer || [];
 function gtag() {
 	window.dataLayer.push(arguments);
 }
-
-gtag("js", new Date());
-gtag("config", "G-EPXF24DJ86");
+if (IS_PROD) {
+	gtag("js", new Date());
+	gtag("config", "G-EPXF24DJ86");
+}
 </script>
 
 <script type="text/partytown">
@@ -120,8 +123,9 @@ gtag("config", "G-EPXF24DJ86");
 			}),
 			(e.__SV = 1));
 })(document, window.posthog || []);
-
-posthog.init("phc_tI9exCHyiVIHBZw0UpaU1AQvatZCnJ26BzeBsH6Iwl5", {
-	api_host: "https://app.posthog.com",
-});
+if (IS_PROD) {
+	posthog.init("phc_tI9exCHyiVIHBZw0UpaU1AQvatZCnJ26BzeBsH6Iwl5", {
+		api_host: "https://app.posthog.com",
+	});
+}
 </script>
