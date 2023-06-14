@@ -4,7 +4,6 @@ import type { FC } from "preact/compat";
 import type { TocItem } from "../utils/generateTOC";
 import { unescape } from "../utils/htmlEntities";
 import "./TableOfContents.css";
-import type { ReactNode } from "react";
 
 interface Props {
   toc: TocItem[];
