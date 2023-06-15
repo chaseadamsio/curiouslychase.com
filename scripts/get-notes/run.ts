@@ -35,9 +35,19 @@ async function getDirContents(directory: string) {
       }
 
       if (result.data.status) {
-        result.data.pubDate = result.data.liveDate
-          ? format(result.data.liveDate, "yyyy-MM-dd")
-          : result.data.date ?? format(filestat.birthtime, "yyyy-MM-dd");
+        if (result.data.liveDate) {
+          if (result.data.liveDate instanceof Date) {
+            result.data.pubDate = format(result.data.liveDate, "yyyy-MM-dd");
+          } else {
+            result.data.pubDate = format(
+              parseISO(result.data.liveDate),
+              "yyyy-MM-dd"
+            );
+          }
+        } else {
+          result.data.pubDate =
+            result.data.date ?? format(filestat.birthtime, "yyyy-MM-dd");
+        }
 
         result.data.updatedDate =
           result.data.modified ?? format(filestat.mtime, "yyyy-MM-dd");
