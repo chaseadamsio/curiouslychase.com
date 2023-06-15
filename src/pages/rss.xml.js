@@ -4,7 +4,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { getPosts } from "../utils/getPosts";
 
 export async function get(context) {
-  const posts = getPosts({});
+  const posts = await getPosts({});
   return rss({
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
