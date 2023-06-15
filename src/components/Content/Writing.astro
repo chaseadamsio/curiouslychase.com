@@ -1,14 +1,8 @@
 ---
 import FormattedDate from "../../components/FormattedDate.astro";
-import { getCollection } from "astro:content";
+import { getPosts } from "../../utils/getPosts";
 
-const posts = (await getCollection("posts")).sort(
-	(a, b) =>
-		// @ts-ignore
-		new Date(b.data.pubDate.valueOf()) - new Date(a.data.pubDate.valueOf())
-);
-
-const selectedPosts = posts.slice(0, 6);
+const posts = await getPosts({ limit: 6 });
 ---
 
 <main class="mt-12 max-w-5xl mx-auto">
@@ -18,7 +12,7 @@ const selectedPosts = posts.slice(0, 6);
 	<section>
 		<ul>
 			{
-				selectedPosts.map((post) => (
+				posts.map((post) => (
 					<li>
 						<FormattedDate date={post.data.pubDate} />
 						<a href={`/posts/${post.slug}/`}>{post.data.title}</a>
