@@ -30,12 +30,10 @@ async function getDirContents(directory: string) {
       const content = fs.readFileSync(filepath, "utf-8");
       const result = matter(content);
 
-      if (
-        result.data.status &&
-        result.data.status.toLowerCase() === "published"
-      ) {
-        result.data.pubDate =
-          result.data.date ?? format(filestat.birthtime, "yyyy-MM-dd");
+      if (result.data.status) {
+        result.data.pubDate = result.data.liveDate
+          ? result.data.liveDate
+          : result.data.date ?? format(filestat.birthtime, "yyyy-MM-dd");
 
         result.data.updatedDate =
           result.data.modified ?? format(filestat.mtime, "yyyy-MM-dd");
