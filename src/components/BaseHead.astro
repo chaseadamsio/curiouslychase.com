@@ -23,12 +23,26 @@ const IS_DEV = !!import.meta.env.DEV;
 export interface Props {
 	title: string;
 	description: string;
+	thembnail?: string;
 	image?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "/placeholder-social.jpg" } = Astro.props;
+const { title, description, thumbnail, image } = Astro.props;
+
+let cardType = "summary_large_image";
+let imageUrl;
+if (thumbnail?.startsWith("https")) {
+	imageUrl = `https://curiouslychase.com/${thumbnail}`;
+} else if (!!thumbnail) {
+	imageUrl = `https://curiouslychase.com/${thumbnail}`;
+} else if (image) {
+	imageUrl = `https://curiouslychase.com/${image}`;
+} else {
+	cardType = "summary";
+	imageUrl = `https://curiouslychase.com/apple-touch-icon-180x180.png`;
+}
 ---
 
 <!-- Global Metadata -->
@@ -50,14 +64,14 @@ const { title, description, image = "/placeholder-social.jpg" } = Astro.props;
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:image" content={imageUrl} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta property="twitter:image" content={imageUrl} />
 
 <script
 	type="text/partytown"
