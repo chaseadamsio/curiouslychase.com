@@ -1,7 +1,7 @@
 import { getCollection } from "astro:content";
-import { isBefore, parse, parseISO } from "date-fns";
+import { isBefore, parseISO } from "date-fns";
 
-export const getPosts = async (props?: { limit?: number }) => {
+export const getPosts = async (props: { limit?: number } = {}) => {
   let allPosts = await getCollection("posts");
 
   if (!import.meta.env.DEV) {
