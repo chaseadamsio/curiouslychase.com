@@ -11,4 +11,4 @@ jobs:
     steps:
       - name: trigger netlify build
         run: |
-          curl -X POST -d '{}' https://api.netlify.com/build_hooks/648c5902946d9508512a13f1
+          curl -X POST -d '{}' $BUILD_HOOK
