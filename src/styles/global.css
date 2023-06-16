@@ -40,7 +40,10 @@ b {
 }
 
 a {
-  color: #2454ff;
+  color: #0055ff;
+}
+a:visited {
+  color: #0055ff;
 }
 nav a {
   margin-right: 10px;
