@@ -45,6 +45,9 @@ a {
 a:visited {
   color: #0055ff;
 }
+a:hover {
+  text-decoration: underline;
+}
 nav a {
   margin-right: 10px;
 }
