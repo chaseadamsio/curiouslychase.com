@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       //   base: ["10px"],
       fontFamily: {
-        sans: ["Public Sans", "sans-serif"],
+        sans: ["IBM Plex Mono", "Public Sans", "sans-serif"],
         mono: ["JetBrains Mono", "monospace"],
       },
     },

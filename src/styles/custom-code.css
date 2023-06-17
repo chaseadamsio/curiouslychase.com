@@ -97,7 +97,8 @@ pre[class*="language-sh"]::before {
 pre[class*="language-shell"]::before {
   content: "shell";
 }
-pre[class*="language-text"]::before {
+pre[class*="language-text"]::before,
+pre[class*="language-plaintext"]:before {
   content: "text";
 }
 pre[class*="language-toml"]::before {
