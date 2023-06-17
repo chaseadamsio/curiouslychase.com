@@ -45,6 +45,11 @@
   .prose-xl li {
     @apply my-0;
   }
+
+  .prose-xl :where(p):not(:where([class~="not-prose"] *)),
+  .prose-xl :where(ul):not(:where([class~="not-prose"] *)) {
+    @apply mt-0 !important;
+  }
 }
 /*
   The CSS in this style tag is based off of Bear Blog's default CSS.
