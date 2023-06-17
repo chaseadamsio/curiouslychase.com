@@ -30,12 +30,20 @@
   h4,
   h5,
   h6 {
-    @apply font-extrabold;
+    @apply font-extrabold my-0 pt-4 !important;
   }
 
   b,
   strong {
     @apply font-bold;
+  }
+
+  .heading-wrapper {
+    @apply pt-4;
+  }
+
+  .prose-xl li {
+    @apply my-0;
   }
 }
 /*
@@ -94,19 +102,6 @@ iframe {
 
 .iframe-wrapper {
   padding-bottom: 1rem;
-}
-
-.article h2 {
-  font-size: 1.8rem;
-}
-
-.article h3 {
-  font-size: 1.5rem;
-}
-
-.article h4 {
-  font-size: 1.2rem;
-  text-transform: uppercase;
 }
 
 .article pre {
