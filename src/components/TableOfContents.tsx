@@ -144,7 +144,7 @@ const TableOfContents: FC<Props> = ({ toc = [], labels, isMobile }) => {
           {labels.onThisPage}
         </h2>
       </HeadingContainer>
-      <ul className="toc-root">
+      <ul className="toc-root pl-0">
         {toc.map((heading2) => (
           <TableOfContentsItem key={heading2.slug} heading={heading2} />
         ))}

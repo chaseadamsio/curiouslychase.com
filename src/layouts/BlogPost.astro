@@ -52,9 +52,9 @@ const permalink = `${SITE_URL}/posts/${slug}/`;
 			<div class="pt-2">
 				<ShareLinkOnTwitter client:load title={title} permalink={permalink} />
 			</div>
-			<hr class="pt-4 pb-8" />
+			<hr class="mt-4 pb-8 border-slate-200 dark:border-slate-800" />
 		</div>
-		<div class="flex flex-col gap-8 lg:flex-row-reverse lg:gap-12">
+		<div class="flex flex-col gap-8 lg:flex-row-reverse lg:gap-12 prose-xl">
 			<nav class="lg:sticky lg:self-start lg:top-4 text-sm lg:w-4/12">
 				<TableOfContents
 					labels={{ onThisPage: "Table of Contents" }}
