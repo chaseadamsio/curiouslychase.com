@@ -1,0 +1,28 @@
+<theme-switcher>
+	<button>Toggle Theme</button>
+</theme-switcher>
+
+<script>
+	class ThemeSwitcher extends HTMLElement {
+		constructor() {
+			super();
+
+			// Read the message from the data attribute.
+			const message = this.dataset.message;
+			const button = this.querySelector("button");
+			button?.addEventListener("click", () => {
+				const nextTheme =
+					document.documentElement.attributes.getNamedItem("data-theme")
+						?.value === "dark"
+						? "light"
+						: "dark";
+
+				document.dispatchEvent(
+					new CustomEvent("set-theme", { detail: nextTheme })
+				);
+			});
+		}
+	}
+
+	customElements.define("theme-switcher", ThemeSwitcher);
+</script>

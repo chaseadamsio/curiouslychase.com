@@ -25,6 +25,7 @@
     "@types/rimraf": "^4.0.5",
     "astro": "^2.6.3",
     "astro-auto-import": "^0.3.0",
+    "astro-themes": "^0.2.4",
     "date-fns": "^2.30.0",
     "gray-matter": "^4.0.3",
     "html-escaper": "^3.0.3",
