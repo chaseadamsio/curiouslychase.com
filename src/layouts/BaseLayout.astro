@@ -3,6 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Themes from "astro-themes";
 
 const { description, title, image } = Astro.props;
 ---
@@ -10,6 +11,7 @@ const { description, title, image } = Astro.props;
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<Themes />
 		<BaseHead
 			title={title ?? SITE_TITLE}
 			description={description ?? SITE_DESCRIPTION}

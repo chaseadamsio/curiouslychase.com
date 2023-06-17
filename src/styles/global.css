@@ -2,6 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  /* body a {
+    @apply text-[#007aff];
+  } */
+  body {
+    @apply bg-slate-50 dark:bg-slate-950 text-slate-950 dark:text-slate-300;
+  }
+  a {
+    @apply text-blue-600 dark:text-blue-400;
+  }
+
+  a:visited {
+    @apply text-cyan-600 dark:text-cyan-400;
+  }
+
+  code {
+    @apply py-[2px] px-[5px] bg-slate-200 dark:bg-slate-800 border-slate-300 dark:border-slate-700 border-solid border rounded-md;
+  }
+
+  h1 {
+    @apply font-black;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-extrabold;
+  }
+
+  b,
+  strong {
+    @apply font-bold;
+  }
+}
 /*
   The CSS in this style tag is based off of Bear Blog's default CSS.
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
@@ -11,36 +47,11 @@ body {
   margin: auto;
   padding: 20px;
   text-align: left;
-  background-color: #fff;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  line-height: 1.5;
-  color: #444;
+  line-height: 1.6rem;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 900;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-strong,
-b {
-  color: #222;
-}
-
-a {
-  color: #2454ff;
-}
 nav a {
   margin-right: 10px;
 }
@@ -60,12 +71,6 @@ table {
 img {
   max-width: 100%;
   height: auto;
-}
-code {
-  padding: 2px 5px;
-  background-color: #f2f2f2;
-  border: #9d9ea0 1px solid;
-  border-radius: 4px;
 }
 pre {
   padding: 1rem;
