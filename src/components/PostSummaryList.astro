@@ -13,7 +13,9 @@ const { posts } = Astro.props;
 	{
 		posts.map((post) => (
 			<li class="flex flex-col md:flex-row">
-				<FormattedDate class="pr-4" date={post.data.pubDate} />
+				<span class="pr-4">
+					<FormattedDate date={post.data.pubDate} />
+				</span>
 				<a href={`/posts/${post.slug}/`}>{post.data.title}</a>
 			</li>
 		))
