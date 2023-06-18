@@ -1,0 +1,29 @@
+---
+import { ShareLinkOnTwitter } from "../components/ShareOnTwitter";
+import { SITE_TITLE } from "../consts";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<BaseLayout title={SITE_TITLE} description={"Articles written by Chase Adams"}>
+	<section>
+		<div class="pb-4">
+			<h1 class="text-2xl uppercase my-0">404: Whoops, page isn't found!</h1>
+
+			<p class="pt-4">
+				It looks like you're trying to visit a URL that's broken!
+			</p>
+			<p class="pt-4">
+				Would you <ShareLinkOnTwitter
+					client:load
+					content="It looks like this URL is broken: "
+					permalink={canonicalURL}
+				>
+					let me know on Twitter?
+				</ShareLinkOnTwitter>
+			</p>
+		</div>
+	</section>
+</BaseLayout>
