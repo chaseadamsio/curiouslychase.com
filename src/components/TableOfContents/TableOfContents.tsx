@@ -1,8 +1,8 @@
 import type { ComponentChildren, JSX } from "preact";
 import { useEffect, useState } from "preact/hooks";
 import type { FC } from "preact/compat";
-import type { TocItem } from "../utils/generateTOC";
-import { unescape } from "../utils/htmlEntities";
+import type { TocItem } from "../../utils/generateTOC";
+import { unescape } from "../../utils/htmlEntities";
 import "./TableOfContents.css";
 
 interface Props {

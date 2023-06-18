@@ -1,11 +1,11 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
-import MaybeLink from "../../components/MaybeLink.astro";
-import Paragraph from "../../components/Paragraph.astro";
 import Blockquote from "../../components/Blockquote.astro";
-import UnorderedList from "../../components/UnorderedList.astro";
-import OrderedList from "../../components/OrderedList.astro";
+import MaybeLink from "../../components/MaybeLink.astro";
+import OrderedList from "../../components/mdx/OrderedList.astro";
+import Paragraph from "../../components/Paragraph.astro";
 import Table from "../../components/Table.astro";
+import UnorderedList from "../../components/mdx/UnorderedList.astro";
 
 export async function getStaticPaths() {
 	const posts = await getCollection("posts");
