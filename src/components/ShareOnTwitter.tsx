@@ -1,14 +1,17 @@
 import type { FC } from "preact/compat";
-import Preact from "preact";
+import React from "preact";
 
 type ShareLinkProps = {
+  content?: string;
   title: string;
   permalink: string;
 };
 
 export const ShareLinkOnTwitter: FC<ShareLinkProps> = ({
+  content,
   title,
   permalink,
+  children,
 }) => {
   const handleClick = (event: Event) => {
     event.preventDefault();
@@ -22,11 +25,16 @@ export const ShareLinkOnTwitter: FC<ShareLinkProps> = ({
       left;
 
     const encodedURL = `url=${encodeURIComponent(permalink)}`;
-    const encodedTitle = `text=Check out ${encodeURIComponent(`"${title}"`)}`;
-    const via = "via=curiouslychase";
+    const username = `curiouslychase`;
+    const via = `via=${username}`;
+    const encodedContent = content
+      ? `text=${content}&${via}`
+      : `text=Check out ${encodeURIComponent(`"${title}"`)}&${via}`;
+
+    const tweet = `${encodedContent}&${encodedURL}`;
 
     window.open(
-      `https://twitter.com/intent/tweet?${encodedTitle}&${encodedURL}&${via}`,
+      `https://twitter.com/intent/tweet?${tweet}`,
       `NewWindow`,
       params
     );
@@ -37,7 +45,7 @@ export const ShareLinkOnTwitter: FC<ShareLinkProps> = ({
       onClick={handleClick}
       href={`https://twitter.com/intent/tweet?=${permalink}&text=${title}`}
     >
-      Share on Twitter
+      {children ?? "Share on Twitter"}
     </a>
   );
 };
