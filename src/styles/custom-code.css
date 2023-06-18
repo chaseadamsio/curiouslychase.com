@@ -10,7 +10,6 @@ pre[class*="language-"]::before {
   left: 0;
   text-align: left;
   width: 100%;
-  border-bottom: 1px solid #444;
 }
 
 pre[class*="language-"] {

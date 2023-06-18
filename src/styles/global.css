@@ -50,7 +50,17 @@
   .prose-xl :where(ul):not(:where([class~="not-prose"] *)) {
     @apply mt-0 !important;
   }
+
+  pre[class*="language-"],
+  code[class*="language-"] {
+    @apply bg-slate-900;
+  }
+
+  pre[class*="language-"]::before {
+    @apply border-slate-800 border-b-2;
+  }
 }
+
 /*
   The CSS in this style tag is based off of Bear Blog's default CSS.
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
