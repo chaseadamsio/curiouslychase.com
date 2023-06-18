@@ -2,11 +2,21 @@
 import { format, parseISO } from "date-fns";
 export interface Props {
 	date: string;
+	class: string;
 }
 
-const { date } = Astro.props;
+const { date, class: className = "" } = Astro.props;
 ---
 
-<time datetime={format(parseISO(date), "yyyy-MM-dd'T'HH:mm:ss.SSSxxx")}>
+<time
+	datetime={format(parseISO(date), "yyyy-MM-dd'T'HH:mm:ss.SSSxxx")}
+	class={className}
+>
 	{format(parseISO(date), "yyyy-MM-dd")}
 </time>
+
+<style>
+	time {
+		@apply font-mono;
+	}
+</style>
