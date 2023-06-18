@@ -20,7 +20,7 @@ const posts = await getPosts({});
 		<ul>
 			{
 				posts.map((post) => (
-					<li class="py-2">
+					<li>
 						<FormattedDate date={post.data.pubDate} />
 						<a href={`/posts/${post.slug}/`}>{post.data.title}</a>
 					</li>
@@ -29,3 +29,22 @@ const posts = await getPosts({});
 		</ul>
 	</section>
 </BaseLayout>
+
+<style>
+	ul {
+		display: flex;
+		flex-direction: column;
+		list-style-type: none;
+		padding: unset;
+		gap: 0.5rem;
+	}
+	ul li {
+		display: flex;
+	}
+	ul li :global(time) {
+		flex: 0 0 130px;
+		font-size: 0.8rem;
+
+		font-family: "JetBrains Mono", monospace;
+	}
+</style>
