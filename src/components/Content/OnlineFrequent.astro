@@ -7,10 +7,10 @@ const frequentSocial = social.filter(
 ---
 
 <p>I'm on almost all social media as <strong>@curiouslychase</strong></p>
-<ul class="flex flex-row gap-2">
+<ul class="flex flex-col pt-4 md:pt-0 md:flex-row gap-2">
 	{
 		frequentSocial.map((s) => (
-			<li class="after:content-['/'] after:last-of-type:content-['']">
+			<li class="md:after:content-['/'] after:last-of-type:content-['']">
 				<a class="hover:font-bold" href={`${s.link}`}>
 					{s.network}
 				</a>
