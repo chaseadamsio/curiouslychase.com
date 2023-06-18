@@ -6,6 +6,7 @@ import { SITE_URL } from "../consts";
 import generateTOC from "../utils/generateTOC";
 import BaseLayout from "./BaseLayout.astro";
 import TableOfContents from "../components/TableOfContents/TableOfContents";
+import PageHeading from "../components/PageHeading.astro";
 
 type Props = CollectionEntry<"posts">["data"];
 
@@ -29,7 +30,7 @@ const permalink = `${SITE_URL}/posts/${slug}/`;
 	<article>
 		{heroImage && <img width={720} height={360} src={heroImage} alt="" />}
 		<div class="lg:w-8/12">
-			<h1 class="text-4xl leading-[3rem]" id="overview">{title}</h1>
+			<PageHeading>{title}</PageHeading>
 			<div class="pt-4 text-xs flex flex-row gap-4 font-mono">
 				{
 					pubDate && (
