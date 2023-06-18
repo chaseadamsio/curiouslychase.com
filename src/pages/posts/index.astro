@@ -7,6 +7,7 @@ import FormattedDate from "../../components/FormattedDate.astro";
 
 import { getPosts } from "../../utils/getPosts";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostSummaryList from "../../components/PostSummaryList.astro";
 
 const posts = await getPosts({});
 ---
@@ -17,34 +18,8 @@ const posts = await getPosts({});
 		<span>Articles I've Written</span>
 	</div>
 	<section>
-		<ul>
-			{
-				posts.map((post) => (
-					<li>
-						<FormattedDate date={post.data.pubDate} />
-						<a href={`/posts/${post.slug}/`}>{post.data.title}</a>
-					</li>
-				))
-			}
-		</ul>
+		<PostSummaryList posts={posts} />
 	</section>
 </BaseLayout>
 
-<style>
-	ul {
-		display: flex;
-		flex-direction: column;
-		list-style-type: none;
-		padding: unset;
-		gap: 0.5rem;
-	}
-	ul li {
-		display: flex;
-	}
-	ul li :global(time) {
-		flex: 0 0 130px;
-		font-size: 0.8rem;
-
-		font-family: "JetBrains Mono", monospace;
-	}
-</style>
+<style></style>

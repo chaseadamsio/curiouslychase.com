@@ -1,6 +1,7 @@
 ---
 import FormattedDate from "../../components/FormattedDate.astro";
 import { getPosts } from "../../utils/getPosts";
+import PostSummaryList from "../PostSummaryList.astro";
 
 const posts = await getPosts({ limit: 6 });
 ---
@@ -10,37 +11,10 @@ const posts = await getPosts({ limit: 6 });
 		<h2 class="uppercase my-0 text-2xl">What I'm Writing</h2>
 	</div>
 	<section>
-		<ul>
-			{
-				posts.map((post) => (
-					<li>
-						<FormattedDate date={post.data.pubDate} />
-						<a href={`/posts/${post.slug}/`}>{post.data.title}</a>
-					</li>
-				))
-			}
-		</ul>
+		<PostSummaryList posts={posts} />
+
 		<div class="mt-8">
 			<a href="/posts/" class="text-md">See all {posts.length} posts</a>
 		</div>
 	</section>
 </main>
-
-<style>
-	ul {
-		display: flex;
-		flex-direction: column;
-		list-style-type: none;
-		padding: unset;
-		gap: 0.5rem;
-	}
-	ul li {
-		display: flex;
-	}
-	ul li :global(time) {
-		flex: 0 0 130px;
-		font-size: 0.8rem;
-
-		font-family: "JetBrains Mono", monospace;
-	}
-</style>
