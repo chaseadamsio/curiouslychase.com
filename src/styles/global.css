@@ -14,7 +14,7 @@
   }
 
   a:visited {
-    @apply text-cyan-600 dark:text-cyan-400;
+    @apply text-blue-700 dark:text-blue-300;
   }
 
   code {
