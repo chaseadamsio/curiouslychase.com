@@ -11,7 +11,8 @@ if (!props.href.startsWith("#") && !props.href.startsWith("https://")) {
 		return acc;
 	}, {});
 
-	if (!postsByKey[props.href]) {
+	const [url] = props.href.split("#");
+	if (!postsByKey[url]) {
 		props.href = `#unpublished?href=${props.href}`;
 	}
 }
