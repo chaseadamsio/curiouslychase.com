@@ -7,8 +7,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: daily_build
 
     steps:
       - name: trigger netlify build
+        shell: bash
+        env:
+          BUILD_HOOK: ${{ secrets.BUILD_HOOK_ID }}
         run: |
-          curl -X POST -d '{}' "https://api.netlify.com/build_hooks/64904f02b32a795fdc466a59"
+          curl -X POST -d '{}' "https://api.netlify.com/build_hooks/$BUILD_HOOK_ID"
