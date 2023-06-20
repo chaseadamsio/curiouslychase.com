@@ -21,6 +21,10 @@
     @apply py-[2px] px-[5px] bg-slate-200 dark:bg-slate-800 border-slate-300 dark:border-slate-700 border-solid border rounded-md;
   }
 
+  blockquote {
+    @apply text-slate-700 dark:text-slate-200;
+  }
+
   h1 {
     @apply font-black;
   }
