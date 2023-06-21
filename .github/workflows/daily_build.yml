@@ -2,7 +2,7 @@ name: daily-build
 
 on:
   schedule:
-    - cron: "1 13 * * *"
+    - cron: "1 14 * * *"
 
 jobs:
   build:
@@ -13,6 +13,6 @@ jobs:
       - name: trigger netlify build
         shell: bash
         env:
-          BUILD_HOOK: ${{ secrets.BUILD_HOOK_ID }}
+          BUILD_HOOK_ID: ${{ secrets.BUILD_HOOK_ID }}
         run: |
           curl -X POST -d '{}' "https://api.netlify.com/build_hooks/$BUILD_HOOK_ID"
