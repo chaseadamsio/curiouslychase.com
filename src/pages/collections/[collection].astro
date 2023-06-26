@@ -1,0 +1,36 @@
+---
+import PageHeading from "../../components/PageHeading.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getPosts } from "../../utils/getPosts";
+
+export async function getStaticPaths() {
+	return [
+		{ params: { collection: "astro" } },
+		{ params: { collection: "successes" } },
+		{ params: { collection: "community" } },
+		{ params: { collection: "blogging" } },
+		{ params: { collection: "javascript" } },
+		{ params: { collection: "learning in public" } },
+	];
+}
+
+const { collection } = Astro.params;
+
+const posts = await getPosts();
+
+const postsByTitle = posts.reduce((acc, item) => {
+	acc[item.data.title.toLowerCase()] = item;
+	return acc;
+}, {});
+
+// console.log(Object.keys(postsByTitle));
+let collectionContent;
+if (collection && postsByTitle[collection?.toLowerCase()]) {
+	collectionContent = postsByTitle[collection?.toLowerCase()];
+}
+---
+
+<BaseLayout>
+	<PageHeading>{collectionContent.data.title}</PageHeading>
+	<div>{collectionContent.data.description}</div>
+</BaseLayout>
