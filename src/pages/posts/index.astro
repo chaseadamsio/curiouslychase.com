@@ -5,7 +5,7 @@ import PostSummaryList from "../../components/PostSummaryList.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getPosts } from "../../utils/getPosts";
 
-const posts = await getPosts({});
+const posts = await getPosts();
 ---
 
 <BaseLayout title={SITE_TITLE} description={"Articles written by Chase Adams"}>
