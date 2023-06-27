@@ -30,14 +30,12 @@ export interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description } = Astro.props;
+const { title, description, image } = Astro.props;
 
 const ogImageUrl = getOgImageUrl(canonicalURL.pathname);
 
-const imageSrc = ogImageUrl ?? "/placeholder-social.jpg";
+const imageSrc = image ?? ogImageUrl ?? "/placeholder-social.jpg";
 const canonicalImageSrc = new URL(imageSrc, Astro.url);
-
-console.log(canonicalImageSrc);
 ---
 
 <!-- Global Metadata -->
