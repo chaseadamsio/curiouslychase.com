@@ -31,9 +31,13 @@ export const { getStaticPaths, get } = OGImageRoute({
   getImageOptions: (path, page) => ({
     title: page.data.title,
     description: page.data.description,
-    // logo: {
-    //   path: "./src/astro-docs-logo.png",
-    // },
+    font: {
+      title: { weight: "Bold", size: 64, lineHeight: 1.2 },
+    },
+    logo: {
+      path: "./src/avatar.png",
+      size: [100, 100],
+    },
     // There are a bunch more options you can use here!
   }),
 });

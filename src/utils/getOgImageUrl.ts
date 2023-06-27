@@ -18,7 +18,5 @@ const paths = new Set(routes.map(({ params }) => params.route));
  */
 export function getOgImageUrl(path: string): string | undefined {
   let imagePath = generateOGImageUrl(path);
-  console.log("imagepath:", imagePath);
-  console.log(paths.has(imagePath));
   if (paths.has(imagePath)) return "/open-graph/" + imagePath;
 }
