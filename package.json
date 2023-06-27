@@ -25,7 +25,9 @@
     "@types/rimraf": "^4.0.5",
     "astro": "^2.6.3",
     "astro-auto-import": "^0.3.0",
+    "astro-og-canvas": "^0.1.8",
     "astro-themes": "^0.2.4",
+    "canvaskit-wasm": "^0.38.2",
     "date-fns": "^2.30.0",
     "gray-matter": "^4.0.3",
     "html-escaper": "^3.0.3",
@@ -46,7 +48,6 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
     "@types/mapbox__rehype-prism": "^0.8.0",
-    "tailwind-vertical-rhythm": "^1.2.0",
     "ts-node": "^10.9.1"
   }
 }
