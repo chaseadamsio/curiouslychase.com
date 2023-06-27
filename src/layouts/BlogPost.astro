@@ -7,6 +7,7 @@ import generateTOC from "../utils/generateTOC";
 import BaseLayout from "./BaseLayout.astro";
 import TableOfContents from "../components/TableOfContents/TableOfContents";
 import PageHeading from "../components/PageHeading.astro";
+import { isBefore, parseISO } from "date-fns";
 
 type Props = CollectionEntry<"posts">["data"];
 
@@ -40,7 +41,7 @@ const permalink = `${SITE_URL}/posts/${slug}/`;
 					)
 				}
 				{
-					updatedDate && (
+					updatedDate && isBefore(parseISO(pubDate), parseISO(updatedDate)) && (
 						<div>
 							Last updated on <FormattedDate date={updatedDate} />
 						</div>
