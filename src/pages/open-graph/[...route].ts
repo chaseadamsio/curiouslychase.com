@@ -38,22 +38,28 @@ export const { getStaticPaths, get } = OGImageRoute({
         lineHeight: 1.2,
         textTransform: "uppercase",
         color: [255, 241, 12],
+        families: ["JetBrains Mono", "IBM Plex Mono"],
       },
       description: {
-        weight: "Bold",
+        weight: "Light",
         size: 36,
-        lineHeight: 1.2,
+        lineHeight: 1.5,
         color: [255, 245, 225],
+        families: ["JetBrains Mono"],
       },
     },
     logo: {
-      path: "./src/avatar.png",
-      size: [100, 100],
+      path: "./src/header.png",
+      size: [300],
     },
     border: { color: [255, 241, 12], width: 20, side: "inline-start" },
     bgGradient: [
       [51, 61, 88],
       [30, 38, 48],
+    ],
+    fonts: [
+      "https://curiouslychase.com/fonts/JetBrains_Mono/JetBrainsMono-VariableFont_wght.ttf",
+      "https://curiouslychase.com/fonts/JetBrains_Mono/JetBrainsMono-Italic-VariableFont_wght.ttf",
     ],
   }),
 });
