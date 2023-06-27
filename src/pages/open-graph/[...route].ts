@@ -29,16 +29,32 @@ export const { getStaticPaths, get } = OGImageRoute({
   // image. For example, if `pages` was passed a glob like above, you
   // could read values from frontmatter.
   getImageOptions: (path, page) => ({
-    title: page.data.title,
+    title: page.data.title.toUpperCase(),
     description: page.data.description,
     font: {
-      title: { weight: "Bold", size: 64, lineHeight: 1.2 },
+      title: {
+        weight: "ExtraBold",
+        size: 64,
+        lineHeight: 1.2,
+        textTransform: "uppercase",
+        color: [255, 241, 12],
+      },
+      description: {
+        weight: "Bold",
+        size: 36,
+        lineHeight: 1.2,
+        color: [255, 245, 225],
+      },
     },
     logo: {
       path: "./src/avatar.png",
       size: [100, 100],
     },
-    // There are a bunch more options you can use here!
+    border: { color: [255, 241, 12], width: 20, side: "inline-start" },
+    bgGradient: [
+      [51, 61, 88],
+      [30, 38, 48],
+    ],
   }),
 });
 
