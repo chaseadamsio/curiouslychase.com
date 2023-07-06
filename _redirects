@@ -1,5 +1,6 @@
 /posts/Most%20Common%20Programming%20Case%20Types/ /notes/most-common-programming-case-types/ 
 /notes/:path* /posts/:path*/ 
+/blog/:path* /posts/:path*/ 
 /most-common-programming-case-types/ /posts/most-common-programming-case-types/ 
 /notes/ /posts/👋-start-here/ 
 /posts/start-week-on-monday-in-google-calendar-and-apple-calendar/ /posts/start-week-on-monday-in-google-calendar-apple-calendar-spark-email-and-cron-calendar/ 
