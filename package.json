@@ -8,7 +8,8 @@
     "build": "astro build && cp _redirects dist/_redirects",
     "preview": "astro preview",
     "astro": "astro",
-    "cp-notes-and-images": "rm -rf src/content/* && ts-node --esm scripts/get-notes/run.ts"
+    "cp-notes-and-images": "rm -rf src/content/* && ts-node --esm scripts/get-notes/run.ts",
+    "cp-notes-and-images-and-push": "./scripts/get_notes_and_update_git_repo.sh"
   },
   "dependencies": {
     "@astrojs/mdx": "^0.19.5",
