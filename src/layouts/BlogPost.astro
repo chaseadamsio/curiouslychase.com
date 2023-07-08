@@ -32,22 +32,6 @@ const permalink = `${SITE_URL}/posts/${slug}/`;
 		{heroImage && <img width={720} height={360} src={heroImage} alt="" />}
 		<div class="lg:w-8/12">
 			<PageHeading>{title}</PageHeading>
-			<div class="pt-4 text-xs flex flex-row gap-4 font-mono">
-				{
-					pubDate && (
-						<div>
-							Published on <FormattedDate date={pubDate} />
-						</div>
-					)
-				}
-				{
-					updatedDate && isBefore(parseISO(pubDate), parseISO(updatedDate)) && (
-						<div>
-							Last updated on <FormattedDate date={updatedDate} />
-						</div>
-					)
-				}
-			</div>
 			<div class="pt-2">
 				<ShareLinkOnTwitter client:load title={title} permalink={permalink} />
 			</div>
@@ -56,13 +40,29 @@ const permalink = `${SITE_URL}/posts/${slug}/`;
 		<div class="flex flex-col gap-8 lg:flex-row-reverse lg:gap-12">
 			<nav class="lg:sticky lg:self-start lg:top-4 text-md lg:w-4/12">
 				<TableOfContents
-					labels={{ onThisPage: "Table of Contents" }}
+					labels={{ onThisPage: "In This Article" }}
 					toc={generateTOC(headings)}
 				/>
 			</nav>
-			<div class="article w-full lg:w-8/12 prose-xl">
+			<div class="article">
 				<slot />
 			</div>
+		</div>
+		<div class="pt-4 text-xs flex md:flex-row gap-4 font-mono">
+			{
+				pubDate && (
+					<div>
+						Published on <FormattedDate date={pubDate} />
+					</div>
+				)
+			}
+			{
+				updatedDate && isBefore(parseISO(pubDate), parseISO(updatedDate)) && (
+					<div>
+						Last updated on <FormattedDate date={updatedDate} />
+					</div>
+				)
+			}
 		</div>
 	</article>
 	<ShareLinkOnTwitter client:load title={title} permalink={permalink} />

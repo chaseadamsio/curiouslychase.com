@@ -27,8 +27,8 @@ const AnchorLinkIcon = h(
  * This set-up was informed by https://amberwilson.co.uk/blog/are-your-anchor-links-accessible/
  */
 export const autolinkConfig: Options = {
-  properties: { class: "anchor-link" },
-  behavior: "after",
+  properties: { class: "heading-wrapper" },
+  behavior: "wrap",
   group: ({ tagName }) =>
     h("div", { tabIndex: -1, class: `heading-wrapper level-${tagName}` }),
   content: (heading) => [AnchorLinkIcon],
