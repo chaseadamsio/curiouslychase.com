@@ -21,7 +21,7 @@
     "@fontsource/ibm-plex-mono": "^5.0.3",
     "@fontsource/ibm-plex-sans": "^5.0.4",
     "@fontsource/jetbrains-mono": "^5.0.3",
-    "@fontsource/public-sans": "^5.0.3",
+    "@fontsource/public-sans": "^5.0.5",
     "@jsdevtools/rehype-toc": "^3.0.2",
     "@mapbox/rehype-prism": "^0.8.0",
     "@types/rimraf": "^4.0.5",
