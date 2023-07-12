@@ -4,7 +4,7 @@ import { SITE_TITLE } from "../consts";
 import ThemeSwitcher from "./ThemeSwitcher.astro";
 ---
 
-<header class="max-w-5xl mx-auto">
+<header class="max-w-5xl mx-auto font-display">
 	<div class="flex flex-row items-center gap-4 pb-4">
 		<img
 			class="w-[36px] h-[36px] rounded-full inline-block mr-2]"
@@ -13,11 +13,11 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
 			width="100"
 			height="100"
 		/>
-		<h2 class="my-0 py-0 lowercase text-lg">
+		<h2 class="my-0 py-0 lowercase font-subtitle text-3xl">
 			{SITE_TITLE}
 		</h2>
 	</div>
-	<nav>
+	<nav class="font-subtitle">
 		<HeaderLink href="/">Home</HeaderLink>
 		<HeaderLink href="/posts">Blog</HeaderLink>
 		<HeaderLink href="/about">About</HeaderLink>

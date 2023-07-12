@@ -2,6 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Register your custom font family and tell the browser where to find it. */
+@font-face {
+  font-family: "BN Tillsdale";
+  src: url("/fonts/BNTillsdale/BNTillsdale.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BN Tillsdale";
+  src: url("/fonts/BNTillsdale/BNTillsdale-Bold.otf") format("otf");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BN Tillsdale";
+  src: url("/fonts/BNTillsdale/BNTillsdale-Light.otf") format("otf");
+  font-weight: light;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Palmer Lake";
+  src: url("/fonts/PalmerLake/PalmerLakePrint-Regular.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Palmer Lake";
+  src: url("/fonts/PalmerLake/PalmerLakePrint-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Palmer Lake";
+  src: url("/fonts/PalmerLake/PalmerLakePrint-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   /* body a {
     @apply text-[#007aff];
@@ -118,6 +167,7 @@ iframe {
 .article {
   @apply w-full lg:w-8/12;
 }
+
 .article pre {
   margin-bottom: 1rem;
 }
@@ -134,7 +184,7 @@ iframe {
 .article > h3,
 .article > h4,
 .article > h5 {
-  @apply mt-8 mb-6 border-b border-slate-300 text-lg uppercase font-bold leading-8;
+  @apply mt-8 mb-6 border-b border-slate-300 text-lg uppercase font-bold leading-8 font-display;
 }
 
 .article > h2 {
@@ -151,4 +201,9 @@ iframe {
 
 .article > h5 {
   @apply text-base;
+}
+
+.font-subtitle {
+  @apply text-3xl;
+  font-family: "Palmer Lake", sans-serif !important;
 }

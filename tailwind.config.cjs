@@ -6,6 +6,8 @@ module.exports = {
       fontFamily: {
         sans: ["IBM Plex Mono", "JetBrains Mono", "sans-serif"],
         mono: ["JetBrains Mono", "monospace"],
+        display: ["BN Tillsdale"],
+        // display: ["Palmer Lake"],
       },
     },
   },
