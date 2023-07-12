@@ -19,7 +19,7 @@ export const { getStaticPaths, get } = OGImageRoute({
   // This can be any map of paths to data, not necessarily a glob result.
   pages: (await getPosts()).reduce<Record<string, CollectionEntry<"posts">>>(
     (acc, post) => {
-      acc[`posts/${getSlugFromTitle(post.data.title)}.png`] = post;
+      acc[`posts/${getSlugFromTitle(post.data.slug)}.png`] = post;
       return acc;
     },
     {}
@@ -33,33 +33,32 @@ export const { getStaticPaths, get } = OGImageRoute({
     description: page.data.description,
     font: {
       title: {
-        weight: "ExtraBold",
-        size: 64,
+        weight: "Bold",
+        size: 80,
         lineHeight: 1.2,
         textTransform: "uppercase",
-        color: [255, 241, 12],
-        families: ["JetBrains Mono", "IBM Plex Mono"],
+        color: [0, 0, 0],
+        families: ["BN Tillsdale"],
       },
       description: {
-        weight: "Light",
-        size: 36,
-        lineHeight: 1.5,
-        color: [255, 245, 225],
-        families: ["JetBrains Mono"],
+        size: 48,
+        lineHeight: 0.8,
+        color: [0, 0, 0],
+        families: ["Palmer Lake Print"],
       },
     },
     logo: {
       path: "./src/header.png",
-      size: [300],
+      size: [400],
     },
+    padding: 40,
     border: { color: [255, 241, 12], width: 20, side: "inline-start" },
-    bgGradient: [
-      [51, 61, 88],
-      [30, 38, 48],
-    ],
+    bgGradient: [[248, 240, 219]],
     fonts: [
-      "https://curiouslychase.com/fonts/JetBrains_Mono/JetBrainsMono-VariableFont_wght.ttf",
-      "https://curiouslychase.com/fonts/JetBrains_Mono/JetBrainsMono-Italic-VariableFont_wght.ttf",
+      "https://curiouslychase.com/fonts/BNTillsdale/BNTillsdale-Bold.otf",
+      "https://curiouslychase.com/fonts/BNTillsdale/BNTillsdale.otf",
+      "https://curiouslychase.com/fonts/BNTillsdale/BNTillsdale-Light.otf",
+      "https://curiouslychase.com/fonts/PalmerLake/PalmerLakePrint-Regular.otf",
     ],
   }),
 });
