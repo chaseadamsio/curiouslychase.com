@@ -21,6 +21,22 @@
 
 @font-face {
   font-family: "BN Tillsdale";
+  src: url("/fonts/BNTillsdale/BNTillsdale.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BN Tillsdale";
+  src: url("/fonts/BNTillsdale/BNTillsdale-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BN Tillsdale";
   src: url("/fonts/BNTillsdale/BNTillsdale-Light.otf") format("otf");
   font-weight: light;
   font-style: normal;
@@ -210,4 +226,8 @@ iframe {
 
 ul {
   @apply list-disc pl-4 pt-0 pb-4;
+}
+
+ol {
+  @apply list-decimal pl-4 pb-4;
 }
