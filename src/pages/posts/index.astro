@@ -10,8 +10,8 @@ const posts = await getPosts();
 
 <BaseLayout title={SITE_TITLE} description={"Articles written by Chase Adams"}>
 	<div class="pb-4">
-		<h1 class="uppercase my-0">The Blog</h1>
-		<span>Articles I've Written</span>
+		<h1 class="uppercase my-0 text-5xl font-display">The Blog</h1>
+		<span class="text-3xl font-subtitle">Articles I've Written</span>
 	</div>
 	<section>
 		<PostSummaryList posts={posts} />

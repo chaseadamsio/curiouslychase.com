@@ -184,19 +184,19 @@ iframe {
 .article > h3,
 .article > h4,
 .article > h5 {
-  @apply mt-8 mb-6 border-b border-slate-300 text-lg uppercase font-bold leading-8 font-display;
+  @apply mt-8 mb-6 uppercase font-bold leading-8 font-display;
 }
 
 .article > h2 {
-  @apply text-2xl;
+  @apply text-3xl;
 }
 
 .article > h3 {
-  @apply text-xl;
+  @apply text-2xl;
 }
 
 .article > h4 {
-  @apply text-lg;
+  @apply text-xl normal-case;
 }
 
 .article > h5 {
@@ -206,4 +206,8 @@ iframe {
 .font-subtitle {
   @apply text-3xl;
   font-family: "Palmer Lake", sans-serif !important;
+}
+
+ul {
+  @apply list-disc pl-4 pt-0 pb-4;
 }
