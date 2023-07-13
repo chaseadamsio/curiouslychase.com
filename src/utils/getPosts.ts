@@ -20,3 +20,9 @@ export const getPosts = async (props?: { limit?: number }) => {
 
   return posts;
 };
+
+export const getPostsCount = async () => {
+  let allPosts = await getCollection("posts");
+
+  return allPosts.length;
+};
