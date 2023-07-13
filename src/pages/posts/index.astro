@@ -4,14 +4,15 @@ import { SITE_TITLE } from "../../consts";
 import PostSummaryList from "../../components/PostSummaryList.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getPosts } from "../../utils/getPosts";
+import PageHeading from "../../components/PageHeading.astro";
 
 const posts = await getPosts();
 ---
 
 <BaseLayout title={SITE_TITLE} description={"Articles written by Chase Adams"}>
 	<div class="pb-4">
-		<h1 class="uppercase my-0 text-5xl font-display">The Blog</h1>
-		<span class="text-3xl font-subtitle">Articles I've Written</span>
+		<PageHeading>The Blog</PageHeading>
+		<span class="pt-4 text-3xl font-subtitle">Articles I've Written</span>
 	</div>
 	<section>
 		<PostSummaryList posts={posts} />

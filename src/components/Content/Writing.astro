@@ -1,6 +1,6 @@
 ---
 import FormattedDate from "../../components/FormattedDate.astro";
-import { getPosts } from "../../utils/getPosts";
+import { getPosts, getPostsCount } from "../../utils/getPosts";
 import PostSummaryList from "../PostSummaryList.astro";
 
 const posts = await getPosts({ limit: 6 });
@@ -14,7 +14,7 @@ const posts = await getPosts({ limit: 6 });
 		<PostSummaryList posts={posts} />
 
 		<div class="mt-8">
-			<a href="/posts/" class="text-md">See all {posts.length} posts</a>
+			<a href="/posts/" class="text-md">See all {getPostsCount} posts</a>
 		</div>
 	</section>
 </main>
