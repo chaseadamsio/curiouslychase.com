@@ -56,8 +56,6 @@ async function getDirContents(directory: string) {
           delete result.data.updatedDate;
         }
 
-        result.data.layout = "../../layouts/BlogPost.astro";
-
         const foundEmbed = content.match(EMBED_LINK_REGEX);
 
         if (foundEmbed?.length) {
@@ -90,7 +88,7 @@ async function getDirContents(directory: string) {
           remove: /[\.\?"',\(\))]*/,
         });
 
-        const folderPath = `${process.cwd()}/src/content/posts`;
+        const folderPath = `${process.cwd()}/content/posts`;
         fs.mkdirSync(folderPath, { recursive: true });
         const newPath = slugify(filename, {
           lower: true,
@@ -98,7 +96,7 @@ async function getDirContents(directory: string) {
         });
 
         fs.writeFileSync(
-          `${folderPath}/${result.data.slug}.mdx`,
+          `${folderPath}/${result.data.slug}.md`,
           matter.stringify(result.content, result.data)
         );
         copied.notes++;

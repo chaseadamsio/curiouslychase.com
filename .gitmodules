@@ -2,8 +2,6 @@
 	path = public
 	url = git@github.com:curiouslychase/public.git
 	branch = main
-
-[submodule "src/content"]
-	path = src/content
+[submodule "content"]
+	path = content
 	url = git@github.com:curiouslychase/content.git
-	branch = main
