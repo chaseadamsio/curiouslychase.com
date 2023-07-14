@@ -8,7 +8,8 @@
     "dev": "next dev --port 4242",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "vercel-submodules -all"
   },
   "dependencies": {
     "@jsdevtools/rehype-toc": "^3.0.2",
@@ -46,6 +47,7 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
-    "@types/rss": "^0.0.30"
+    "@types/rss": "^0.0.30",
+    "vercel-submodules": "^1.0.10"
   }
 }
