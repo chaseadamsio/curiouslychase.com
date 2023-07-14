@@ -1,4 +1,5 @@
 import { OnlineFrequent } from "@/components/Content/OnlineFrequent";
+import Link from "next/link";
 
 export const Footer = () => {
   return (
@@ -11,16 +12,16 @@ export const Footer = () => {
         <h3 className="uppercase font-subtitle text-lg">Sitemap</h3>
         <ul className="p-0 m-0 pt-4 md:pt-0 list-none">
           <li>
-            <a href="/sitemap.xml">Sitemap</a>
+            <Link href="/sitemap.xml">Sitemap</Link>
           </li>
           <li>
-            <a href="/rss.xml">RSS Feed</a>
+            <Link href="/rss.xml">RSS Feed</Link>
           </li>
           <li>
-            <a href="/about/">About Me</a>
+            <Link href="/about/">About Me</Link>
           </li>
           <li>
-            <a href="/posts/">Blog</a>
+            <Link href="/posts/">Blog</Link>
           </li>
         </ul>
       </div>

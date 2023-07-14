@@ -1,4 +1,5 @@
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import Link from "next/link";
 import { FC, PropsWithChildren } from "react";
 
 export const Header = () => {
@@ -18,8 +19,8 @@ export const Header = () => {
       </div>
       <nav className="font-subtitle">
         <HeaderLink href="/">Home</HeaderLink>
-        <HeaderLink href="/posts">Blog</HeaderLink>
-        <HeaderLink href="/about">About</HeaderLink>
+        <HeaderLink href="/posts/">Blog</HeaderLink>
+        <HeaderLink href="/about/">About</HeaderLink>
         <HeaderLink href="https://crca.news" target="_blank">
           Newsletter
         </HeaderLink>
@@ -35,8 +36,8 @@ const HeaderLink: FC<PropsWithChildren<{ href: string; target?: string }>> = ({
   ...rest
 }) => {
   return (
-    <a href={href} className="text-md" {...rest}>
+    <Link href={href} className="text-md" {...rest}>
       {children}
-    </a>
+    </Link>
   );
 };

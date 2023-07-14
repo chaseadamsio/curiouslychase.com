@@ -1,5 +1,6 @@
 import { PostSummaryList } from "@/components/PostSummaryList";
 import { getArticles, getArticlesCount } from "@/utils/content/getArticles";
+import Link from "next/link";
 
 export const Writing = async () => {
   const posts = await getArticles({ limit: 6 });
@@ -16,9 +17,9 @@ export const Writing = async () => {
         <PostSummaryList posts={posts} />
 
         <div className="mt-8">
-          <a href="/posts/" className="text-md">
+          <Link href="/posts/" className="text-md">
             See all {count} posts
-          </a>
+          </Link>
         </div>
       </section>
     </main>

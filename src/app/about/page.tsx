@@ -1,5 +1,6 @@
 import { OnlineFrequent } from "@/components/Content/OnlineFrequent";
 import { What } from "@/components/Content/What";
+import Link from "next/link";
 
 const work = [
   {
@@ -53,7 +54,7 @@ const WorkSection = () => (
       <ul>
         {work.map((c) => (
           <li key={c.company}>
-            <a href={c.link}>{c.company}</a>: {c.blurb}
+            <Link href={c.link}>{c.company}</Link>: {c.blurb}
           </li>
         ))}
       </ul>
