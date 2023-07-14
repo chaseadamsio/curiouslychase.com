@@ -1,5 +1,6 @@
 import { FormattedDate } from "@/components/FormattedDate";
 import { Article } from "@/utils/content/getArticles";
+import Link from "next/link";
 
 export const PostSummaryList = ({ posts }: { posts: Array<Article> }) => (
   <ul className="p-0 m-0 flex flex-col list-none gap-4">
@@ -8,7 +9,7 @@ export const PostSummaryList = ({ posts }: { posts: Array<Article> }) => (
         <span className="pr-4">
           <FormattedDate date={post.pubDate} />
         </span>
-        <a href={`/posts/${post.slug}/`}>{post.title}</a>
+        <Link href={`/posts/${post.slug}/`}>{post.title}</Link>
       </li>
     ))}
   </ul>

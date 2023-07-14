@@ -11,10 +11,11 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import remarkGFM from "remark-gfm";
 import remarkWikiLink from "remark-wiki-link";
-import { getArticleForSlug } from "./getArticleForSlug";
-import { Metadata } from "next";
+import { getArticleForSlug } from "../../../utils/content/getArticleForSlug";
+import { GetStaticProps, GetStaticPropsContext, Metadata } from "next";
 import { getHostname } from "@/utils/getHostname";
 import { ShareLinkOnTwitter } from "@/components/ShareLink";
+import { getArticle } from "@/utils/content/getArticle";
 
 export async function generateMetadata({
   params: { slug },

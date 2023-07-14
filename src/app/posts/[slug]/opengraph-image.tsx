@@ -1,4 +1,4 @@
-import { getArticleForSlug } from "@/app/posts/[slug]/getArticleForSlug";
+import { getArticleForSlug } from "@/utils/content/getArticleForSlug";
 import { getHostname } from "@/utils/getHostname";
 import { ImageResponse } from "next/server";
 
@@ -6,7 +6,6 @@ import { ImageResponse } from "next/server";
 export const runtime = "nodejs";
 
 // Image metadata
-export const alt = "About Acme";
 export const size = {
   width: 1200,
   height: 630,
