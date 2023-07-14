@@ -6,10 +6,10 @@
     "cp-notes-and-images": "rm -rf src/content/* && ts-node --esm scripts/get-notes/run.ts",
     "cp-notes-and-images-and-push": "./scripts/get_notes_and_update_git_repo.sh",
     "dev": "next dev --port 4242",
-    "build": "next build",
+    "build": "npm run fetch-submodules && next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "vercel-submodules -all"
+    "fetch-submodules": "vercel-submodules --all"
   },
   "dependencies": {
     "@jsdevtools/rehype-toc": "^3.0.2",
