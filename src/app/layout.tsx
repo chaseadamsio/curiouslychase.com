@@ -1,13 +1,12 @@
 import { getArticles } from "@/utils/content/getArticles";
 import "@/styles/globals.css";
 import "@/styles/prism-github-dark.css";
-import { PostHogPageview, Providers } from "@/app/providers";
+import { Providers } from "@/app/providers";
 
 import type { Metadata } from "next";
 import { Public_Sans } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Suspense } from "react";
 
 const publicSans = Public_Sans({ subsets: ["latin"] });
 
@@ -23,9 +22,6 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <Suspense>
-        <PostHogPageview />
-      </Suspense>
       <body className={publicSans.className}>
         <Providers>
           <Header />
