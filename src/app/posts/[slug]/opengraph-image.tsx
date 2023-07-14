@@ -1,4 +1,4 @@
-import { getArticleForSlug } from "@/app/posts/[slug]/getArticleForSlug";
+import { getArticleForSlug } from "@/utils/content/getArticleForSlug";
 import { getHostname } from "@/utils/getHostname";
 import { ImageResponse } from "next/server";
 
