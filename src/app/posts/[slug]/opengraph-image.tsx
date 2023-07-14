@@ -6,7 +6,6 @@ import { ImageResponse } from "next/server";
 export const runtime = "nodejs";
 
 // Image metadata
-export const alt = "About Acme";
 export const size = {
   width: 1200,
   height: 630,
