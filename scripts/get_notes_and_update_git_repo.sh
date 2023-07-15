@@ -6,13 +6,13 @@ git stash
 # Checkout the main branch in the root repository
 git checkout main
 
-# Run the npm command to update src/content and public
+# Run the npm command to update content and public
 npm run cp-notes-and-images
 
-# Add the changes in src/content
-cd src/content
+# Add the changes in content
+cd content
 git add .
-git commit -m "Update src/content"
+git commit -m "Update content"
 cd ../..
 
 # Add the changes in public
@@ -26,8 +26,8 @@ git add .
 git commit -m "Update"
 git push
 
-# Push the src/content and public repositories
-cd src/content
+# Push the content and public repositories
+cd content
 git push
 cd ../..
 
