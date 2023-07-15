@@ -13,7 +13,7 @@ npm run cp-notes-and-images
 cd content
 git add .
 git commit -m "Update content"
-cd ../..
+cd ..
 
 # Add the changes in public
 cd public
@@ -29,7 +29,7 @@ git push
 # Push the content and public repositories
 cd content
 git push
-cd ../..
+cd ..
 
 cd public
 git push
