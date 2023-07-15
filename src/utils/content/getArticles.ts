@@ -7,7 +7,7 @@ import { ElementContent } from "hast";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import path from "path";
 import slugify from "slugify";
-import { format } from "date-fns";
+import { format, isBefore, parseISO } from "date-fns";
 
 export type ArticleMeta = {
   id: string;
@@ -44,13 +44,19 @@ export const getArticles = async (args?: {
 
   const posts = await Promise.all(allFiles.map(getArticleContentAndMetadata));
 
-  const sortedPosts = posts.sort(
+  let allPosts = posts.sort(
     (a, b) =>
       new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
   );
 
+  if (process.env.NODE_ENV !== "development") {
+    allPosts = allPosts
+      .filter((p) => isBefore(parseISO(p.data.pubDate.valueOf()), new Date()))
+      .filter((p) => p.data.status.toLowerCase() === "published");
+  }
+
   const convertedPosts = await Promise.all(
-    sortedPosts.map((post) => ({
+    allPosts.map((post) => ({
       content: post.content,
       subhead: post.data.subhead ?? null,
       id: post.data.slug,
