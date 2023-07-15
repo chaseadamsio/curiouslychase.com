@@ -21,16 +21,16 @@ git add .
 git commit -m "Update public"
 cd ..
 
-# Add the changes in the root repository
-git add .
-git commit -m "Update"
-git push
-
 # Push the content and public repositories
 cd content
-git push
+git push origin HEAD
 cd ..
 
 cd public
-git push
+git push origin HEAD
 cd ..
+
+# Add the changes in the root repository
+git add .
+git commit -m "Update refs"
+git push origin HEAD
