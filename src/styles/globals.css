@@ -79,6 +79,16 @@
 @layer base {
   body {
     @apply bg-blue-50 dark:bg-blue-950 text-blue-950 dark:text-blue-100 text-sm;
+
+    background: linear-gradient(90deg, #ebf1fd 21px, transparent 1%) center,
+      linear-gradient(#ebf1fd 21px, transparent 1%) center, #9cb7f6;
+    background-size: 22px 22px;
+  }
+
+  html[data-theme="dark"] body {
+    background: linear-gradient(90deg, #060b18 21px, transparent 1%) center,
+      linear-gradient(#060b18 21px, transparent 1%) center, #274da6;
+    background-size: 22px 22px;
   }
   a {
     @apply text-blue-500 dark:text-blue-400;
