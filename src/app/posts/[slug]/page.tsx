@@ -30,6 +30,9 @@ export async function generateMetadata({
     title: article.title,
     description: article.description,
     metadataBase: hostname,
+    twitter: {
+      card: "summary_large_image",
+    },
     openGraph: {
       description: article.description,
       title: article.title,
