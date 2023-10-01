@@ -1,3 +1,4 @@
+import { getTableOfContents } from "@/lib/toc";
 import { getArticle } from "@/utils/content/getArticle";
 import { Article } from "@/utils/content/getArticles";
 import { getArticlesFilenameToSlugMap } from "@/utils/content/getArticlesFilenameToSlugMap";
@@ -11,5 +12,7 @@ export async function getArticleForSlug(slug: string) {
     articlesFilenameToSlugMap
   );
 
-  return article;
+  const toc = await getTableOfContents(article.content);
+
+  return { ...article, toc };
 }

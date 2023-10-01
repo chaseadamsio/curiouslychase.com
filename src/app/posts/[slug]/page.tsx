@@ -16,6 +16,9 @@ import { GetStaticProps, GetStaticPropsContext, Metadata } from "next";
 import { getHostname } from "@/utils/getHostname";
 import { ShareLinkOnTwitter } from "@/components/ShareLink";
 import { getArticle } from "@/utils/content/getArticle";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { TableOfContents } from "@/components/toc";
+import { Blockquote } from "../../../components/Blockquote";
 
 export async function generateMetadata({
   params: { slug },
@@ -52,45 +55,60 @@ export default async function Post({
   return (
     <>
       <PageHeading>{article.title}</PageHeading>
-      <div className="article">
+      <div>
         <ShareLinkOnTwitter title={article.title} />
-        <MDXRemote
-          source={article.content}
-          options={{
-            mdxOptions: {
-              remarkPlugins: [
-                remarkGFM,
-                [
-                  remarkWikiLink,
-                  {
-                    aliasDivider: "|",
-                    hrefTemplate: (permalink: string) => {
-                      const slug = getSlugFromTitle(
-                        permalink.replace(/_/g, "-")
-                      );
-                      if (slug.startsWith("#")) {
-                        return slug;
-                      }
-                      if (!articlesFilenameToSlugMap[slug]) {
-                        return `#unpublished?slug=${slug}`;
-                      }
-                      return `/posts/${slug}`;
-                    },
-                  },
-                ],
-                [remarkObsidianImagePlugin, { permalinks: [] }],
-                remarkObsidianEnhancedQuotesPlugin,
-                remarkHeadingSizeRelevelPlugin,
-              ],
-              rehypePlugins: [
-                rehypeSlug,
-                [rehypeAutolinkHeadings, { behavior: "append" }],
-                [rehypePrism, { alias: { javascript: ["dataviewjs"] } }],
-                rehypeTOC,
-              ],
-            },
-          }}
-        />
+        <div className="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
+          <div className="article">
+            <MDXRemote
+              source={article.content}
+              components={{ blockquote: Blockquote }}
+              options={{
+                mdxOptions: {
+                  remarkPlugins: [
+                    remarkGFM,
+                    [
+                      remarkWikiLink,
+                      {
+                        aliasDivider: "|",
+                        hrefTemplate: (permalink: string) => {
+                          const slug = getSlugFromTitle(
+                            permalink.replace(/_/g, "-")
+                          );
+                          if (slug.startsWith("#")) {
+                            return slug;
+                          }
+                          if (!articlesFilenameToSlugMap[slug]) {
+                            return `#unpublished?slug=${slug}`;
+                          }
+                          return `/posts/${slug}`;
+                        },
+                      },
+                    ],
+                    [remarkObsidianImagePlugin, { permalinks: [] }],
+                    remarkObsidianEnhancedQuotesPlugin,
+                    remarkHeadingSizeRelevelPlugin,
+                  ],
+                  rehypePlugins: [
+                    rehypeSlug,
+                    [rehypeAutolinkHeadings, { behavior: "append" }],
+                    [rehypePrism, { alias: { javascript: ["dataviewjs"] } }],
+                  ],
+                },
+              }}
+            />
+          </div>
+          {article.toc && (
+            <div className="hidden text-sm xl:block">
+              <div className="sticky top-16 -mt-10 pt-4">
+                <ScrollArea className="pb-10">
+                  <div className="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] py-12">
+                    <TableOfContents toc={article.toc} />
+                  </div>
+                </ScrollArea>
+              </div>
+            </div>
+          )}
+        </div>
         <ShareLinkOnTwitter title={article.title} />
       </div>
     </>

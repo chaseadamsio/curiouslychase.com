@@ -25,11 +25,16 @@ const remarkObsidianEnhancedQuotesPlugin =
           ...firstBlockQuoteChildChildren,
         ];
 
+        const calloutType = match[1].toLowerCase();
+        const calloutTitle = match[2];
+
         return Object.assign(node, {
           ...node,
           data: {
             hProperties: {
-              className: `callout ${match[1].toLowerCase()}`,
+              className: `callout ${calloutType}`,
+              calloutType,
+              calloutTitle,
             },
           },
           children: [firstBlockQuoteChild, ...children],

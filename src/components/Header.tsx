@@ -1,32 +1,70 @@
-import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+"use client";
+
+import { ModeToggle } from "@/components/theme-toggle";
 import Link from "next/link";
 import { FC, PropsWithChildren } from "react";
 
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
+
 export const Header = () => {
   return (
-    <header className="max-w-5xl mx-auto font-display mb-8">
-      <div className="flex flex-row items-center gap-4 pb-4">
-        <img
-          className="w-[36px] h-[36px] rounded-full inline-block mr-2]"
-          src="/img/curious_chase.png"
-          alt="Curious Chase"
-          width="100"
-          height="100"
-        />
-        <h2 className="my-0 py-0 lowercase font-subtitle text-3xl">
-          Curiously Chase
-        </h2>
-      </div>
-      <nav className="font-subtitle">
-        <HeaderLink href="/">Home</HeaderLink>
-        <HeaderLink href="/posts/">Blog</HeaderLink>
-        <HeaderLink href="/about/">About</HeaderLink>
-        <HeaderLink href="https://crca.news" target="_blank">
-          Newsletter
-        </HeaderLink>
-        <ThemeSwitcher />
-      </nav>
-    </header>
+    <NavigationMenu
+      className={cn(
+        "mx-auto",
+        "my-4",
+        "max-w-5xl",
+        "flex",
+        "justify-between",
+        "items-center"
+      )}
+    >
+      <NavigationMenuList className="ml-0">
+        <NavigationMenuItem className={cn("self-start")}>
+          <NavigationMenuLink href="/">Curiously Chase</NavigationMenuLink>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+      <NavigationMenuList className={cn("ml-auto")}>
+        <NavigationMenuItem>
+          <NavigationMenuLink href="/" className={navigationMenuTriggerStyle()}>
+            Home
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink
+            href="/posts/"
+            className={navigationMenuTriggerStyle()}
+          >
+            Posts
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink
+            href="/about/"
+            className={navigationMenuTriggerStyle()}
+          >
+            About
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink
+            href="https://crca.news"
+            className={navigationMenuTriggerStyle()}
+          >
+            Newsletter
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <ModeToggle />
+        </NavigationMenuItem>
+      </NavigationMenuList>
+    </NavigationMenu>
   );
 };
 

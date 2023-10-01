@@ -19,7 +19,15 @@ if (typeof window !== "undefined") {
 const Providers: FC<PropsWithChildren> = ({ children }) => {
   return (
     <PostHogProvider client={posthog}>
-      <ThemeProvider>{children}</ThemeProvider>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+        themes={["dark", "light", "vibes"]}
+      >
+        {children}
+      </ThemeProvider>
     </PostHogProvider>
   );
 };

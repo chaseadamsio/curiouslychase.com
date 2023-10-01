@@ -46,7 +46,7 @@ const WorkSection = () => (
   <main className="mt-8 max-w-5xl mx-auto">
     <div className="pb-4">
       <h2 className="uppercase my-0 text-3xl font-display">At Work</h2>
-      <span className="text-lg">
+      <span className="block pt-4 lead">
         I've been building better software and better teams for 15 years.
       </span>
     </div>
