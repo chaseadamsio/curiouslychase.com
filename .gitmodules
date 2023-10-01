@@ -5,3 +5,4 @@
 [submodule "content"]
 	path = content
 	url = git@github.com:curiouslychase/content.git
+	branch = main
