@@ -68,7 +68,9 @@ export default async function RootLayout({
       <body className={publicSans.className}>
         <Providers>
           <Header />
-          <main className="mx-auto max-w-5xl">{children}</main>
+          <main className="px-2 w-full lg:mx-auto lg:max-w-5xl">
+            {children}
+          </main>
           <Footer />
         </Providers>
       </body>

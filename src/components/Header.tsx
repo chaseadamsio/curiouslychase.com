@@ -2,7 +2,7 @@
 
 import { ModeToggle } from "@/components/theme-toggle";
 import Link from "next/link";
-import { FC, PropsWithChildren } from "react";
+import { FC, PropsWithChildren, useCallback, useState } from "react";
 
 import {
   NavigationMenu,
@@ -12,59 +12,84 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 export const Header = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const toggleMenu = useCallback(() => setShowMenu((prev) => !prev), []);
+
   return (
-    <NavigationMenu
+    <div
       className={cn(
-        "mx-auto",
-        "my-4",
-        "max-w-5xl",
+        "mx-2",
+        "md:mx-auto",
+        "my-2",
+        "md:my-4",
         "flex",
-        "justify-between",
+        "flex-wrap",
+        "md:flex-nowrap",
+        "max-w-5xl",
+        "justify-start",
+        "gap-2",
         "items-center"
       )}
     >
-      <NavigationMenuList className="ml-0">
-        <NavigationMenuItem className={cn("self-start")}>
-          <NavigationMenuLink href="/">Curiously Chase</NavigationMenuLink>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-      <NavigationMenuList className={cn("ml-auto")}>
-        <NavigationMenuItem>
-          <NavigationMenuLink href="/" className={navigationMenuTriggerStyle()}>
-            Home
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink
-            href="/posts/"
-            className={navigationMenuTriggerStyle()}
-          >
-            Posts
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink
-            href="/about/"
-            className={navigationMenuTriggerStyle()}
-          >
-            About
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink
-            href="https://crca.news"
-            className={navigationMenuTriggerStyle()}
-          >
-            Newsletter
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
+      <div className="order-1 justify-self-start p-2 md:p-0 basis-3/6 md:basis-1/3">
+        <Link href="/">Curiously Chase</Link>
+      </div>
+      <div className={cn("md:ml-auto flex items-center", "order-3 md:order-2")}>
+        <NavigationMenu className={cn("md:flex", showMenu ? "flex" : "hidden")}>
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuLink
+                href="/"
+                className={navigationMenuTriggerStyle()}
+              >
+                Home
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink
+                href="/posts/"
+                className={cn(navigationMenuTriggerStyle())}
+              >
+                Posts
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink
+                href="/about/"
+                className={navigationMenuTriggerStyle()}
+              >
+                About
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink
+                href="https://crca.news"
+                className={navigationMenuTriggerStyle()}
+              >
+                Newsletter
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+      </div>
+      <div
+        className={cn(
+          "flex gap-2 p-2 md:p-0",
+          "order-2 md:order-3 basis-3/6 md:basis-auto"
+        )}
+      >
+        <Button onClick={toggleMenu} className={cn("md:hidden ml-auto")}>
+          Menu
+        </Button>
+        <div>
           <ModeToggle />
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -82,6 +82,10 @@
     @apply my-6 ml-6 list-disc [&>li]:mt-2;
   }
 
+  nav ul > li {
+    @apply mt-0;
+  }
+
   ol {
     @apply my-6 ml-6 list-decimal [&>li]:mt-2;
   }
