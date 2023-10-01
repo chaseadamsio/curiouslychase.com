@@ -31,7 +31,7 @@ export const Header = () => {
         "md:flex-nowrap",
         "max-w-5xl",
         "justify-start",
-        "gap-2",
+        "md:gap-2",
         "items-center"
       )}
     >
