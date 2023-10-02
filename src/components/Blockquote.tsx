@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Info } from "lucide-react";
+import { AlertTriangle, FileWarning, Flame, Info, Zap } from "lucide-react";
 import {
   BlockquoteHTMLAttributes,
   Component,
@@ -8,7 +8,9 @@ import {
   PropsWithChildren,
 } from "react";
 
-type Callout = "info";
+import { startCase, toLower } from "lodash";
+
+type Callout = "info" | "warning" | "tip" | "danger";
 
 const getCalloutBackgroundTW = (calloutType?: Callout) => {
   switch (calloutType) {
@@ -22,6 +24,12 @@ const getCalloutTitleTW = (calloutType?: Callout) => {
   switch (calloutType) {
     case "info":
       return `text-blue-600 dark:text-blue-400`;
+    case "tip":
+      return `text-cyan-600 dark:text-cyan-400`;
+    case "warning":
+      return `text-orange-600 dark:text-orange-400`;
+    case "danger":
+      return `text-red-600 dark:text-red-400`;
     default:
       return `text-slate-900`;
   }
@@ -33,6 +41,24 @@ const getCalloutIcon = (calloutType?: Callout) => {
       return (
         <span>
           <Info width={"20px"} />
+        </span>
+      );
+    case "tip":
+      return (
+        <span>
+          <Flame width={"20px"} />
+        </span>
+      );
+    case "warning":
+      return (
+        <span>
+          <AlertTriangle width={"20px"} />
+        </span>
+      );
+    case "danger":
+      return (
+        <span>
+          <Zap width={"20px"} />
         </span>
       );
     default:
@@ -56,7 +82,8 @@ export const Blockquote: FC<
       className={cn(
         rest.className,
         getCalloutBackgroundTW(calloutType),
-        calloutTitle ? "flex flex-col" : "flex flex-row",
+        "flex",
+        "flex-col",
         "gap-2"
       )}
     >
@@ -68,7 +95,10 @@ export const Blockquote: FC<
             "flex gap-1 items-center"
           )}
         >
-          {getCalloutIcon(calloutType)} {calloutTitle}
+          {getCalloutIcon(calloutType)}{" "}
+          <span>
+            {calloutTitle ? calloutTitle : startCase(toLower(calloutType))}
+          </span>
         </p>
       ) : null}
       {children}

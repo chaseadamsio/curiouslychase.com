@@ -34,6 +34,7 @@
     "eslint-config-next": "13.4.9",
     "gray-matter": "^4.0.3",
     "hast": "^1.0.0",
+    "lodash": "^4.17.21",
     "lucide-react": "^0.279.0",
     "mdast-util-toc": "^7.0.0",
     "next": "13.4.1",
@@ -58,6 +59,7 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.199",
     "@types/rss": "^0.0.30",
     "tailwindcss-themer": "^3.1.2",
     "vercel-submodules": "^1.0.10"
