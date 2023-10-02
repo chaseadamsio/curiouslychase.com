@@ -5,11 +5,11 @@ export const Footer = () => {
   return (
     <footer className="mt-8 pt-4 border-t-2 border-slate-200 dark:border-slate-800 gap-4 max-w-5xl mx-auto flex flex-col md:flex-row">
       <div className="w-3/4">
-        <h3 className="uppercase font-subtitle text-lg">Online</h3>
+        <h3 className="text-base font-bold">Online</h3>
         <OnlineFrequent />
       </div>
       <div className="w-1/4">
-        <h3 className="uppercase font-subtitle text-lg">Sitemap</h3>
+        <h3 className="text-base font-bold">Sitemap</h3>
         <ul className="p-0 m-0 pt-4 md:pt-0 list-none">
           <li>
             <Link href="/sitemap.xml">Sitemap</Link>
@@ -22,6 +22,9 @@ export const Footer = () => {
           </li>
           <li>
             <Link href="/posts/">Blog</Link>
+          </li>
+          <li>
+            <Link href="/ds/">Design System</Link>
           </li>
         </ul>
       </div>

@@ -13,10 +13,17 @@ import Link from "next/link";
 export const PostSummaryList = ({ posts }: { posts: Array<Article> }) => (
   <div className="p-0 m-0 flex list-none gap-4 flex-wrap">
     {posts.map((post) => (
-      <Card className={cn("w-full md:w-[320px]")} key={post.slug}>
-        <Link href={`/posts/${post.slug}/`}>
+      <Card
+        className={cn(
+          "w-full md:w-[320px] hover:bg-slate-100 dark:hover:bg-slate-800"
+        )}
+        key={post.slug}
+      >
+        <Link href={`/posts/${post.slug}/`} className="flex flex-col h-full">
           <CardHeader>
-            <CardTitle className={cn("text-xl mt-0")}>{post.title}</CardTitle>
+            <CardTitle className={cn("text-base font-bold mt-0")}>
+              {post.title}
+            </CardTitle>
             <CardDescription>
               <p>{post.description}</p>
             </CardDescription>

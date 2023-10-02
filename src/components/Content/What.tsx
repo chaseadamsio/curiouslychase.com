@@ -12,9 +12,7 @@ export const What = () => {
             I help creative professionals find creative freedom through
             structure.
           </strong>
-        </p>
-        <p className="mt-2 text-xl">
-          I primarily focus on <strong>remote teams.</strong>
+          <br />I primarily focus on <strong>remote teams.</strong>
         </p>
       </div>
       <div className="max-w-xs self-center lg:max-w-md">

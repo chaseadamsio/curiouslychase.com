@@ -45,7 +45,7 @@ const activities = [
 const WorkSection = () => (
   <main className="mt-8 max-w-5xl mx-auto">
     <div className="pb-4">
-      <h2 className="uppercase my-0 text-3xl font-display">At Work</h2>
+      <h2 className="uppercase my-0 text-3xl font-bold">At Work</h2>
       <span className="block pt-4 lead">
         I've been building better software and better teams for 15 years.
       </span>
@@ -65,7 +65,7 @@ const WorkSection = () => (
 const PlaySection = () => (
   <main className="mt-8 max-w-5xl mx-auto">
     <div className="pb-4">
-      <h2 className="uppercase my-0 text-3xl font-display">At Play</h2>
+      <h2 className="uppercase my-0 text-3xl font-bold">At Play</h2>
     </div>
     <section>
       <ul>
@@ -81,11 +81,11 @@ const PlaySection = () => (
 
 export default function AboutPage() {
   return (
-    <>
+    <div className="page">
       <What />
       <OnlineFrequent />
       <WorkSection />
       <PlaySection />
-    </>
+    </div>
   );
 }

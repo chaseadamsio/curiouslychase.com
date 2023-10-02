@@ -86,6 +86,32 @@
     @apply mt-0;
   }
 
+  /*
+
+    .summary-box {
+    background: repeating-linear-gradient(
+      -45deg,
+      #f00,
+      #f00 2px,
+      #fff,
+      #fff 4px
+    );
+    padding-right: 0.25rem;
+    padding-bottom: 0.25rem;
+    margin: 1rem 0;
+  }
+
+  .summary-box__content {
+    @apply bg-slate-100 dark:bg-slate-900 p-4 border-[2px] border-slate-200 dark:border-slate-800;
+  }
+
+  
+Usage:
+  <div className="summary-box">
+        <div className="summary-box__content">{article.description}c</div>
+      </div>
+  */
+
   ol {
     @apply my-6 ml-6 list-decimal [&>li]:mt-2;
   }
@@ -95,14 +121,23 @@
   }
 
   pre[class*="language-"] {
-    @apply mb-4 mt-6 overflow-x-auto rounded-lg border bg-slate-950 py-4 dark:bg-slate-900;
+    @apply mb-4 mt-6 overflow-x-auto max-w-full rounded-lg border bg-slate-950 py-4 dark:bg-slate-900 max-w-5xl;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+  }
+
+  pre[class*="language-markdown"] code {
+    white-space: break-spaces;
   }
 
   .article {
     /* @apply relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]; */
   }
 
-  .article a {
+  .article a,
+  .page a {
     @apply font-medium underline underline-offset-4;
   }
 
@@ -126,8 +161,8 @@
     @apply leading-7 [&:not(:first-child)]:mt-6;
   }
 
-  .article > blockquote {
-    @apply relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7 text-foreground mt-6;
+  blockquote {
+    @apply relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7 text-foreground my-6;
   }
 
   .article > table {
@@ -149,4 +184,10 @@
 
 body {
   word-wrap: break-word;
+}
+
+img,
+iframe {
+  max-width: 100%;
+  height: auto;
 }

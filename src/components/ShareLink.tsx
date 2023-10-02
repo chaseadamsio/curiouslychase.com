@@ -1,6 +1,8 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { getHostnameNaked } from "@/utils/getHostname";
+import { Twitter } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 import { FC, SyntheticEvent } from "react";
@@ -37,13 +39,14 @@ export const ShareLinkOnTwitter: FC<ShareLinkProps> = ({ title }) => {
   const url = `${siteUrl}${pathname}`;
 
   return (
-    <a
-      className="font-bold text-blue-700 dark:text-blue-300"
-      onClick={handleClick}
-      href={`https://twitter.com/intent/tweet?=${url}&text=${title}`}
-    >
-      Share on Twitter
-    </a>
+    <Button className="mt-4" asChild variant={"twitter"}>
+      <a
+        onClick={handleClick}
+        href={`https://twitter.com/intent/tweet?=${url}&text=${title}`}
+      >
+        Share on Twitter <Twitter className="ml-2" width={"20"} />
+      </a>
+    </Button>
   );
 };
 

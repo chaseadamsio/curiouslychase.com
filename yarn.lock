@@ -516,6 +516,21 @@
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-compose-refs" "1.0.1"
 
+"@radix-ui/react-tabs@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-tabs/-/react-tabs-1.0.4.tgz#993608eec55a5d1deddd446fa9978d2bc1053da2"
+  integrity sha512-egZfYY/+wRNCflXNHx+dePvnz9FbmssDTJBtgRfDY7e8SE5oIo3Py2eCB1ckAbh1Q7cQ/6yJZThJ++sgbxibog==
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+    "@radix-ui/primitive" "1.0.1"
+    "@radix-ui/react-context" "1.0.1"
+    "@radix-ui/react-direction" "1.0.1"
+    "@radix-ui/react-id" "1.0.1"
+    "@radix-ui/react-presence" "1.0.1"
+    "@radix-ui/react-primitive" "1.0.3"
+    "@radix-ui/react-roving-focus" "1.0.4"
+    "@radix-ui/react-use-controllable-state" "1.0.1"
+
 "@radix-ui/react-use-callback-ref@1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-use-callback-ref/-/react-use-callback-ref-1.0.1.tgz#f4bb1f27f2023c984e6534317ebc411fc181107a"
@@ -695,6 +710,11 @@
   integrity sha512-8t92P+oeW4d/CRQfJaSqEwXujrhH4OEeHRjGU3v1Q8mUS8GPF3yiX26sw4svv6faL2HfBtGTe2xWIoVgN3dy9w==
   dependencies:
     "@types/node" "*"
+
+"@types/lodash@^4.14.199":
+  version "4.14.199"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.199.tgz#c3edb5650149d847a277a8961a7ad360c474e9bf"
+  integrity sha512-Vrjz5N5Ia4SEzWWgIVwnHNEnb1UE1XMkvY5DGXrAeOGE9imk0hgTHh5GyDjLDJi9OTCn9oo9dXH1uToK1VRfrg==
 
 "@types/mdast@^3.0.0":
   version "3.0.13"
@@ -3493,7 +3513,7 @@ lodash.mergewith@^4.6.2:
   resolved "https://registry.yarnpkg.com/lodash.mergewith/-/lodash.mergewith-4.6.2.tgz#617121f89ac55f59047c7aec1ccd6654c6590f55"
   integrity sha512-GK3g5RPZWTRSeLSpgP8Xhra+pnjBC56q9FZYe1d5RN3TJ35dbkGy3YqBSMbyCrlbi+CM9Z3Jk5yTL7RCsqboyQ==
 
-lodash@^4.17.15, lodash@^4.17.19:
+lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.21:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
