@@ -35,7 +35,10 @@ export const Header = () => {
         "items-center"
       )}
     >
-      <div className="order-1 justify-self-start p-2 md:p-0 basis-3/6 md:basis-1/3">
+      <div className="order-1 justify-self-start p-2 items-center flex gap-2 md:p-0 basis-3/6 md:basis-1/3">
+        <div className="w-[36px]">
+          <img src="/img/curious_chase.png" />
+        </div>
         <Link href="/">Curiously Chase</Link>
       </div>
       <div className={cn("md:ml-auto flex items-center", "order-3 md:order-2")}>
