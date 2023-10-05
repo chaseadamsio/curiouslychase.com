@@ -15,23 +15,23 @@ type Callout = "info" | "warning" | "tip" | "danger";
 const getCalloutBackgroundTW = (calloutType?: Callout) => {
   switch (calloutType) {
     case "info":
-      return `bg-slate-100 dark:bg-slate-900`;
+      return `bg-muted border border-border`;
     default:
-      return `bg-slate-100 dark:bg-slate-900`;
+      return `bg-muted border border-border`;
   }
 };
 const getCalloutTitleTW = (calloutType?: Callout) => {
   switch (calloutType) {
     case "info":
-      return `text-blue-600 dark:text-blue-400`;
+      return `text-info-foreground`;
     case "tip":
-      return `text-cyan-600 dark:text-cyan-400`;
+      return `text-tip-foreground`;
     case "warning":
-      return `text-orange-600 dark:text-orange-400`;
+      return `text-warning-foreground`;
     case "danger":
-      return `text-red-600 dark:text-red-400`;
+      return `text-danger-foreground`;
     default:
-      return `text-slate-900`;
+      return `text-foreground`;
   }
 };
 

@@ -24,7 +24,7 @@ const Providers: FC<PropsWithChildren> = ({ children }) => {
         defaultTheme="system"
         enableSystem
         disableTransitionOnChange
-        themes={["dark", "light", "vibes"]}
+        themes={["dark", "light", "vibes-light", "vibes-dark"]}
       >
         {children}
       </ThemeProvider>

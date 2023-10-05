@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <footer className="mt-8 pt-4 border-t-2 border-slate-200 dark:border-slate-800 gap-4 max-w-5xl mx-auto flex flex-col md:flex-row">
+    <footer className="global-footer mt-8 py-4 border-t border-border gap-4 max-w-5xl mx-auto flex flex-col md:flex-row">
       <div className="w-3/4">
         <h3 className="text-base font-bold">Online</h3>
         <OnlineFrequent />

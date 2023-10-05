@@ -35,6 +35,60 @@
     --radius: 0.5rem;
   }
 
+  .vibes-light {
+    --background: 30 10% 95%;
+    --foreground: 330 12% 6%;
+
+    --accent: 30 36% 90%;
+    --accent-foreground: 330 12% 6%;
+
+    --muted: 30 36% 90%;
+    --muted-foreground: 330 12% 6%;
+
+    --border: 30 36% 82%;
+    --input: 30 36% 82%;
+
+    --primary: 205 60% 48%;
+    --primary-foreground: 30 36% 90%;
+    --destructive: 7 60% 48%;
+    --destructive-foreground: 18 27% 90%;
+
+    --info-foreground: 205 60% 48%;
+    --danger-foreground: 7 60% 48%;
+    --success-foreground: 151 60% 48%;
+    --warning-foreground: 40 46% 36%;
+    --tip-foreground: 266 60% 48%;
+
+    --card-foreground: 330 40 10%;
+    --card: 30 36% 95%;
+  }
+
+  .vibes-dark {
+    --background: 330 12% 6%;
+    --foreground: 18 27% 90%;
+
+    --muted: 330 40% 10%;
+    --muted-foreground: 18 27% 90%;
+
+    --accent-foreground: 330 12% 6%;
+    --accent: 30 36% 90%;
+
+    --border: 330 25% 17%;
+
+    --primary: 205 89% 64%;
+    --primary-foreground: 330 40% 10%;
+    --destructive-foreground: 18 27% 90%;
+
+    --info-foreground: 205 89% 64%;
+    --danger-foreground: 7 89% 64%;
+    --success-foreground: 151 89% 64%;
+    --warning-foreground: 40 89% 64%;
+    --tip-foreground: 266 89% 74%;
+
+    --card: 330 40 10%;
+    --card-foreground: 18 27% 90%;
+  }
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -138,7 +192,7 @@ Usage:
 
   .article a,
   .page a {
-    @apply font-medium underline underline-offset-4;
+    @apply font-medium underline underline-offset-4 text-primary;
   }
 
   h2 {
@@ -161,8 +215,12 @@ Usage:
     @apply leading-7 [&:not(:first-child)]:mt-6;
   }
 
+  li {
+    @apply leading-7;
+  }
+
   blockquote {
-    @apply relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7 text-foreground my-6;
+    @apply bg-muted relative w-full rounded-lg px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7 text-foreground my-6;
   }
 
   .article > table {
@@ -190,4 +248,11 @@ img,
 iframe {
   max-width: 100%;
   height: auto;
+}
+
+.global-footer {
+  background: url("/assets/squirrel_1.png") no-repeat;
+  background-size: 10%;
+  background-position: 1rem 1rem;
+  padding-left: 140px;
 }

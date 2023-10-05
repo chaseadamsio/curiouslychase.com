@@ -13,6 +13,22 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Form } from "@/components/ui/form";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { SubmitHandler, UseFormHandleSubmit, useForm } from "react-hook-form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 
 export const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -42,43 +58,64 @@ export const Header = () => {
         <Link href="/">Curiously Chase</Link>
       </div>
       <div className={cn("md:ml-auto flex items-center", "order-3 md:order-2")}>
-        <NavigationMenu className={cn("md:flex", showMenu ? "flex" : "hidden")}>
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuLink
-                href="/"
-                className={navigationMenuTriggerStyle()}
-              >
-                Home
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink
-                href="/posts/"
-                className={cn(navigationMenuTriggerStyle())}
-              >
-                Posts
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink
-                href="/about/"
-                className={navigationMenuTriggerStyle()}
-              >
-                About
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink
-                href="https://crca.news"
-                className={navigationMenuTriggerStyle()}
-              >
-                Newsletter
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
+        <Dialog>
+          <NavigationMenu
+            className={cn("md:flex", showMenu ? "flex" : "hidden")}
+          >
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  href="/"
+                  className={navigationMenuTriggerStyle()}
+                >
+                  Home
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  href="/posts/"
+                  className={cn(navigationMenuTriggerStyle())}
+                >
+                  Posts
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  href="/about/"
+                  className={navigationMenuTriggerStyle()}
+                >
+                  About
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <DialogTrigger asChild>
+                  <NavigationMenuLink
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      "cursor-pointer"
+                    )}
+                  >
+                    Say Hi
+                  </NavigationMenuLink>
+                </DialogTrigger>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  href="https://crca.news"
+                  className={navigationMenuTriggerStyle()}
+                >
+                  Newsletter
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+          {/* <DialogContent>
+            <DialogTitle>Say Hi</DialogTitle>
+            <ContactForm />
+                    </DialogContent> */}
+        </Dialog>
       </div>
+
       <div
         className={cn(
           "flex gap-2 p-2 md:p-0",
@@ -105,5 +142,41 @@ const HeaderLink: FC<PropsWithChildren<{ href: string; target?: string }>> = ({
     <Link href={href} className="text-md" {...rest}>
       {children}
     </Link>
+  );
+};
+
+type ContactFormInputs = {
+  name: string;
+  email: string;
+  message: string;
+};
+
+const ContactForm = () => {
+  const form = useForm<ContactFormInputs>({});
+  const onSubmit: SubmitHandler<ContactFormInputs> = useCallback((data) => {
+    console.log(data);
+  }, []);
+
+  return (
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)}>
+        <div className="pt-4 flex flex-col gap-3">
+          <Label htmlFor="name">Name</Label>
+          <Input type="text" {...form.register("name")} />
+        </div>
+        <div className="pt-4 flex flex-col gap-3">
+          <Label htmlFor="email">Email</Label>
+          <Input type="email" {...form.register("email")} />
+        </div>
+        <div className="pt-4 flex flex-col gap-3">
+          <Label htmlFor="message">Message</Label>
+          <Textarea {...form.register("message")} />
+        </div>
+
+        <div className="pt-4 flex flex-col gap-3">
+          <Button type="submit">Submit</Button>
+        </div>
+      </form>
+    </Form>
   );
 };

@@ -22,6 +22,24 @@ module.exports = {
             ring: "hsl(var(--ring))",
             background: "hsl(var(--background))",
             foreground: "hsl(var(--foreground))",
+            card: {
+              border: "hsl(var(--card-border))",
+            },
+            info: {
+              foreground: "hsl(var(--info-foreground))",
+            },
+            danger: {
+              foreground: "hsl(var(--danger-foreground))",
+            },
+            success: {
+              foreground: "hsl(var(--success-foreground))",
+            },
+            warning: {
+              foreground: "hsl(var(--warning-foreground))",
+            },
+            tip: {
+              foreground: "hsl(var(--tip-foreground))",
+            },
             primary: {
               DEFAULT: "hsl(var(--primary))",
               foreground: "hsl(var(--primary-foreground))",
@@ -74,14 +92,13 @@ module.exports = {
       },
       themes: [
         {
+          selectors: [".vibes-light", 'data-theme="vibes-light"'],
           // name your theme anything that could be a valid css class name
           // remember what you named your theme because you will use it as a class to enable the theme
-          name: "vibes",
+          name: "vibes-light",
           // put any overrides your theme has here
           // just as if you were to extend tailwind's theme like normal https://tailwindcss.com/docs/theme#extending-the-default-theme
-          extend: {
-            colors: {},
-          },
+          extend: {},
         },
       ],
     }),
