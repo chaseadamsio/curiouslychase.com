@@ -45,6 +45,7 @@
     --accent: 30 36% 90%;
 
     --border: 330 25% 17%;
+    --input: 330 25% 17%;
 
     --link-foreground: 266 55% 68%;
 
@@ -155,6 +156,7 @@ Usage:
     @apply text-xl text-muted-foreground;
   }
 
+  .page > p,
   .article > p {
     @apply leading-7 [&:not(:first-child)]:mt-6;
   }

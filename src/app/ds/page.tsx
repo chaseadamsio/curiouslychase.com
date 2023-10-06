@@ -11,6 +11,14 @@ const DSH2: FC<PropsWithChildren> = ({ children }) => {
   return <h2 className="pt-4 text-3xl border-none">{children}</h2>;
 };
 
+const DSH3: FC<PropsWithChildren> = ({ children }) => {
+  return <h3 className="pt-4 text-2xl border-none">{children}</h3>;
+};
+
+const DSH4: FC<PropsWithChildren> = ({ children }) => {
+  return <h4 className="pt-4 text-xl border-none">{children}</h4>;
+};
+
 export default function DesignSystem() {
   return (
     <div className="page page--design-system">
@@ -25,17 +33,42 @@ export default function DesignSystem() {
           </TabsList>
           <TabsContent value="typography">
             <DSH2>Typography</DSH2>
-            <div>
-              <Blockquote calloutTitle="Headings Tip" calloutType="info">
-                The only Headings I use are h1 through h4.
-              </Blockquote>
-              <PageHeading>This is a H1</PageHeading>
-              <h2>This is a H2</h2>
-              <h3>This is a H3</h3>
-              <h4>This is a H4</h4>
+            <div className="page">
+              <DSH3>Headings</DSH3>
+              <div className="">
+                <Blockquote calloutTitle="Headings Tip" calloutType="info">
+                  The only Headings I use are h1 through h4.
+                </Blockquote>
+                <PageHeading>This is a H1</PageHeading>
+                <h2>This is a H2</h2>
+                <h3>This is a H3</h3>
+                <h4>This is a H4</h4>
+              </div>
+
+              <DSH3>Other Elements</DSH3>
+
+              <DSH4>Paragraphs</DSH4>
               <p>
                 This is a paragraph <a href="#">with a link.</a>
               </p>
+
+              <p>
+                This is a paragraph with a <strong>strong element.</strong>
+              </p>
+
+              <DSH4>Unordered List</DSH4>
+              <ul>
+                <li>The first item in an unordered list</li>
+                <li>The second item in an unordered list</li>
+                <li>The third item in an unordered list</li>
+              </ul>
+
+              <DSH4>Ordered List</DSH4>
+              <ol>
+                <li>The first item in an ordered list</li>
+                <li>The second item in an ordered list</li>
+                <li>The third item in an ordered list</li>
+              </ol>
             </div>
           </TabsContent>
           <TabsContent value="callouts">
