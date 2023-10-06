@@ -23,6 +23,7 @@ module.exports = {
             link: {
               foreground: "hsl(var(--link-foreground))",
             },
+            callout: "hsl(var(--callout-background))",
             background: "hsl(var(--background))",
             foreground: "hsl(var(--foreground))",
             card: {

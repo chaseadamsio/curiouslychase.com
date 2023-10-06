@@ -15,9 +15,9 @@ type Callout = "info" | "warning" | "tip" | "danger";
 const getCalloutBackgroundTW = (calloutType?: Callout) => {
   switch (calloutType) {
     case "info":
-      return `bg-muted border border-border`;
+      return `bg-callout border border-border`;
     default:
-      return `bg-muted border border-border`;
+      return `bg-callout border border-border`;
   }
 };
 const getCalloutTitleTW = (calloutType?: Callout) => {
