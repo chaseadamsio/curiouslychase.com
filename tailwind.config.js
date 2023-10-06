@@ -93,17 +93,7 @@ module.exports = {
           },
         },
       },
-      themes: [
-        {
-          selectors: [".vibes-light", 'data-theme="vibes-light"'],
-          // name your theme anything that could be a valid css class name
-          // remember what you named your theme because you will use it as a class to enable the theme
-          name: "vibes-light",
-          // put any overrides your theme has here
-          // just as if you were to extend tailwind's theme like normal https://tailwindcss.com/docs/theme#extending-the-default-theme
-          extend: {},
-        },
-      ],
+      themes: [],
     }),
   ],
 };
