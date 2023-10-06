@@ -14,7 +14,10 @@ export const PostSummaryList = ({ posts }: { posts: Array<Article> }) => (
   <div className="p-0 m-0 flex list-none gap-4 flex-wrap">
     {posts.map((post) => (
       <Card className={cn("w-full md:w-[320px]")} key={post.slug}>
-        <Link href={`/posts/${post.slug}/`} className="flex flex-col h-full">
+        <Link
+          href={`/posts/${post.slug}/`}
+          className="flex flex-col h-full hover:bg-accent"
+        >
           <CardHeader>
             <CardTitle className={cn("text-base font-bold mt-0")}>
               {post.title}

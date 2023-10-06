@@ -7,12 +7,15 @@
     --background: 30 10% 95%;
     --foreground: 330 12% 6%;
 
+    --popover: 30 10% 95%;
+    --popover-foreground: 222.2 84% 4.9%;
+
     --accent: 30 36% 90%;
     --accent-foreground: 330 12% 6%;
     --callout-background: var(--accent);
 
     --muted: 30 36% 90%;
-    --muted-foreground: 330 12% 6%;
+    --muted-foreground: 330 12% 46%;
 
     --border: 30 36% 82%;
     --input: 30 36% 82%;
@@ -39,13 +42,19 @@
     --background: 330 12% 6%;
     --foreground: 18 27% 90%;
 
+    --popover: 330 12% 6%;
+    --popover-foreground: 18 27% 90%;
+
     --callout-background: 330 40% 10%;
 
     --muted: 330 30% 20%;
-    --muted-foreground: 18 27% 90%;
+    --muted-foreground: 18 27% 60%;
 
-    --accent-foreground: 330 12% 6%;
-    --accent: 30 36% 90%;
+    --accent: 330 30% 20%;
+    --accent-foreground: 18 27% 90%;
+
+    /* --accent-foreground: 330 12% 6%;
+    --accent: 30 36% 90%; */
 
     --border: 330 25% 17%;
     --input: 330 25% 17%;
@@ -80,7 +89,7 @@
     @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
   }
 
-  ul {
+  .article ul {
     @apply my-6 ml-6 list-disc [&>li]:mt-2;
   }
 
