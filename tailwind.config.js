@@ -20,6 +20,9 @@ module.exports = {
             border: "hsl(var(--border))",
             input: "hsl(var(--input))",
             ring: "hsl(var(--ring))",
+            link: {
+              foreground: "hsl(var(--link-foreground))",
+            },
             background: "hsl(var(--background))",
             foreground: "hsl(var(--foreground))",
             card: {

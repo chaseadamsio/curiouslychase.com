@@ -13,7 +13,7 @@ const DSH2: FC<PropsWithChildren> = ({ children }) => {
 
 export default function DesignSystem() {
   return (
-    <div className="page--design-system">
+    <div className="page page--design-system">
       <PageHeading>Design System</PageHeading>
       <div className="pt-6">
         <Tabs defaultValue="typography">
@@ -33,6 +33,9 @@ export default function DesignSystem() {
               <h2>This is a H2</h2>
               <h3>This is a H3</h3>
               <h4>This is a H4</h4>
+              <p>
+                This is a paragraph <a href="#">with a link.</a>
+              </p>
             </div>
           </TabsContent>
           <TabsContent value="callouts">
@@ -77,7 +80,7 @@ export default function DesignSystem() {
               Each of these squirrels is displayed at 50% of their original
               size.
             </p>
-            <div className="pt-6 flex flex-row gap-4 w-[400px]">
+            <div className="pt-6 flex flex-row gap-8 w-[400px]">
               <div className="flex flex-col gap-1 items-center">
                 <Image
                   src="/assets/squirrel_1.png"
@@ -87,6 +90,17 @@ export default function DesignSystem() {
                 />
                 <div>
                   <code>/assets/squirrel_1.png</code>
+                </div>
+              </div>
+              <div className="flex flex-col gap-1 justify-end items-center">
+                <Image
+                  src="/assets/squirrel_2.png"
+                  alt="Squirrel 2"
+                  width={293 / 2}
+                  height={407 / 2}
+                />
+                <div>
+                  <code>/assets/squirrel_2.png</code>
                 </div>
               </div>
             </div>

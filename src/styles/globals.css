@@ -59,6 +59,8 @@
     --warning-foreground: 40 46% 36%;
     --tip-foreground: 266 60% 48%;
 
+    --link-foreground: 22 55% 44%;
+
     --card-foreground: 330 40 10%;
     --card: 30 36% 95%;
   }
@@ -74,6 +76,9 @@
     --accent: 30 36% 90%;
 
     --border: 330 25% 17%;
+
+    /* --link-foreground: 22 55% 58%; */
+    --link-foreground: 266 89% 74%;
 
     --primary: 205 89% 64%;
     --primary-foreground: 330 40% 10%;
@@ -192,7 +197,7 @@ Usage:
 
   .article a,
   .page a {
-    @apply font-medium underline underline-offset-4 text-primary;
+    @apply font-medium underline underline-offset-4 text-link-foreground;
   }
 
   h2 {
@@ -251,8 +256,6 @@ iframe {
 }
 
 .global-footer {
-  background: url("/assets/squirrel_1.png") no-repeat;
-  background-size: 10%;
-  background-position: 1rem 1rem;
-  padding-left: 140px;
+  @apply bg-[right_1rem_bottom_1rem] bg-[length:120px] pb-[100px] p-4 bg-no-repeat md:p-0 md:pl-[160px] md:bg-[1rem_1rem];
+  background-image: url("/assets/squirrel_1.png");
 }
