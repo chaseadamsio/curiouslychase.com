@@ -87,7 +87,7 @@ export const Header = () => {
                   About
                 </NavigationMenuLink>
               </NavigationMenuItem>
-              <NavigationMenuItem>
+              {/* <NavigationMenuItem>
                 <DialogTrigger asChild>
                   <NavigationMenuLink
                     className={cn(
@@ -98,7 +98,7 @@ export const Header = () => {
                     Say Hi
                   </NavigationMenuLink>
                 </DialogTrigger>
-              </NavigationMenuItem>
+              </NavigationMenuItem> */}
               <NavigationMenuItem>
                 <NavigationMenuLink
                   href="https://crca.news"
