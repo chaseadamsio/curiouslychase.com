@@ -177,8 +177,18 @@ Usage:
     @apply leading-7;
   }
 
-  blockquote {
-    @apply bg-muted relative w-full rounded-lg px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7 text-foreground my-6;
+  .article > blockquote {
+    @apply bg-muted relative w-full rounded-lg px-4 pt-4 pb-7 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7 text-foreground my-6;
+  }
+
+  .article > blockquote > ul,
+  .article > blockquote > ol {
+    @apply my-0;
+  }
+
+  .article > blockquote > ol > li,
+  .article > blockquote > ul > li {
+    @apply my-0;
   }
 
   .article > table {
@@ -195,6 +205,10 @@ Usage:
 
   .article > table td {
     @apply border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right;
+  }
+
+  .article img {
+    @apply my-6;
   }
 }
 
