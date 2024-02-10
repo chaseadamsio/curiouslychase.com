@@ -4,11 +4,11 @@ import "@/styles/prism-github-dark.css";
 import { Providers } from "@/app/providers";
 
 import type { Metadata } from "next";
-import { Public_Sans } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
-const publicSans = Public_Sans({ subsets: ["latin"] });
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Curiously Chase",
@@ -65,7 +65,7 @@ export default async function RootLayout({
         type="font/otf"
       />
 
-      <body className={publicSans.className}>
+      <body className={spaceGrotesk.className}>
         <Providers>
           <Header />
           <main className="px-2 w-full lg:mx-auto lg:max-w-5xl">
