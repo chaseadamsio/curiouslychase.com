@@ -2,7 +2,7 @@
 
 import { ModeToggle } from "@/components/theme-toggle";
 import Link from "next/link";
-import { FC, PropsWithChildren, useCallback, useState } from "react";
+import { FC, PropsWithChildren, useCallback, useEffect, useState } from "react";
 
 import {
   NavigationMenu,
@@ -13,11 +13,6 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 import { Form } from "@/components/ui/form";
 import {
   Dialog,
@@ -29,11 +24,14 @@ import { SubmitHandler, UseFormHandleSubmit, useForm } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { usePathname } from "next/navigation";
+import { log } from "@/utils/logger";
 
 export const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = useCallback(() => setShowMenu((prev) => !prev), []);
+  const pathname = usePathname();
 
   return (
     <div
@@ -52,10 +50,9 @@ export const Header = () => {
       )}
     >
       <div className="order-1 justify-self-start p-2 items-center flex gap-2 md:p-0 basis-3/6 md:basis-1/3">
-        <div className="w-[36px]">
-          <img src="/img/curious_chase.png" />
-        </div>
-        <Link href="/">Curiously Chase</Link>
+        <Link href="/" className="font-bold text-xl">
+          curiouslychase
+        </Link>
       </div>
       <div className={cn("md:ml-auto flex items-center", "order-3 md:order-2")}>
         <Dialog>
@@ -66,7 +63,9 @@ export const Header = () => {
               <NavigationMenuItem>
                 <NavigationMenuLink
                   href="/"
-                  className={navigationMenuTriggerStyle()}
+                  className={navigationMenuTriggerStyle({
+                    active: !!pathname.match("^/$"),
+                  })()}
                 >
                   Home
                 </NavigationMenuLink>
@@ -74,7 +73,11 @@ export const Header = () => {
               <NavigationMenuItem>
                 <NavigationMenuLink
                   href="/posts/"
-                  className={cn(navigationMenuTriggerStyle())}
+                  className={cn(
+                    navigationMenuTriggerStyle({
+                      active: log(!!pathname.match("/posts")),
+                    })()
+                  )}
                 >
                   Posts
                 </NavigationMenuLink>
@@ -82,7 +85,9 @@ export const Header = () => {
               <NavigationMenuItem>
                 <NavigationMenuLink
                   href="/about/"
-                  className={navigationMenuTriggerStyle()}
+                  className={navigationMenuTriggerStyle({
+                    active: !!pathname.match("/about"),
+                  })()}
                 >
                   About
                 </NavigationMenuLink>
@@ -102,7 +107,7 @@ export const Header = () => {
               <NavigationMenuItem>
                 <NavigationMenuLink
                   href="https://crca.news"
-                  className={navigationMenuTriggerStyle()}
+                  className={navigationMenuTriggerStyle({ active: false })()}
                 >
                   Newsletter
                 </NavigationMenuLink>

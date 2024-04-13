@@ -4,8 +4,25 @@
 
 @layer base {
   :root {
-    --background: 30 10% 95%;
-    --foreground: 330 12% 6%;
+    --black-950: 240 12% 15%;
+    --black-900: 240 12% 20%;
+    --white-100: 60 6% 93%;
+    --white-50: 60 6% 88%;
+
+    --pink-light: 342 80% 69%;
+    --pink-dark: 342 70% 59%;
+
+    --purple-light: 253 52% 73%;
+    --purple-dark: 253 42% 63%;
+
+    --blue-light: 209 80% 69%;
+    --blue-dark: 209 60% 59%;
+
+    --yellow-light: 39 92% 62%;
+    --yellow-dark: 39 82% 52%;
+
+    --background: var(--white-50);
+    --foreground: var(--black-900);
 
     --popover: 30 10% 95%;
     --popover-foreground: 222.2 84% 4.9%;
@@ -31,7 +48,7 @@
     --warning-foreground: 40 46% 36%;
     --tip-foreground: 266 60% 48%;
 
-    --link-foreground: 22 55% 44%;
+    --link-foreground: var(--purple-dark);
 
     --card-foreground: 330 40 10%;
     --card: 30 36% 95%;
@@ -39,8 +56,8 @@
   }
 
   .dark {
-    --background: 330 12% 6%;
-    --foreground: 18 27% 90%;
+    --background: var(--black-900);
+    --foreground: var(--white-50);
 
     --popover: 330 12% 6%;
     --popover-foreground: 18 27% 90%;
@@ -59,7 +76,7 @@
     --border: 330 25% 17%;
     --input: 330 25% 17%;
 
-    --link-foreground: 266 55% 68%;
+    --link-foreground: var(--purple-light);
 
     --primary: 205 89% 64%;
     --primary-foreground: 330 40% 10%;
@@ -147,9 +164,10 @@ Usage:
     /* @apply relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]; */
   }
 
-  .article a,
-  .page a {
-    @apply font-medium underline underline-offset-4 text-link-foreground;
+  .article a[href^="/"]:not([href^="//"]),
+  .page a[href^="/"]:not([href^="//"])
+  {
+    @apply font-medium text-link-foreground before:content-["[["] after:content-["]]"];
   }
 
   h2 {
@@ -223,6 +241,5 @@ iframe {
 }
 
 .global-footer {
-  @apply bg-[right_1rem_bottom_1rem] bg-[length:120px] pb-[100px] p-4 bg-no-repeat md:p-0 md:pl-[160px] md:bg-[1rem_1rem];
-  background-image: url("/assets/squirrel_1.png");
+  @apply bg-[right_1rem_bottom_1rem] bg-[length:120px] pb-[100px] p-4 bg-no-repeat md:p-0 md:bg-[1rem_1rem];
 }
