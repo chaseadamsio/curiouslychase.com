@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { AlertTriangle, FileWarning, Flame, Info, Zap } from "lucide-react";
-import {
+import React, {
   BlockquoteHTMLAttributes,
   Component,
   DetailedHTMLProps,
@@ -9,6 +9,7 @@ import {
 } from "react";
 
 import { startCase, toLower } from "lodash";
+import { FunctionComponent } from "mdx/types";
 
 type Callout = "info" | "warning" | "tip" | "danger";
 
@@ -65,7 +66,7 @@ const getCalloutIcon = (calloutType?: Callout) => {
       return null;
   }
 };
-export const Blockquote: FC<
+export const Blockquote: FunctionComponent<
   PropsWithChildren<
     DetailedHTMLProps<
       BlockquoteHTMLAttributes<HTMLQuoteElement>,

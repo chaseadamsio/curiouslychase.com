@@ -64,7 +64,9 @@ export default async function Post({
           <div className="article">
             <MDXRemote
               source={article.content}
-              components={{ blockquote: Blockquote }}
+              components={{
+                blockquote: Blockquote,
+              }}
               options={{
                 mdxOptions: {
                   remarkPlugins: [

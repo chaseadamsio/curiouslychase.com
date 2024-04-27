@@ -1,10 +1,7 @@
 import { Blockquote } from "@/components/Blockquote";
-import { What } from "@/components/Content/What";
-import { Writing } from "@/components/Content/Writing";
 import { PageHeading } from "@/components/PageHeading";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Image from "next/image";
 import { FC, PropsWithChildren } from "react";
 
 const DSH2: FC<PropsWithChildren> = ({ children }) => {
@@ -24,13 +21,19 @@ export default function DesignSystem() {
     <div className="page page--design-system">
       <PageHeading>Design System</PageHeading>
       <div className="pt-6">
-        <Tabs defaultValue="typography">
+        <Tabs defaultValue="colors">
           <TabsList>
+            <TabsTrigger value="colors">Colors</TabsTrigger>
             <TabsTrigger value="typography">Typography</TabsTrigger>
             <TabsTrigger value="callouts">Callouts</TabsTrigger>
             <TabsTrigger value="buttons">Buttons</TabsTrigger>
-            <TabsTrigger value="squirrels">Squirrels</TabsTrigger>
           </TabsList>
+          <TabsContent value="colors">
+            <DSH2>Colors</DSH2>
+            <div className="flex gap-2">
+              <div className="rounded-full w-[32px] h-[32px] bg-[color:var(--yellow-light)]"></div>
+            </div>
+          </TabsContent>
           <TabsContent value="typography">
             <DSH2>Typography</DSH2>
             <div className="page">
@@ -104,38 +107,6 @@ export default function DesignSystem() {
               <Button variant={"ghost"}>Ghost Variant</Button>
               <Button variant={"outline"}>Outline Variant</Button>
               <Button variant={"destructive"}>Destructive Variant</Button>
-            </div>
-          </TabsContent>
-          <TabsContent value="squirrels">
-            <DSH2>Squirrels</DSH2>
-            <p>I'm exploring using squirrels for my website.</p>
-            <p>
-              Each of these squirrels is displayed at 50% of their original
-              size.
-            </p>
-            <div className="pt-6 flex flex-row gap-8 w-[400px]">
-              <div className="flex flex-col gap-1 items-center">
-                <Image
-                  src="/assets/squirrel_1.png"
-                  alt="Squirrel 1"
-                  width={293 / 2}
-                  height={407 / 2}
-                />
-                <div>
-                  <code>/assets/squirrel_1.png</code>
-                </div>
-              </div>
-              <div className="flex flex-col gap-1 justify-end items-center">
-                <Image
-                  src="/assets/squirrel_2.png"
-                  alt="Squirrel 2"
-                  width={293 / 2}
-                  height={407 / 2}
-                />
-                <div>
-                  <code>/assets/squirrel_2.png</code>
-                </div>
-              </div>
             </div>
           </TabsContent>
         </Tabs>

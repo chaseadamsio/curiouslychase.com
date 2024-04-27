@@ -6,8 +6,8 @@
   :root {
     --black-950: 240 12% 15%;
     --black-900: 240 12% 20%;
-    --white-100: 60 6% 93%;
-    --white-50: 60 6% 88%;
+    --white-100: 60 6% 88%;
+    --white-50: 60 0% 100%;
 
     --pink-light: 342 80% 69%;
     --pink-dark: 342 70% 59%;
@@ -31,13 +31,13 @@
     --accent-foreground: 330 12% 6%;
     --callout-background: var(--accent);
 
-    --muted: 30 36% 90%;
-    --muted-foreground: 330 12% 46%;
+    --muted: var(--white-100);
+    --muted-foreground: var(--black-950);
 
     --border: 30 36% 82%;
     --input: 30 36% 82%;
 
-    --primary: 205 60% 48%;
+    --primary: var(--yellow-dark);
     --primary-foreground: 30 36% 90%;
     --destructive: 7 60% 48%;
     --destructive-foreground: 18 27% 90%;
@@ -64,8 +64,8 @@
 
     --callout-background: 330 40% 10%;
 
-    --muted: 330 30% 20%;
-    --muted-foreground: 18 27% 60%;
+    --muted: var(--black-950);
+    --muted-foreground: var(--purple-light);
 
     --accent: 330 30% 20%;
     --accent-foreground: 18 27% 90%;
