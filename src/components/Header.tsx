@@ -51,12 +51,10 @@ export const Header = () => {
             "font-bold text-xl [&>.text]:invisible [&:hover>.text]:visible gap-2 items-center",
             "flex flex-col md:my-0 md:flex-row justify-center md:justify-start",
             "[&>.text]:opacity-0",
-            "[&:hover>.text]:opacity-100 [&:hover>.text]:transition-all [&:hover>.text]:duration-300 [&:hover>.text]:scale-100 [&:hover>.text]:md:-translate-x-5"
+            "[&:hover>.text]:opacity-100 [&:hover>.text]:transition-all [&:hover>.text]:duration-300 [&:hover>.text]:scale-100"
           )}
         >
-          <div className="md:ml-[-26px]">
-            <Logo className="logo text-magenta-500 md:scale-50" />
-          </div>
+          <Logo className="logo text-magenta-500" />
           <span className="text lowercase scale-50 transition-all duration-300 text-magenta-500">
             Chase Adams
           </span>
