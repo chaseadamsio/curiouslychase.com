@@ -9,7 +9,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-primary text-primary-foreground hover:bg-primary/80",
         primary:
           "bg-transparent outline outline-1 outline-magenta-500 rounded-full hover:bg-magenta-500 hover:text-magenta-50",
         destructive:
@@ -19,7 +19,7 @@ const buttonVariants = cva(
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+        link: "text-link-foreground underline-offset-4 hover:underline",
         twitter: "bg-blue-500 text-blue-50 hover:bg-blue-600",
       },
       size: {

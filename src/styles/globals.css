@@ -84,7 +84,7 @@
     --bg-from: var(--ultraviolet-990);
     --bg-to: var(--black);
 
-    --primary: var(--ultraviolet-50);
+    --primary: var(--ultraviolet-950);
     --primary-foreground: var(--blue-100);
   }
 }
@@ -166,10 +166,6 @@
 
   li {
     @apply leading-7;
-  }
-
-  .article > blockquote {
-    @apply bg-muted relative w-full rounded-lg px-4 pt-4 pb-7 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7 text-foreground my-6;
   }
 
   .article > blockquote > ul,

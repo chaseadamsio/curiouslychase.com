@@ -76,21 +76,39 @@ export default function DesignSystem() {
           </TabsContent>
           <TabsContent value="callouts">
             <DSH2>Callouts</DSH2>
-            <Blockquote calloutTitle="An Info Callout" calloutType="info">
+
+            <Blockquote
+              className="my-4"
+              calloutTitle="An Info Callout"
+              calloutType="info"
+            >
               <p>This is a callout for information. </p>
               <p>Use these for supplemental information.</p>
             </Blockquote>
 
-            <Blockquote calloutTitle="A Tip Callout " calloutType="tip">
+            <Blockquote
+              className="my-4"
+              calloutTitle="A Tip Callout "
+              calloutType="tip"
+            >
               <p>This is a callout for tips.</p>
               <p>Use these for tips and tricks.</p>
             </Blockquote>
-            <Blockquote calloutTitle="An Warning Callout" calloutType="warning">
+
+            <Blockquote
+              className="my-4"
+              calloutTitle="An Warning Callout"
+              calloutType="warning"
+            >
               <p>This is a callout for warnings.</p>
               <p>Use these for any gotchas that a user should watch out for.</p>
               <p>Also use these for WIP.</p>
             </Blockquote>
-            <Blockquote calloutTitle="A Danger Callout" calloutType="danger">
+            <Blockquote
+              className="my-4"
+              calloutTitle="A Danger Callout"
+              calloutType="danger"
+            >
               <p>This is a callout for danger.</p>
               <p>
                 Use these for any information that could cause a user to bang
@@ -101,6 +119,7 @@ export default function DesignSystem() {
           <TabsContent value="buttons">
             <DSH2>Buttons</DSH2>
             <div className="flex flex-col gap-2 w-[400px]">
+              <Button variant="primary">Primary Variant</Button>
               <Button variant={"default"}>Default Variant</Button>
               <Button variant={"secondary"}>Secondary Variant</Button>
               <Button variant={"link"}>Link Variant</Button>
