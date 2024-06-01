@@ -1,9 +1,12 @@
 "use client";
 
-import { ModeToggle } from "@/components/theme-toggle";
 import Link from "next/link";
-import { FC, PropsWithChildren, useCallback, useEffect, useState } from "react";
+import { FC, PropsWithChildren, useCallback, useState } from "react";
 
+import { Button } from "@/components/ui/button";
+import { Form } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -11,22 +14,11 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { Form } from "@/components/ui/form";
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { SubmitHandler, UseFormHandleSubmit, useForm } from "react-hook-form";
-import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 import { log } from "@/utils/logger";
-import { Menu } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { SubmitHandler, useForm } from "react-hook-form";
 
 export const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -37,14 +29,17 @@ export const Header = () => {
   return (
     <div
       className={cn(
-        "mx-2",
-        "md:flex",
-        "md:flex-row",
-        "flex flex-col",
+        "my-2",
+        "mx-auto",
+        "md:my-4",
+        "md:mx-0",
+        "flex flex-col md:flex-row",
+        "flex-wrap",
+        "md:flex-nowrap",
         "max-w-5xl",
         "justify-between",
-        "items-center",
-        "py-4"
+        "md:gap-2",
+        "items-center"
       )}
     >
       <div className="order-1 justify-self-start p-2 items-center flex gap-2 md:p-0 basis-3/6 md:basis-1/3">
@@ -53,53 +48,51 @@ export const Header = () => {
         </Link>
       </div>
       <div className={cn("md:ml-auto flex items-center", "order-3 md:order-2")}>
-        <Dialog>
-          <NavigationMenu className={cn("md:flex")}>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  href="/"
-                  className={navigationMenuTriggerStyle({
-                    active: !!pathname.match("^/$"),
-                  })()}
-                >
-                  Home
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  href="/posts/"
-                  className={cn(
-                    navigationMenuTriggerStyle({
-                      active: log(!!pathname.match("/posts")),
-                    })()
-                  )}
-                >
-                  Posts
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  href="/about/"
-                  className={navigationMenuTriggerStyle({
-                    active: !!pathname.match("/about"),
-                  })()}
-                >
-                  About
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+        <NavigationMenu className={cn("md:flex")}>
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuLink
+                href="/"
+                className={navigationMenuTriggerStyle({
+                  active: !!pathname.match("^/$"),
+                })()}
+              >
+                Home
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink
+                href="/posts/"
+                className={cn(
+                  navigationMenuTriggerStyle({
+                    active: log(!!pathname.match("/posts")),
+                  })()
+                )}
+              >
+                Posts
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink
+                href="/about/"
+                className={navigationMenuTriggerStyle({
+                  active: !!pathname.match("/about"),
+                })()}
+              >
+                About
+              </NavigationMenuLink>
+            </NavigationMenuItem>
 
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  href="https://crca.news"
-                  className={navigationMenuTriggerStyle({ active: false })()}
-                >
-                  Newsletter
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
-        </Dialog>
+            <NavigationMenuItem>
+              <NavigationMenuLink
+                href="https://crca.news"
+                className={navigationMenuTriggerStyle({ active: false })()}
+              >
+                Newsletter
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
       </div>
     </div>
   );

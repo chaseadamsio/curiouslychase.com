@@ -49,24 +49,24 @@
     --blue-950: 225 100% 19%;
     --blue-990: 225 87% 5%;
 
+    --ultraviolet-50: 285 100% 98%;
+    --ultraviolet-100: 279 100% 95%;
     --ultraviolet-950: 276 100% 23%;
     --ultraviolet-990: 276 100% 8%;
 
     --popover: 30 10% 95%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --accent: 30 36% 90%;
-    --accent-foreground: 330 12% 6%;
+    --accent: var(--magenta-500);
+    --accent-foreground: var(--magenta-50);
     --callout-background: var(--black);
 
     --muted: var(--black);
     --muted-foreground: var(--magenta-600);
 
     --border: var(--tuna-950);
-    --input: 30 36% 82%;
+    --input: var(--magenta-900);
 
-    --primary: var(--blue-700);
-    --primary-foreground: var(--white-50);
     --destructive: 7 60% 48%;
     --destructive-foreground: 18 27% 90%;
 
@@ -81,6 +81,11 @@
     --card-foreground: 330 40 10%;
     --card: 30 36% 95%;
     --radius: 0.5rem;
+    --bg-from: var(--ultraviolet-990);
+    --bg-to: var(--black);
+
+    --primary: var(--ultraviolet-50);
+    --primary-foreground: var(--blue-100);
   }
 }
 
@@ -89,7 +94,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-fixed bg-gradient-to-b from-ultraviolet-990 to-black text-blue-100;
+    @apply bg-fixed bg-gradient-to-b from-bg-from to-bg-to text-primary-foreground;
   }
 
   h1 {

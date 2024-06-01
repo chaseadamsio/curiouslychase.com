@@ -66,23 +66,20 @@ export default async function RootLayout({
         type="font/otf"
       />
 
-      <body
-        className={cn(
-          spaceGrotesk.className,
-          "min-h-screen",
-          "flex flex-col",
-          "max-w-3xl mx-auto"
-        )}
-      >
-        <Providers>
-          <Header />
-          <main className="px-2 w-full lg:mx-auto lg:max-w-5xl">
-            {children}
-          </main>
-          <div className="mt-auto">
-            <Footer />
-          </div>
-        </Providers>
+      <body className={cn(spaceGrotesk.className)}>
+        <div
+          className={cn("min-h-screen", "flex flex-col", "max-w-3xl mx-auto")}
+        >
+          <Providers>
+            <Header />
+            <main className="px-2 w-full lg:mx-auto lg:max-w-5xl">
+              {children}
+            </main>
+            <div className="mt-auto">
+              <Footer />
+            </div>
+          </Providers>
+        </div>
       </body>
     </html>
   );

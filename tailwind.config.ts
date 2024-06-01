@@ -61,8 +61,14 @@ module.exports = {
               990: "hsl(var(--blue-990))",
             },
             ultraviolet: {
+              50: "hsl(var(--ultraviolet-50))",
+              100: "hsl(var(--ultraviolet-100))",
               950: "hsl(var(--ultraviolet-950))",
               990: "hsl(var(--ultraviolet-990))",
+            },
+            bg: {
+              from: "hsl(var(--bg-from))",
+              to: "hsl(var(--bg-to))",
             },
             border: "hsl(var(--border))",
             input: "hsl(var(--input))",
