@@ -38,7 +38,7 @@ module.exports = {
               200: "hsl(var(--magenta-200))",
               300: "hsl(var(--magenta-300))",
               400: "hsl(var(--magenta-400))",
-              500: "hsl(var(--magenta-600))",
+              500: "hsl(var(--magenta-500))",
               600: "hsl(var(--magenta-600))",
               700: "hsl(var(--magenta-700))",
               800: "hsl(var(--magenta-800))",

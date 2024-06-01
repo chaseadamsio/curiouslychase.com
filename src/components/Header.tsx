@@ -26,6 +26,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { usePathname } from "next/navigation";
 import { log } from "@/utils/logger";
+import { Menu } from "lucide-react";
 
 export const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -37,7 +38,8 @@ export const Header = () => {
     <div
       className={cn(
         "mx-2",
-        "flex",
+        "md:flex",
+        "flex flex-col",
         "max-w-5xl",
         "justify-between",
         "items-center",
