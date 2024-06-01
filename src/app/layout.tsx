@@ -68,10 +68,12 @@ export default async function RootLayout({
 
       <body className={cn(spaceGrotesk.className)}>
         <div
-          className={cn("min-h-screen", "flex flex-col", "max-w-3xl mx-auto")}
+          className={cn("min-h-screen", "flex flex-col", "max-w-5xl mx-auto")}
         >
           <Providers>
-            <Header />
+            <div className="my-5">
+              <Header />
+            </div>
             <main className="px-2 w-full lg:mx-auto lg:max-w-5xl">
               {children}
             </main>
