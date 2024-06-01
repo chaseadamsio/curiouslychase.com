@@ -19,6 +19,7 @@ import { cn } from "@/lib/utils";
 import { log } from "@/utils/logger";
 import { usePathname } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
+import Image from "next/image";
 
 export const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -43,8 +44,23 @@ export const Header = () => {
       )}
     >
       <div className="order-1 justify-self-start p-2 items-center flex gap-2 md:p-0 basis-3/6 md:basis-1/3">
-        <Link href="/" className="font-bold text-xl">
-          curiouslychase
+        <Link
+          href="/"
+          className={cn(
+            "font-bold text-xl pl-2 [&>.text]:invisible [&:hover>.text]:visible flex gap-2 items-center",
+            "[&:hover>.text]:transition-transform [&:hover>.text]:duration-300 [&:hover>.text]:scale-100"
+          )}
+        >
+          <Image
+            className="logo"
+            src="/img/logo.png?bloop"
+            alt="curiouslychase"
+            width={48}
+            height={48}
+          />
+          <span className="text lowercase scale-50 transition-all duration-300 text-magenta-500">
+            Chase Adams
+          </span>
         </Link>
       </div>
       <div className={cn("md:ml-auto flex items-center", "order-3 md:order-2")}>
