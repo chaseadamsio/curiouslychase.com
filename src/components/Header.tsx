@@ -20,6 +20,7 @@ import { log } from "@/utils/logger";
 import { usePathname } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Image from "next/image";
+import { Logo } from "@/components/logo";
 
 export const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -48,16 +49,11 @@ export const Header = () => {
           href="/"
           className={cn(
             "font-bold text-xl pl-2 [&>.text]:invisible [&:hover>.text]:visible flex gap-2 items-center",
-            "[&:hover>.text]:transition-transform [&:hover>.text]:duration-300 [&:hover>.text]:scale-100"
+            "[&>.text]:opacity-0",
+            "[&:hover>.text]:opacity-100 [&:hover>.text]:transition-all [&:hover>.text]:duration-300 [&:hover>.text]:scale-100 [&:hover>.text]:-translate-x-5"
           )}
         >
-          <Image
-            className="logo"
-            src="/img/logo.png?bloop"
-            alt="curiouslychase"
-            width={48}
-            height={48}
-          />
+          <Logo className="logo text-magenta-500 scale-50" />
           <span className="text lowercase scale-50 transition-all duration-300 text-magenta-500">
             Chase Adams
           </span>
