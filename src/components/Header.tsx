@@ -37,16 +37,11 @@ export const Header = () => {
     <div
       className={cn(
         "mx-2",
-        "md:mx-auto",
-        "my-2",
-        "md:my-4",
         "flex",
-        "flex-wrap",
-        "md:flex-nowrap",
         "max-w-5xl",
-        "justify-start",
-        "md:gap-2",
-        "items-center"
+        "justify-between",
+        "items-center",
+        "py-4"
       )}
     >
       <div className="order-1 justify-self-start p-2 items-center flex gap-2 md:p-0 basis-3/6 md:basis-1/3">
@@ -92,18 +87,7 @@ export const Header = () => {
                   About
                 </NavigationMenuLink>
               </NavigationMenuItem>
-              {/* <NavigationMenuItem>
-                <DialogTrigger asChild>
-                  <NavigationMenuLink
-                    className={cn(
-                      navigationMenuTriggerStyle(),
-                      "cursor-pointer"
-                    )}
-                  >
-                    Say Hi
-                  </NavigationMenuLink>
-                </DialogTrigger>
-              </NavigationMenuItem> */}
+
               <NavigationMenuItem>
                 <NavigationMenuLink
                   href="https://crca.news"
@@ -114,25 +98,7 @@ export const Header = () => {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-          {/* <DialogContent>
-            <DialogTitle>Say Hi</DialogTitle>
-            <ContactForm />
-                    </DialogContent> */}
         </Dialog>
-      </div>
-
-      <div
-        className={cn(
-          "flex gap-2 p-2 md:p-0",
-          "order-2 md:order-3 basis-3/6 md:basis-auto"
-        )}
-      >
-        <Button onClick={toggleMenu} className={cn("md:hidden ml-auto")}>
-          Menu
-        </Button>
-        <div>
-          <ModeToggle />
-        </div>
       </div>
     </div>
   );

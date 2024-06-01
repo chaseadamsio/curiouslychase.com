@@ -10,7 +10,11 @@ export const OnlineFrequent = () => {
       <ul className="p-0 m-0 list-none flex flex-col pt-6 mt-4 md:pt-0 md:flex-row gap-2">
         {frequentSocial.map((s) => (
           <li className="p-0 m-0">
-            <Button asChild variant={"link"}>
+            <Button
+              asChild
+              variant={"link"}
+              className="text-blue-400 hover:text-magenta-500"
+            >
               <a
                 className="!no-underline flex gap-2 hover:font-bold"
                 href={`${s.link}`}

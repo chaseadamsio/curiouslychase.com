@@ -19,12 +19,9 @@ export const PostSummaryList = ({ posts }: { posts: Array<Article> }) => (
             <FormattedDate date={post.pubDate} />
           </small>
         </div>
-        <Link
-          href={`/posts/${post.slug}/`}
-          className="flex flex-col h-full hover:bg-accent"
-        >
+        <Link href={`/posts/${post.slug}/`} className="flex flex-col h-full">
           <div>
-            <div className={cn("text-base font-bold mt-0")}>{post.title}</div>
+            <div className={cn("text-base mt-0")}>{post.title}</div>
           </div>
         </Link>
       </div>

@@ -16,7 +16,7 @@ export const Writing = async () => {
         <PostSummaryList posts={posts} />
 
         <div className="mt-8 flex justify-center">
-          <Button variant={"default"}>
+          <Button variant={"primary"}>
             <Link href="/posts/" className="text-md">
               See all {count} posts
             </Link>

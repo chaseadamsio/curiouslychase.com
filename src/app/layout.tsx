@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { cn } from "@/lib/utils";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
@@ -65,13 +66,22 @@ export default async function RootLayout({
         type="font/otf"
       />
 
-      <body className={spaceGrotesk.className}>
+      <body
+        className={cn(
+          spaceGrotesk.className,
+          "min-h-screen",
+          "flex flex-col",
+          "max-w-3xl mx-auto"
+        )}
+      >
         <Providers>
           <Header />
           <main className="px-2 w-full lg:mx-auto lg:max-w-5xl">
             {children}
           </main>
-          <Footer />
+          <div className="mt-auto">
+            <Footer />
+          </div>
         </Providers>
       </body>
     </html>

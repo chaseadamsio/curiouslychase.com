@@ -31,7 +31,7 @@ export default function DesignSystem() {
           <TabsContent value="colors">
             <DSH2>Colors</DSH2>
             <div className="flex gap-2">
-              <div className="rounded-full w-[32px] h-[32px] bg-[color:var(--yellow-light)]"></div>
+              <div className="rounded-full w-[32px] h-[32px]"></div>
             </div>
           </TabsContent>
           <TabsContent value="typography">

@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
   content: ["./src/**/*.{ts,tsx,mdx}"],
@@ -17,6 +16,54 @@ module.exports = {
       defaultTheme: {
         extend: {
           colors: {
+            white: {
+              50: "hsl(var(--white-50))",
+            },
+            tuna: {
+              50: "hsl(var(--tuna-50))",
+              100: "hsl(var(--tuna-100))",
+              200: "hsl(var(--tuna-200))",
+              300: "hsl(var(--tuna-300))",
+              400: "hsl(var(--tuna-400))",
+              500: "hsl(var(--tuna-500))",
+              600: "hsl(var(--tuna-600))",
+              700: "hsl(var(--tuna-700))",
+              800: "hsl(var(--tuna-800))",
+              900: "hsl(var(--tuna-900))",
+              950: "hsl(var(--tuna-950))",
+            },
+            magenta: {
+              50: "hsl(var(--magenta-50))",
+              100: "hsl(var(--magenta-100))",
+              200: "hsl(var(--magenta-200))",
+              300: "hsl(var(--magenta-300))",
+              400: "hsl(var(--magenta-400))",
+              500: "hsl(var(--magenta-600))",
+              600: "hsl(var(--magenta-600))",
+              700: "hsl(var(--magenta-700))",
+              800: "hsl(var(--magenta-800))",
+              900: "hsl(var(--magenta-900))",
+              950: "hsl(var(--magenta-950))",
+              990: "hsl(var(--magenta-990))",
+            },
+            blue: {
+              50: "hsl(var(--blue-50))",
+              100: "hsl(var(--blue-100))",
+              200: "hsl(var(--blue-200))",
+              300: "hsl(var(--blue-300))",
+              400: "hsl(var(--blue-400))",
+              500: "hsl(var(--blue-500))",
+              600: "hsl(var(--blue-600))",
+              700: "hsl(var(--blue-700))",
+              800: "hsl(var(--blue-800))",
+              900: "hsl(var(--blue-900))",
+              950: "hsl(var(--blue-950))",
+              990: "hsl(var(--blue-990))",
+            },
+            ultraviolet: {
+              950: "hsl(var(--ultraviolet-950))",
+              990: "hsl(var(--ultraviolet-990))",
+            },
             border: "hsl(var(--border))",
             input: "hsl(var(--input))",
             ring: "hsl(var(--ring))",
@@ -67,10 +114,6 @@ module.exports = {
             popover: {
               DEFAULT: "hsl(var(--popover))",
               foreground: "hsl(var(--popover-foreground))",
-            },
-            card: {
-              DEFAULT: "hsl(var(--card))",
-              foreground: "hsl(var(--card-foreground))",
             },
           },
           borderRadius: {
