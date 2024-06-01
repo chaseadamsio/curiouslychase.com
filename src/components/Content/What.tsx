@@ -16,7 +16,7 @@ export const What = () => {
             Plumb
           </a>
           : a no code AI pipeline builder for building and deploying AI features
-          for product teams. .
+          for product teams.
         </p>
       </div>
     </div>
