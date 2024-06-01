@@ -48,12 +48,13 @@ export const Header = () => {
         <Link
           href="/"
           className={cn(
-            "font-bold text-xl pl-2 [&>.text]:invisible [&:hover>.text]:visible flex gap-2 items-center",
+            "font-bold text-xl pl-2 [&>.text]:invisible [&:hover>.text]:visible gap-2 items-center",
+            "flex flex-col md:my-0 md:flex-row justify-center md:justify-start",
             "[&>.text]:opacity-0",
-            "[&:hover>.text]:opacity-100 [&:hover>.text]:transition-all [&:hover>.text]:duration-300 [&:hover>.text]:scale-100 [&:hover>.text]:-translate-x-5"
+            "[&:hover>.text]:opacity-100 [&:hover>.text]:transition-all [&:hover>.text]:duration-300 [&:hover>.text]:scale-100 [&:hover>.text]:md:-translate-x-5"
           )}
         >
-          <Logo className="logo text-magenta-500 scale-50" />
+          <Logo className="logo text-magenta-500 md:scale-50" />
           <span className="text lowercase scale-50 transition-all duration-300 text-magenta-500">
             Chase Adams
           </span>
