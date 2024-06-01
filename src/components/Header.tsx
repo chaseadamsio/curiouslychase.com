@@ -39,6 +39,7 @@ export const Header = () => {
       className={cn(
         "mx-2",
         "md:flex",
+        "md:flex-row",
         "flex flex-col",
         "max-w-5xl",
         "justify-between",
@@ -53,9 +54,7 @@ export const Header = () => {
       </div>
       <div className={cn("md:ml-auto flex items-center", "order-3 md:order-2")}>
         <Dialog>
-          <NavigationMenu
-            className={cn("md:flex", showMenu ? "flex" : "hidden")}
-          >
+          <NavigationMenu className={cn("md:flex")}>
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuLink
