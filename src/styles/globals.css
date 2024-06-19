@@ -118,7 +118,7 @@
   }
 
   pre[class*="language-"] {
-    @apply mb-4 mt-6 overflow-x-auto max-w-full rounded-lg border bg-slate-950 py-4 dark:bg-slate-900 max-w-5xl;
+    @apply text-sm mb-4 mt-6 overflow-x-auto max-w-full rounded-lg border border-ultraviolet-950 bg-ultraviolet-990 max-w-5xl;
     white-space: pre;
     word-spacing: normal;
     word-break: normal;
