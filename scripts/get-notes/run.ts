@@ -45,8 +45,7 @@ async function getDirContents(directory: string) {
             );
           }
         } else {
-          result.data.pubDate =
-            result.data.date ?? format(filestat.birthtime, "yyyy-MM-dd");
+          result.data.pubDate = format(filestat.birthtime, "yyyy-MM-dd");
         }
 
         result.data.updatedDate =

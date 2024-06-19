@@ -9,10 +9,42 @@ import path from "path";
 import slugify from "slugify";
 import { format, isBefore, parseISO } from "date-fns";
 
+export const stages = {
+  concept: {
+    name: "Concept",
+    description: "Initial idea or concept",
+  },
+  researching: {
+    name: "Researching",
+    description: "Requires research",
+  },
+  in_progress: {
+    name: "In Progress",
+    description: "Initial draft, needs significant work",
+  },
+  draft: {
+    name: "In Review",
+    description: "Draft, needs review and revision",
+  },
+  stable: {
+    name: "Stable",
+    description: "Stable version, but open to future edits",
+  },
+  living_document: {
+    name: "Living Document",
+    description: "Continuously revised and updated",
+  },
+  stale: {
+    name: "Stale",
+    description: "Outdated, needs review and revision",
+  },
+};
+
 export type ArticleMeta = {
   id: string;
   slug: string;
   filename: string;
+  stage: keyof typeof stages;
   path: string;
   featured?: boolean;
   description: string;
@@ -69,6 +101,7 @@ export const getArticles = async (args?: {
       updatedDate: post.data.updatedDate ?? Date.now(),
       ...(post.data.thumbnail && { thumbnail: post.data.thumbnail }),
       title: post.data.title,
+      stage: post.data.stage,
       image: post.data.image ?? null,
       description: post.data.description ?? null,
       status: post.data.status,
@@ -132,6 +165,7 @@ export const getArticleContentAndMetadata = async (
       filename: fullPath,
       slug,
       tags,
+      stage: matterResult.data.stage,
       title: matterResult.data.title ?? title,
     },
   };

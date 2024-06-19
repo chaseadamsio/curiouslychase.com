@@ -1,30 +1,57 @@
 import { FormattedDate } from "@/components/FormattedDate";
-import {
-  Card,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { Article } from "@/utils/content/getArticles";
+import { Article, stages } from "@/utils/content/getArticles";
 import Link from "next/link";
 
 export const PostSummaryList = ({ posts }: { posts: Array<Article> }) => (
   <div className="p-0 m-0 flex list-none gap-4 flex-wrap">
-    {posts.map((post) => (
-      <div className={cn("w-full", "flex", "gap-2")} key={post.slug}>
-        <div className={cn("mt-auto")}>
-          <small>
-            <FormattedDate date={post.pubDate} />
-          </small>
-        </div>
-        <Link href={`/posts/${post.slug}/`} className="flex flex-col h-full">
-          <div>
-            <div className={cn("text-base mt-0")}>{post.title}</div>
+    {posts
+      .sort((a, b) => {
+        if (a.stage && !b.stage) return -1;
+        if (b.stage && !a.stage) return 1;
+        return 0;
+      })
+      .map((post) => (
+        <div
+          className={cn("w-full", "flex", "gap-2", "items-center")}
+          key={post.slug}
+        >
+          <div className={cn("mt-auto")}>
+            <small>
+              <FormattedDate slug={post.slug} date={post.pubDate} />
+            </small>
           </div>
-        </Link>
-      </div>
-    ))}
+          {post.stage ? <StageLabel stage={post.stage} /> : null}
+          <Link href={`/posts/${post.slug}/`} className="flex flex-col h-full">
+            <div>
+              <div className={cn("text-base mt-0")}>{post.title}</div>
+            </div>
+          </Link>
+        </div>
+      ))}
+  </div>
+);
+
+const StageLabel = ({ stage }: { stage: keyof typeof stages }) => (
+  <div
+    className={cn(
+      "text-xs rounded-full",
+      "p-1 px-2",
+      stage === "concept"
+        ? "bg-tuna-200 text-tuna-950"
+        : stage === "researching"
+        ? "bg-blue-300 text-blue-950"
+        : stage === "in_progress"
+        ? "bg-yellow-300 text-yellow-950"
+        : stage === "draft"
+        ? "bg-tuna-200 text-tuna-950"
+        : stage === "living_document"
+        ? "bg-green-300 text-green-950"
+        : stage === "stale"
+        ? "bg-tuna-900 text-tuna-500"
+        : "bg-magenta-950 text-magenta-200"
+    )}
+  >
+    {stages[stage].name}
   </div>
 );
