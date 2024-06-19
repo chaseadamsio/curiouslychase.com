@@ -111,7 +111,7 @@ export default async function Post({
               />
             </div>
             {Object.keys(article.toc).length > 0 ? (
-              <div className="bg-fixed bg-gradient-to-b from-bg-from to-bg-to w-full p-4 rounded-tl rounded-tr text-sm sticky bottom-0 z-10 border border-magenta-900">
+              <div className="sticky bottom-3 z-10">
                 <div>
                   <TableOfContents toc={article.toc} />
                 </div>

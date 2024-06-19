@@ -19,6 +19,7 @@ export type ArticleMeta = {
   title: string;
   status: string;
   thumbnail?: string;
+  summary?: string;
   subhead?: string;
   image?: string;
   date: string;

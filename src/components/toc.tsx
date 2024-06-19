@@ -83,8 +83,19 @@ export function TableOfContents({ toc }: TocProps) {
   }
 
   return (
-    <Collapsible open={open} onOpenChange={setOpen} className="z-100">
-      <CollapsibleTrigger>On This Page: {currentHeading}</CollapsibleTrigger>
+    <Collapsible
+      open={open}
+      onOpenChange={setOpen}
+      className={cn(
+        "inline-flex",
+        "z-100 bg-fixed bg-gradient-to-b from-bg-from to-bg-to pl-6 pr-8 py-3 text-sm border border-magenta-900",
+        open ? "rounded-md flex-col w-full p-3" : "rounded-full"
+      )}
+    >
+      <CollapsibleTrigger className={cn(open ? "hidden" : "flex flex-col")}>
+        <span className="uppercase text-xs text-tuna-600">Section</span>
+        <span>{currentHeading}</span>
+      </CollapsibleTrigger>
       <CollapsibleContent>
         <Tree
           tree={toc}
