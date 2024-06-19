@@ -30,6 +30,15 @@ async function getDirContents(directory: string) {
       const content = fs.readFileSync(filepath, "utf-8");
       const result = matter(content);
 
+      if (
+        !(
+          result.data.status === "Published" ||
+          result.data.status === "published"
+        )
+      ) {
+        continue;
+      }
+
       if (result.data.liveDate === null) {
         delete result.data.liveDate;
       }

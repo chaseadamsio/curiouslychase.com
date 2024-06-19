@@ -13,15 +13,31 @@ export const PostSummaryList = ({ posts }: { posts: Array<Article> }) => (
       })
       .map((post) => (
         <div
-          className={cn("w-full", "flex", "gap-2", "items-center")}
+          className={cn(
+            "w-full",
+            "flex",
+            "gap-2",
+            "md:items-center",
+            "flex-col",
+            "md:flex-row",
+            "border-b border-magenta-000 md:border-0 pb-4 md:pb-0"
+          )}
           key={post.slug}
         >
-          <div className={cn("mt-auto")}>
+          <div
+            className={cn(
+              "mt-auto",
+              "flex",
+              "gap-2",
+              "items-center",
+              "flex-row"
+            )}
+          >
             <small>
               <FormattedDate slug={post.slug} date={post.pubDate} />
             </small>
+            {post.stage ? <StageLabel stage={post.stage} /> : null}
           </div>
-          {post.stage ? <StageLabel stage={post.stage} /> : null}
           <Link href={`/posts/${post.slug}/`} className="flex flex-col h-full">
             <div>
               <div className={cn("text-base mt-0")}>{post.title}</div>
