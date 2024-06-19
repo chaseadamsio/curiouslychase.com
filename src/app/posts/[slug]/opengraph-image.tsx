@@ -1,6 +1,8 @@
 import { getArticleForSlug } from "@/utils/content/getArticleForSlug";
 import { getHostname } from "@/utils/getHostname";
 import { ImageResponse } from "next/server";
+import photo from "./curiouslychase_photo.png";
+import NextImage from "next/image";
 
 // Route segment config
 export const runtime = "nodejs";
@@ -20,13 +22,13 @@ export default async function Image({
   params: { slug: string };
 }) {
   const hostname = getHostname();
-  // Font
-  const tillsdaleBold = await fetch(
-    `${hostname}/fonts/BNTillsdale/BNTillsdale-Bold.otf`
+
+  const spaceGrotesk = await fetch(
+    `${hostname}/fonts/Space_Grotesk/static/SpaceGrotesk-Regular.ttf`
   ).then((res) => res.arrayBuffer());
 
-  const palmerLake = await fetch(
-    `${hostname}/fonts/PalmerLake/PalmerLakePrint-Regular.otf`
+  const spaceGroteskBold = await fetch(
+    `${hostname}/fonts/Space_Grotesk/static/SpaceGrotesk-Bold.ttf`
   ).then((res) => res.arrayBuffer());
 
   const article = await getArticleForSlug(slug);
@@ -35,38 +37,66 @@ export default async function Image({
     (
       <div
         style={{
-          padding: 64,
-          color: "#ebf1fd",
+          padding: "4rem",
+          color: "hsl(225, 100%, 90%)",
           width: "100%",
           height: "100%",
           display: "flex",
+          gap: "2rem",
           flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundImage: `url("${hostname}/dot-grid.png")`,
+          alignItems: "flex-start",
+          justifyContent: "flex-start",
+          backgroundColor: "hsl(276, 100%, 8%)",
+          backgroundImage:
+            "linear-gradient(to bottom, rgb(8, 7, 13), rgb(24, 0, 41))",
           backgroundPosition: "center",
-          backgroundRepeat: "repeat",
-          backgroundSize: "22px 22px",
         }}
       >
         <div
           style={{
-            fontSize: 100,
-            fontFamily: "Tillsdale",
-            textTransform: "uppercase",
+            display: "flex",
+            justifyContent: "space-between",
+            flexDirection: "row-reverse",
+            width: "100%",
+          }}
+        >
+          <img
+            alt="photo"
+            src={`${hostname}/assets/curiouslychase_photo.png`}
+            width={120}
+            height={128}
+          />
+          <div
+            style={{
+              fontSize: 24,
+              fontFamily: "Space Grotesk",
+            }}
+          >
+            curiouslychase.com
+          </div>
+        </div>
+
+        <div
+          style={{
+            fontSize: "60px",
+            lineHeight: "64px",
+            fontFamily: "Space Grotesk",
+            fontWeight: 700,
+            color: `hsl(299 100% 50%)`,
           }}
         >
           {article.title}
         </div>
-        <div
-          style={{
-            fontSize: 64,
-            lineHeight: "3rem",
-            fontFamily: "Palmer Lake",
-          }}
-        >
-          {article.description}
-        </div>
+        {article.description?.length < 200 && (
+          <div
+            style={{
+              fontSize: 36,
+              fontFamily: "Space Grotesk",
+            }}
+          >
+            {article.description}
+          </div>
+        )}
       </div>
     ),
     // ImageResponse options
@@ -74,16 +104,16 @@ export default async function Image({
       ...size,
       fonts: [
         {
-          name: "Tillsdale",
-          data: tillsdaleBold,
-          style: "normal",
-          weight: 700,
-        },
-        {
-          name: "Palmer Lake",
-          data: palmerLake,
+          name: "Space Grotesk",
+          data: spaceGrotesk,
           style: "normal",
           weight: 400,
+        },
+        {
+          name: "Space Grotesk",
+          data: spaceGroteskBold,
+          style: "normal",
+          weight: 700,
         },
       ],
     }
