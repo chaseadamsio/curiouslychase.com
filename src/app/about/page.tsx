@@ -2,29 +2,6 @@ import { OnlineFrequent } from "@/components/Content/OnlineFrequent";
 import { What } from "@/components/Content/What";
 import Link from "next/link";
 
-const work = [
-  {
-    company: "Murmur",
-    blurb: "Building the future of decision making.",
-    link: "/posts/murmur",
-  },
-  {
-    company: "Webflow",
-    blurb: "Building the future of building software with no code.",
-    link: "/posts/webflow",
-  },
-  {
-    company: "Walmart Labs",
-    blurb: "Building ecommerce at scale.",
-    link: "/posts/walmart-labs",
-  },
-  {
-    company: "Zappos",
-    blurb: "Building the future of retail.",
-    link: "/posts/zappos",
-  },
-];
-
 const activities = [
   {
     activity: "Climbing",
@@ -52,11 +29,22 @@ const WorkSection = () => (
     </div>
     <section>
       <ul>
-        {work.map((c) => (
-          <li key={c.company}>
-            <Link href={c.link}>{c.company}</Link>: {c.blurb}
-          </li>
-        ))}
+        <li>
+          <Link href="/posts/murmur-labs">Murmur Labs</Link>: Building the
+          future of <s>decision making</s> AI visual programming.
+        </li>
+        <li>
+          <Link href="/posts/webflow">Webflow</Link>: Building the future of
+          building software with no code.
+        </li>
+        <li>
+          <Link href="/posts/walmart-labs">Walmart Labs</Link>: Building
+          ecommerce at scale.
+        </li>
+        <li>
+          <Link href="/posts/zappos">Zappos</Link>: Building the future of
+          retail.
+        </li>
       </ul>
     </section>
   </main>
