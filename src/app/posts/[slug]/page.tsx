@@ -26,7 +26,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import Image from "next/image";
-import plumb_card from "../../../../public/img/plumb_card.png";
+import plumb_card from "./plumb_card.png";
 
 export async function generateMetadata({
   params: { slug },
