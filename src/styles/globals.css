@@ -22,17 +22,17 @@
     --tuna-950: 222 14% 20%;
 
     /* Magenta/Fuchsia Colors */
-    --magenta-50: 300 100% 99%;
-    --magenta-100: 300 100% 98%;
-    --magenta-200: 300 100% 97%;
-    --magenta-300: 300 100% 92%;
-    --magenta-400: 300 100% 93%;
-    --magenta-500: 299 100% 50%;
-    --magenta-600: 300 100% 71%;
-    --magenta-700: 300 100% 59%;
-    --magenta-800: 300 67% 46%;
-    --magenta-900: 300 57% 38%;
-    --magenta-950: 300 71% 19%;
+    --magenta-50: 305 100% 97%;
+    --magenta-100: 302 100% 95%;
+    --magenta-200: 302 100% 89%;
+    --magenta-300: 304 100% 80%;
+    --magenta-400: 305 100% 68%;
+    --magenta-500: 302 100% 56%;
+    --magenta-600: 299 100% 50%;
+    --magenta-700: 300 100% 41%;
+    --magenta-800: 301 67% 33%;
+    --magenta-900: 302 90% 28%;
+    --magenta-950: 301 100% 18%;
     --magenta-990: 300 97% 7%;
 
     /* Blue Colors */
@@ -146,7 +146,8 @@
   .article a[href^="/"]:not([href^="//"]),
   .page a[href^="/"]:not([href^="//"])
   {
-    @apply font-medium text-link-foreground hover:text-magenta-500 before:content-["[["] after:content-["]]"];
+    /* before:content-["[["] after:content-["]]"] */
+    @apply font-medium text-magenta-300 hover:text-magenta-500;
   }
 
   h2 {

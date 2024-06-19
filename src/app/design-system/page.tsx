@@ -2,6 +2,7 @@ import { Blockquote } from "@/components/Blockquote";
 import { PageHeading } from "@/components/PageHeading";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { cn } from "@/lib/utils";
 import { FC, PropsWithChildren } from "react";
 
 const DSH2: FC<PropsWithChildren> = ({ children }) => {
@@ -9,14 +10,100 @@ const DSH2: FC<PropsWithChildren> = ({ children }) => {
 };
 
 const DSH3: FC<PropsWithChildren> = ({ children }) => {
-  return <h3 className="pt-4 text-2xl border-none">{children}</h3>;
+  return <h3 className="mt-0 text-2xl border-none">{children}</h3>;
 };
 
 const DSH4: FC<PropsWithChildren> = ({ children }) => {
   return <h4 className="pt-4 text-xl border-none">{children}</h4>;
 };
 
+const ColorSwatch = ({
+  color,
+  textColor,
+  text,
+}: {
+  color: string;
+  textColor?: string;
+  text?: string;
+}) => {
+  const colorNumber = parseInt(color.split("-")[2]);
+
+  console.log(`"${color}"`);
+  return (
+    <div
+      className={cn(
+        `flex items-center justify-center w-[40px] h-[64px]`,
+        color
+      )}
+    >
+      <div
+        className={cn(
+          "text-sm",
+          textColor
+            ? textColor
+            : colorNumber > 500
+            ? "text-white"
+            : "text-black"
+        )}
+      >
+        {text ?? colorNumber}
+      </div>
+    </div>
+  );
+};
+
 export default function DesignSystem() {
+  const magenta = [
+    "bg-magenta-50",
+    "bg-magenta-100",
+    "bg-magenta-200",
+    "bg-magenta-300",
+    "bg-magenta-400",
+    "bg-magenta-500",
+    "bg-magenta-600",
+    "bg-magenta-700",
+    "bg-magenta-800",
+    "bg-magenta-900",
+    "bg-magenta-950",
+  ];
+
+  const tuna = [
+    "bg-tuna-50",
+    "bg-tuna-100",
+    "bg-tuna-200",
+    "bg-tuna-300",
+    "bg-tuna-400",
+    "bg-tuna-500",
+    "bg-tuna-600",
+    "bg-tuna-700",
+    "bg-tuna-800",
+    "bg-tuna-900",
+    "bg-tuna-950",
+  ];
+
+  const blue = [
+    "bg-blue-50",
+    "bg-blue-100",
+    "bg-blue-200",
+    "bg-blue-300",
+    "bg-blue-400",
+    "bg-blue-500",
+    "bg-blue-600",
+    "bg-blue-700",
+    "bg-blue-800",
+    "bg-blue-900",
+    "bg-blue-950",
+  ];
+
+  const ultraviolet = [
+    "bg-ultraviolet-50",
+    "bg-ultraviolet-100",
+    "bg-ultraviolet-950",
+    "bg-ultraviolet-990",
+  ];
+
+  const base = ["bg-black", "bg-white-50", "bg-white-100"];
+
   return (
     <div className="page page--design-system">
       <PageHeading>Design System</PageHeading>
@@ -30,8 +117,55 @@ export default function DesignSystem() {
           </TabsList>
           <TabsContent value="colors">
             <DSH2>Colors</DSH2>
-            <div className="flex gap-2">
-              <div className="rounded-full w-[32px] h-[32px]"></div>
+            <div className="flex gap-2 flex-col">
+              <DSH3>Base</DSH3>
+              <div className="flex flex-col">
+                <ColorSwatch
+                  color={"bg-black"}
+                  textColor={"text-white"}
+                  text="black"
+                />
+                <DSH4>White</DSH4>
+                <div className="flex">
+                  <ColorSwatch color={"bg-white-50"} textColor={"text-black"} />
+                  <ColorSwatch
+                    color={"bg-white-100"}
+                    textColor={"text-black"}
+                  />
+                </div>
+              </div>
+              <DSH3>Magenta</DSH3>
+              <div className="flex">
+                {magenta.map((c) => (
+                  <div key={c} className="flex flex-col items-center">
+                    <ColorSwatch color={c} />
+                  </div>
+                ))}
+              </div>
+              <DSH3>Tuna</DSH3>
+              <div className="flex">
+                {tuna.map((c) => (
+                  <div key={c} className="flex flex-col items-center">
+                    <ColorSwatch color={c} />
+                  </div>
+                ))}
+              </div>
+              <DSH3>Blue</DSH3>
+              <div className="flex">
+                {blue.map((c) => (
+                  <div key={c} className="flex flex-col items-center">
+                    <ColorSwatch color={c} />
+                  </div>
+                ))}
+              </div>
+              <DSH3>Ultraviolet</DSH3>
+              <div className="flex">
+                {ultraviolet.map((c) => (
+                  <div key={c} className="flex flex-col items-center">
+                    <ColorSwatch color={c} />
+                  </div>
+                ))}
+              </div>
             </div>
           </TabsContent>
           <TabsContent value="typography">

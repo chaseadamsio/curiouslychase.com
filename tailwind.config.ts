@@ -18,6 +18,7 @@ module.exports = {
           colors: {
             white: {
               50: "hsl(var(--white-50))",
+              100: "hsl(var(--white-100))",
             },
             tuna: {
               50: "hsl(var(--tuna-50))",
