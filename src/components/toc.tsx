@@ -6,6 +6,11 @@ import * as React from "react";
 import { TableOfContents } from "@/lib/toc";
 import { cn } from "@/lib/utils";
 import { useMounted } from "@/hooks/use-mounted";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 
 interface TocProps {
   toc: TableOfContents;
@@ -26,15 +31,68 @@ export function TableOfContents({ toc }: TocProps) {
   const activeHeading = useActiveItem(itemIds);
   const mounted = useMounted();
 
+  const flattenItems = (
+    parentItem: TableOfContents,
+    items: TableOfContents[]
+  ) => {
+    return [
+      parentItem,
+      ...items.map((item) => {
+        if (item.items) {
+          return flattenItems(item, item.items);
+        }
+        return { ...item, title: `${parentItem.title} > ${item.title}` };
+      }),
+    ];
+  };
+
+  const flattenedItems = React.useMemo(() => {
+    return toc.items
+      .map((item) => {
+        if (item.items) {
+          return flattenItems(item, item.items);
+        }
+        return item;
+      })
+      .flat();
+  }, [toc]);
+
+  const [currentHeading, setCurrentHeading] = React.useState(
+    flattenedItems.find((item) => item.url === `#${itemIds[0]}`)?.title
+  );
+
+  React.useEffect(() => {
+    if (!activeHeading) return;
+    setCurrentHeading(
+      flattenedItems.find((item) => item.url === `#${activeHeading}`)?.title
+    );
+  }, [activeHeading]);
+
+  const [open, setOpen] = React.useState(false);
+
+  const setCurrentHeadingAndCollapse = React.useCallback(
+    (heading: string) => {
+      setCurrentHeading(heading);
+      setOpen(false);
+    },
+    [setCurrentHeading, setOpen]
+  );
+
   if (!toc?.items || !mounted) {
     return null;
   }
 
   return (
-    <div className="space-y-2">
-      <p className="font-medium">On This Page</p>
-      <Tree tree={toc} activeItem={activeHeading} />
-    </div>
+    <Collapsible open={open} onOpenChange={setOpen} className="z-100">
+      <CollapsibleTrigger>On This Page: {currentHeading}</CollapsibleTrigger>
+      <CollapsibleContent>
+        <Tree
+          tree={toc}
+          activeItem={activeHeading}
+          setCurrentHeading={setCurrentHeadingAndCollapse}
+        />
+      </CollapsibleContent>
+    </Collapsible>
   );
 }
 
@@ -77,9 +135,10 @@ interface TreeProps {
   tree: TableOfContents;
   level?: number;
   activeItem?: string;
+  setCurrentHeading: (heading: string) => void;
 }
 
-function Tree({ tree, level = 1, activeItem }: TreeProps) {
+function Tree({ tree, level = 1, activeItem, setCurrentHeading }: TreeProps) {
   return tree?.items?.length && level < 3 ? (
     <ul className={cn("m-0 list-none", { "pl-4": level !== 1 })}>
       {tree.items.map((item, index) => {
@@ -87,6 +146,7 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
           <li key={index} className={cn("mt-0")}>
             <a
               href={item.url}
+              onClick={() => setCurrentHeading(item.title)}
               className={cn(
                 "inline-block no-underline transition-colors hover:text-foreground",
                 item.url === `#${activeItem}`
@@ -97,7 +157,12 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
               {item.title}
             </a>
             {item.items?.length ? (
-              <Tree tree={item} level={level + 1} activeItem={activeItem} />
+              <Tree
+                tree={item}
+                level={level + 1}
+                activeItem={activeItem}
+                setCurrentHeading={setCurrentHeading}
+              />
             ) : null}
           </li>
         );
