@@ -18,7 +18,7 @@ export const IncompleteArticle = ({ slug }: { slug: string }) => {
     <div className="mx-auto max-w-xl p-8 border border-magenta-500 rounded-xl bg-black text-center">
       {submitted ? (
         <>
-          <h2>Thank you!</h2>
+          <h2 className="my-0 py-0 border-none">Thank you!</h2>
           <div>
             Your interest helps me prioritize which articles to finish first.
           </div>
