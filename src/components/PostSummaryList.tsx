@@ -25,7 +25,13 @@ import { stages } from "@/utils/content/stages";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export const PostSummaryList = ({ posts }: { posts: Array<Article> }) => {
+export const PostSummaryList = ({
+  posts,
+  displayFacets,
+}: {
+  posts: Array<Article>;
+  displayFacets?: boolean;
+}) => {
   const [stage, setStage] = useState<keyof typeof stages | "all">("all");
   const [selectedPosts, setSelectedPosts] = useState<Array<Article>>(posts);
 
@@ -39,43 +45,48 @@ export const PostSummaryList = ({ posts }: { posts: Array<Article> }) => {
 
   return (
     <div className="p-0 m-0 flex list-none gap-4 flex-wrap">
-      <div>
-        <Popover>
-          <PopoverTrigger asChild className="flex flex-row gap-2 items-center">
-            <Button variant="outline">
-              {stage === "all" ? "Filter" : "Filtering"}
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent>
-            <div className="flex flex-col gap-3">
-              <Label>Stage of Completion</Label>
-              <Select
-                value={stage}
-                onValueChange={(value) =>
-                  setStage(value as keyof typeof stages)
-                }
-              >
-                <SelectTrigger>
-                  <SelectValue placeholder="Stage" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value={"all"}>All</SelectItem>
-                  {Object.keys(stages).map((stage) => (
-                    <SelectItem key={stage} value={stage}>
-                      {stages[stage as keyof typeof stages].name}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-          </PopoverContent>
-        </Popover>
-        <div className="pt-2 text-sm">
-          {stage !== "all"
-            ? `Showing ${selectedPosts.length} of ${posts.length} total`
-            : null}
+      {displayFacets ? (
+        <div>
+          <Popover>
+            <PopoverTrigger
+              asChild
+              className="flex flex-row gap-2 items-center"
+            >
+              <Button variant="outline">
+                {stage === "all" ? "Filter" : "Filtering"}
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent>
+              <div className="flex flex-col gap-3">
+                <Label>Stage of Completion</Label>
+                <Select
+                  value={stage}
+                  onValueChange={(value) =>
+                    setStage(value as keyof typeof stages)
+                  }
+                >
+                  <SelectTrigger>
+                    <SelectValue placeholder="Stage" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value={"all"}>All</SelectItem>
+                    {Object.keys(stages).map((stage) => (
+                      <SelectItem key={stage} value={stage}>
+                        {stages[stage as keyof typeof stages].name}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            </PopoverContent>
+          </Popover>
+          <div className="pt-2 text-sm">
+            {stage !== "all"
+              ? `Showing ${selectedPosts.length} of ${posts.length} total`
+              : null}
+          </div>
         </div>
-      </div>
+      ) : null}
       {selectedPosts
         .sort((a, b) => {
           if (a.stage && !b.stage) return -1;
@@ -111,7 +122,7 @@ export const PostSummaryList = ({ posts }: { posts: Array<Article> }) => {
             </div>
             <Link
               href={`/posts/${post.slug}/`}
-              className="flex flex-col h-full"
+              className="flex flex-col h-full hover:text-magenta-500 transition-all duration-300 hover:transition-all"
             >
               <div>
                 <div className={cn("text-base mt-0")}>{post.title}</div>

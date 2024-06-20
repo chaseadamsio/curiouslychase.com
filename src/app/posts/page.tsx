@@ -12,7 +12,7 @@ export default async function Posts() {
         <span className="block pt-4 lead">Articles I've Written</span>
       </div>
       <section>
-        <PostSummaryList posts={posts} />
+        <PostSummaryList posts={posts} displayFacets={true} />
       </section>
     </>
   );

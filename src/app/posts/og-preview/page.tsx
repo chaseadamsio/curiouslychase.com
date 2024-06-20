@@ -1,5 +1,4 @@
 import { PageHeading } from "@/components/PageHeading";
-import { PostSummaryList } from "@/components/PostSummaryList";
 import { cn } from "@/lib/utils";
 import { getArticles } from "@/utils/content/getArticles";
 
