@@ -1,4 +1,9 @@
 import { FormattedDate } from "@/components/FormattedDate";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 import { cn } from "@/lib/utils";
 import { Article, stages } from "@/utils/content/getArticles";
 import Link from "next/link";
@@ -68,6 +73,16 @@ const StageLabel = ({ stage }: { stage: keyof typeof stages }) => (
         : "bg-magenta-950 text-magenta-200"
     )}
   >
-    {stages[stage].name}
+    <HoverCard>
+      <HoverCardTrigger className="cursor-pointer">
+        <span>{stages[stage].name}</span>
+      </HoverCardTrigger>
+      <HoverCardContent>
+        <h4 className="text-magenta-500 mt-0 text-base font-bold">
+          {stages[stage].name}
+        </h4>
+        <p>{stages[stage].description}</p>
+      </HoverCardContent>
+    </HoverCard>
   </div>
 );

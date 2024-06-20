@@ -54,8 +54,8 @@
     --ultraviolet-950: 276 100% 23%;
     --ultraviolet-990: 276 100% 8%;
 
-    --popover: 30 10% 95%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: var(--black);
+    --popover-foreground: var(--white-50);
 
     --accent: var(--magenta-500);
     --accent-foreground: var(--magenta-50);
