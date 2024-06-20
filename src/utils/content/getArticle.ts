@@ -1,8 +1,5 @@
-import {
-  Article,
-  ArticleRaw,
-  getArticleContentAndMetadata,
-} from "@/utils/content/getArticles";
+import { getArticleContentAndMetadata } from "@/utils/content/getArticles";
+import { Article, ArticleRaw } from "./Article";
 
 export const getArticle = async (
   id: string,

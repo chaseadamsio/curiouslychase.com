@@ -1,70 +1,12 @@
 import { getAllFiles } from "@/utils/content/getAllFiles";
 import { getSlugFromTitle } from "@/utils/getSlugFromTitle";
 import { getTitleFromPath } from "@/utils/getTitleFromPath";
+import { format, isBefore, parseISO } from "date-fns";
 import { readFileSync, statSync } from "fs";
 import matter from "gray-matter";
-import { ElementContent } from "hast";
-import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import path from "path";
 import slugify from "slugify";
-import { format, isBefore, parseISO } from "date-fns";
-
-export const stages = {
-  concept: {
-    name: "Concept",
-    description:
-      "Initial idea or concept. I'm just starting to think about it.",
-  },
-  researching: {
-    name: "Researching",
-    description: "I'm researching the idea and have a rough outline.",
-  },
-  in_progress: {
-    name: "In Progress",
-    description: "Initial draft, needs significant work.",
-  },
-  draft: {
-    name: "In Review",
-    description: "Draft, needs review and revision.",
-  },
-  stable: {
-    name: "Stable",
-    description: "Stable version, but open to future edits.",
-  },
-  living_document: {
-    name: "Living Document",
-    description: "Continuously revised and updated.",
-  },
-  stale: {
-    name: "Stale",
-    description: "Outdated, needs review and revision.",
-  },
-};
-
-export type ArticleMeta = {
-  id: string;
-  slug: string;
-  filename: string;
-  stage: keyof typeof stages;
-  path: string;
-  featured?: boolean;
-  description: string;
-  title: string;
-  status: string;
-  thumbnail?: string;
-  summary?: string;
-  subhead?: string;
-  image?: string;
-  date: string;
-  pubDate: string;
-  updatedDate: string;
-};
-
-export type ArticleRaw = ArticleMeta & { content: string };
-
-export type Article = ArticleMeta & {
-  content: string;
-};
+import { Article } from "./Article";
 
 export const postsDirectory = path.join(process.cwd(), "content", "posts");
 
@@ -83,11 +25,11 @@ export const getArticles = async (args?: {
       new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
   );
 
-  if (process.env.NODE_ENV !== "development") {
-    allPosts = allPosts
-      .filter((p) => isBefore(parseISO(p.data.pubDate.valueOf()), new Date()))
-      .filter((p) => p.data.status.toLowerCase() === "published");
-  }
+  // if (process.env.NODE_ENV !== "development") {
+  allPosts = allPosts
+    .filter((p) => isBefore(parseISO(p.data.pubDate.valueOf()), new Date()))
+    .filter((p) => p.data.status.toLowerCase() === "published");
+  // }
 
   const convertedPosts = await Promise.all(
     allPosts.map((post) => ({
