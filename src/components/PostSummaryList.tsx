@@ -59,18 +59,18 @@ const StageLabel = ({ stage }: { stage: keyof typeof stages }) => (
       "text-xs rounded-full",
       "p-1 px-2",
       stage === "concept"
-        ? "bg-tuna-200 text-tuna-950"
+        ? "bg-tuna-200 text-tuna-950 hover:bg-tuna-300"
         : stage === "researching"
-        ? "bg-blue-300 text-blue-950"
+        ? "bg-blue-300 text-blue-950 hover:bg-blue-400"
         : stage === "in_progress"
-        ? "bg-yellow-300 text-yellow-950"
+        ? "bg-yellow-300 text-yellow-950 hover:bg-yellow-400"
         : stage === "draft"
-        ? "bg-tuna-200 text-tuna-950"
+        ? "bg-tuna-200 text-tuna-950 hover:bg-tuna-300"
         : stage === "living_document"
-        ? "bg-green-300 text-green-950"
+        ? "bg-green-300 text-green-950 hover:bg-green-400"
         : stage === "stale"
-        ? "bg-tuna-900 text-tuna-500"
-        : "bg-magenta-950 text-magenta-200"
+        ? "bg-tuna-900 text-tuna-500 hover:bg-tuna-800"
+        : "bg-magenta-950 text-magenta-200 hover:bg-magenta-800"
     )}
   >
     <HoverCard>
