@@ -1,31 +1,24 @@
 import { PageHeading } from "@/components/PageHeading";
+import { ShareLinkOnTwitter } from "@/components/ShareLink";
+import { StageLabel } from "@/components/StageLabel";
+import { TableOfContents } from "@/components/toc";
 import { getArticlesFilenameToSlugMap } from "@/utils/content/getArticlesFilenameToSlugMap";
+import { getHostname } from "@/utils/getHostname";
 import { getSlugFromTitle } from "@/utils/getSlugFromTitle";
 import { remarkHeadingSizeRelevelPlugin } from "@/utils/markdown/remark/remarkHeadingSizeRelevel/remarkHeadingSizeRelevel";
 import remarkObsidianEnhancedQuotesPlugin from "@/utils/markdown/remark/remarkObsidianEnhancedQuotes/remarkObsidianEnhancedQuotes";
 import remarkObsidianImagePlugin from "@/utils/markdown/remark/remarkObsidianImage/remarkObsidianImage";
-import rehypeTOC from "@jsdevtools/rehype-toc";
 import rehypePrism from "@mapbox/rehype-prism";
+import { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import Image from "next/image";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import remarkGFM from "remark-gfm";
 import remarkWikiLink from "remark-wiki-link";
-import { getArticleForSlug } from "../../../utils/content/getArticleForSlug";
-import { GetStaticProps, GetStaticPropsContext, Metadata } from "next";
-import { getHostname } from "@/utils/getHostname";
-import { ShareLinkOnTwitter } from "@/components/ShareLink";
-import { getArticle } from "@/utils/content/getArticle";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { TableOfContents } from "@/components/toc";
 import { Blockquote } from "../../../components/Blockquote";
-import { log } from "@/utils/logger";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
-import Image from "next/image";
+import { getArticleForSlug } from "../../../utils/content/getArticleForSlug";
+import { IncompleteArticle } from "./IncompleteArticle";
 import plumb_card from "./plumb_card.png";
 
 export async function generateMetadata({
@@ -64,6 +57,9 @@ export default async function Post({
     <div className="flex gap-4 flex-col md:flex-row">
       <div className="max-w-full md:max-w-xl lg:max-w-3xl">
         <PageHeading>{article.title}</PageHeading>
+        <div className="pt-2 flex">
+          <StageLabel stage={article.stage} />
+        </div>
         <div>
           {article.description ? (
             <span className="block pt-2 lead">{article.description}</span>
@@ -110,6 +106,11 @@ export default async function Post({
                 }}
               />
             </div>
+            {!(
+              article.stage === "living_document" || article.stage === "stable"
+            ) ? (
+              <IncompleteArticle slug={slug} />
+            ) : null}
             {Object.keys(article.toc).length > 0 ? (
               <div className="sticky bottom-3 z-10">
                 <div>

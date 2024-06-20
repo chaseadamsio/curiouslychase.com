@@ -18,6 +18,7 @@ export const getArticle = async (
     ...(post.data.thumbnail && { thumbnail: post.data.thumbnail }),
     title: post.data.title,
     image: post.data.image ?? null,
+    stage: post.data.stage ?? null,
     description: post.data.description ?? null,
     status: post.data.status,
   };
