@@ -1,3 +1,10 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Crafting AI-Powered Magic",
+  description: "To unlock extraordinary human potential in the future of work.",
+};
+
 export default function AboutPage() {
   return (
     <div className="page">
