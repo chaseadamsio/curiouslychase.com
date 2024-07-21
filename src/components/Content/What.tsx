@@ -8,9 +8,9 @@ export const What = () => {
         <img src="/img/Avatar.png" width={291} height={291} />
       </div>
       <div className="flex flex-col justify-center">
-        <p className="text-xl font-bold">Hey, I'm Chase!</p>
+        <p className="text-xl">Hey, I'm Chase!</p>
         <div className="mt-4">
-          <div className="text-3xl">
+          <div className="text-4xl leading-10 font-extrabold">
             Crafting AI-powered magic to unlock extraordinary human potential in
             the future of work.
           </div>

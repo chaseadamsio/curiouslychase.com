@@ -3,7 +3,7 @@ export default function AboutPage() {
     <div className="page">
       <div className="pb-8">
         <h1>Crafting AI-Powered Magic</h1>
-        <h2 className="mt-1">
+        <h2 className="mt-1 border-none">
           To unlock extraordinary human potential in the future of work.
         </h2>
       </div>

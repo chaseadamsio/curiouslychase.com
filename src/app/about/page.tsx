@@ -31,7 +31,10 @@ const WorkSection = () => (
       <ul>
         <li>
           <Link href="/posts/murmur-labs">Murmur Labs</Link>: Building the
-          future of <s>decision making</s> AI visual programming.
+          future of <s>decision making</s>{" "}
+          <Link href="/about/purpose/magic">
+            workflow automation with the magic of AI.
+          </Link>
         </li>
         <li>
           <Link href="/posts/webflow">Webflow</Link>: Building the future of
@@ -69,7 +72,7 @@ const PlaySection = () => (
 
 export default function AboutPage() {
   return (
-    <div className="page">
+    <div className="about-page">
       <What />
       <OnlineFrequent />
       <WorkSection />

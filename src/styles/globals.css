@@ -165,19 +165,20 @@
   }
 
   .article a[href^="https://"],
-  .page a[href^="https://"]
+  .about-page a[href^="https://"]
   {
-    @apply font-medium text-purple-500 hover:text-purple-400 dark:text-purple-200 dark:hover:text-purple-100;
+    @apply font-medium text-purple-500 hover:text-purple-700 dark:text-purple-200 dark:hover:text-purple-100;
   }
 
-  .article a[href^="/"]:not([href^="//"])
+  .article a[href^="/"]:not([href^="//"]),
+  .about-page a[href^="/"]:not([href^="//"])
   {
     /* before:content-["[["] after:content-["]]"] */
-    @apply font-medium text-purple-500 hover:text-purple-400 dark:text-purple-200 dark:hover:text-purple-100;
+    @apply font-medium text-purple-500 hover:text-purple-700 dark:text-purple-200 dark:hover:text-purple-100;
   }
 
   h2 {
-    @apply mt-12 scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0;
+    @apply font-bold mt-12 scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0;
   }
 
   h3 {

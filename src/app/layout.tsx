@@ -29,13 +29,20 @@ export default async function RootLayout({
       </head>
       <body className={cn("")}>
         <div
-          className={cn("min-h-screen", "flex flex-col", "max-w-5xl mx-auto")}
+          className={cn(
+            "min-h-screen",
+            "flex flex-col",
+            "max-w-5xl mx-auto",
+            "px-4"
+          )}
         >
           <Providers>
             <div>
               <Header />
             </div>
-            <main className="w-full lg:mx-auto lg:max-w-5xl">{children}</main>
+            <main className="pt-8 w-full lg:mx-auto lg:max-w-5xl">
+              {children}
+            </main>
             <div className="mt-auto">
               <Footer />
             </div>
