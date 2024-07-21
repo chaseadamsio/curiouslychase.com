@@ -1,10 +1,8 @@
 import { cn } from "@/lib/utils";
-import { AlertTriangle, FileWarning, Flame, Info, Zap } from "lucide-react";
-import React, {
+import { AlertTriangle, Flame, Info, Zap } from "lucide-react";
+import {
   BlockquoteHTMLAttributes,
-  Component,
   DetailedHTMLProps,
-  FC,
   PropsWithChildren,
 } from "react";
 
@@ -16,9 +14,9 @@ type Callout = "info" | "warning" | "tip" | "danger";
 const getCalloutBackgroundTW = (calloutType?: Callout) => {
   switch (calloutType) {
     case "info":
-      return `bg-black border-l border-magenta-500`;
+      return `border-l border-purple-500 dark:border-purple-300`;
     default:
-      return `bg-black border-l border-magenta-500`;
+      return `border-l border-purple-500 dark:border-purple-300`;
   }
 };
 

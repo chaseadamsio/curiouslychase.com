@@ -33,7 +33,7 @@ export const StageLabel = ({ stage }: { stage: keyof typeof stages }) => {
           <span>{stages[stage].name}</span>
         </HoverCardTrigger>
         <HoverCardContent>
-          <h4 className="text-magenta-500 mt-0 text-base font-bold">
+          <h4 className="text-purple-200 mt-0 text-base font-bold">
             {stages[stage].name}
           </h4>
           <p>{stages[stage].description}</p>

@@ -1,7 +1,7 @@
-import * as React from "react";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { cva } from "class-variance-authority";
 import { ChevronDown } from "lucide-react";
+import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -42,10 +42,10 @@ const NavigationMenuItem = NavigationMenuPrimitive.Item;
 
 const navigationMenuTriggerStyle = ({ active = false }: { active: boolean }) =>
   cva(
-    `group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors relative disabled:pointer-events-none disabled:opacity-50 hover:after:content-[''] hover:after:w-[3px] hover:after:h-[3px] hover:after:rounded-full hover:after:bottom-0 hover:after:absolute hover:after:left-[50%] hover:after:bg-magenta-500 focus:after:content-[''] focus:after:w-[3px] focus:after:h-[3px] focus:after:rounded-full focus:after:bottom-0 focus:after:absolute focus:after:left-[50%] focus:after:bg-magenta-500
+    `group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors relative disabled:pointer-events-none disabled:opacity-50 hover:after:content-[''] hover:after:w-[3px] hover:after:h-[3px] hover:after:rounded-full hover:after:bottom-0 hover:after:absolute hover:after:left-[50%] hover:after:bg-purple-500 dark:hover:after:bg-purple-400 focus:after:content-[''] focus:after:w-[3px] focus:after:h-[3px] focus:after:rounded-full focus:after:bottom-0 focus:after:absolute focus:after:left-[50%] focus:after:bg-purple-500 dark:focus:after:bg-purple-400
     ${
       active
-        ? `after:content-[''] after:w-[3px] after:h-[3px] after:rounded-full after:bottom-0 after:absolute after:left-[50%] after:bg-magenta-500`
+        ? `after:content-[''] after:w-[3px] after:h-[3px] after:rounded-full after:bottom-0 after:absolute after:left-[50%] after:bg-purple-500 dark:after:bg-purple-400`
         : ""
     }`
   );
@@ -127,13 +127,13 @@ NavigationMenuIndicator.displayName =
   NavigationMenuPrimitive.Indicator.displayName;
 
 export {
-  navigationMenuTriggerStyle,
   NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
   NavigationMenuContent,
-  NavigationMenuTrigger,
-  NavigationMenuLink,
   NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
   NavigationMenuViewport,
+  navigationMenuTriggerStyle,
 };

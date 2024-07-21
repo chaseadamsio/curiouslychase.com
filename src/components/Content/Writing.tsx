@@ -10,7 +10,7 @@ export const Writing = async () => {
   return (
     <main className="mt-12 max-w-5xl mx-auto">
       <div className="pb-4">
-        <h2 className="my-0 text-3xl font-bold">What I'm Writing</h2>
+        <h2 className="my-0 text-3xl font-medium">What I'm Writing</h2>
       </div>
       <section>
         <PostSummaryList posts={posts} />

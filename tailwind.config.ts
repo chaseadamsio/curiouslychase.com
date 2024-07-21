@@ -13,12 +13,33 @@ module.exports = {
   plugins: [
     require("tailwindcss-animate"),
     require("tailwindcss-themer")({
+      colors: {
+        yellow: {
+          500: "hsl(var(--yellow-500))",
+        },
+        blue: {
+          500: "hsl(var(--blue-500))",
+        },
+      },
       defaultTheme: {
         extend: {
           colors: {
             white: {
               50: "hsl(var(--white-50))",
               100: "hsl(var(--white-100))",
+            },
+            purple: {
+              50: "hsl(var(--magic-purple-50))",
+              100: "hsl(var(--magic-purple-100))",
+              200: "hsl(var(--magic-purple-200))",
+              300: "hsl(var(--magic-purple-300))",
+              400: "hsl(var(--magic-purple-400))",
+              500: "hsl(var(--magic-purple-500))",
+              600: "hsl(var(--magic-purple-600))",
+              700: "hsl(var(--magic-purple-700))",
+              800: "hsl(var(--magic-purple-800))",
+              900: "hsl(var(--magic-purple-900))",
+              950: "hsl(var(--magic-purple-950))",
             },
             tuna: {
               50: "hsl(var(--tuna-50))",
@@ -46,20 +67,6 @@ module.exports = {
               900: "hsl(var(--magenta-900))",
               950: "hsl(var(--magenta-950))",
               990: "hsl(var(--magenta-990))",
-            },
-            blue: {
-              50: "hsl(var(--blue-50))",
-              100: "hsl(var(--blue-100))",
-              200: "hsl(var(--blue-200))",
-              300: "hsl(var(--blue-300))",
-              400: "hsl(var(--blue-400))",
-              500: "hsl(var(--blue-500))",
-              600: "hsl(var(--blue-600))",
-              700: "hsl(var(--blue-700))",
-              800: "hsl(var(--blue-800))",
-              900: "hsl(var(--blue-900))",
-              950: "hsl(var(--blue-950))",
-              990: "hsl(var(--blue-990))",
             },
             ultraviolet: {
               50: "hsl(var(--ultraviolet-50))",

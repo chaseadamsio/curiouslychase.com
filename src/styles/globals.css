@@ -4,10 +4,24 @@
 
 @layer base {
   :root {
-    --black: 246 31% 4%;
+    --yellow-500: 52 99%, 65%;
+    --blue-500: 248, 100% 52%;
+    --magic-purple-50: 266, 100%, 95%;
+    --magic-purple-100: 266, 100%, 85%;
+    --magic-purple-200: 266, 100%, 75%;
+    --magic-purple-300: 266, 100%, 65%;
+    --magic-purple-400: 266, 100%, 55%;
+    --magic-purple-500: 266, 100%, 50%;
+    --magic-purple-600: 266, 100%, 45%;
+    --magic-purple-700: 266, 100%, 35%;
+    --magic-purple-800: 266, 100%, 25%;
+    --magic-purple-900: 266, 100%, 13%;
+    --magic-purple-950: 266, 100%, 8%;
+    --white-50: 40 60% 99%;
+    --white-100: 33, 50%, 87%;
 
-    --white-100: 60 6% 88%;
-    --white-50: 238 100% 94%;
+    /* --white-100: 60 6% 88%; */
+    /* --white-50: 238 100% 94%; */
 
     --tuna-50: 222 100% 97%;
     --tuna-100: 222 47% 93%;
@@ -35,37 +49,23 @@
     --magenta-950: 301 100% 18%;
     --magenta-990: 300 97% 7%;
 
-    /* Blue Colors */
-    --blue-50: 225 100% 97%;
-    --blue-100: 225 100% 90%;
-    --blue-200: 225 100% 82%;
-    --blue-300: 225 70% 71%;
-    --blue-400: 225 70% 64%;
-    --blue-500: 225 80% 56%;
-    --blue-600: 225 90% 43%;
-    --blue-700: 225 100% 31%;
-    --blue-800: 225 100% 25%;
-    --blue-900: 225 90% 30%;
-    --blue-950: 225 100% 19%;
-    --blue-990: 225 87% 5%;
-
     --ultraviolet-50: 285 100% 98%;
     --ultraviolet-100: 279 100% 95%;
     --ultraviolet-950: 276 100% 23%;
     --ultraviolet-990: 276 100% 8%;
 
-    --popover: var(--black);
-    --popover-foreground: var(--white-50);
+    --popover: var(--background);
+    --popover-foreground: var(--foreground);
 
-    --accent: var(--magenta-500);
-    --accent-foreground: var(--magenta-50);
+    --accent: var(--magic-purple-500);
+    --accent-foreground: var(--white-50);
     --callout-background: var(--black);
 
     --muted: var(--black);
     --muted-foreground: var(--magenta-600);
 
-    --border: var(--tuna-950);
-    --input: var(--magenta-900);
+    --border: var(--magic-purple-200);
+    --input: var(--magic-purple-200);
 
     --destructive: 7 60% 48%;
     --destructive-foreground: 18 27% 90%;
@@ -76,7 +76,7 @@
     --warning-foreground: 40 46% 36%;
     --tip-foreground: 266 60% 48%;
 
-    --link-foreground: var(--blue-400);
+    --link-foreground: var(--magic-purple-500);
 
     --card-foreground: 330 40 10%;
     --card: 30 36% 95%;
@@ -84,17 +84,44 @@
     --bg-from: var(--ultraviolet-990);
     --bg-to: var(--black);
 
+    --background: var(--white-50);
+    --foreground: var(--black);
+
     --primary: var(--ultraviolet-950);
     --primary-foreground: var(--blue-100);
+  }
+
+  .dark {
+    --background: var(--magic-purple-950);
+    --foreground: var(--magic-purple-50);
+    --border: var(--magic-purple-800);
+    --link-foreground: var(--magic-purple-300);
+    --input: var(--magic-purple-500);
   }
 }
 
 @layer base {
+  @font-face {
+    font-family: "Overused Grotesk";
+    src: url("/fonts/overused-grotesk/variable/OverusedGrotesk-VF.woff2")
+        format("woff2 supports variations"),
+      url("/fonts/overused-grotesk/variable/OverusedGrotesk-VF.woff2")
+        format("woff2-variations")
+        url("/fonts/overused-grotesk/variable/OverusedGrotesk-VF.ttf")
+        format("truetype");
+    font-weight: 100 200 300 400 500 600 700 800 900;
+  }
+
   * {
     @apply border-border;
   }
+  html {
+    font-size: 16px;
+  }
   body {
-    @apply bg-fixed bg-gradient-to-b from-bg-from to-bg-to text-primary-foreground;
+    @apply bg-background text-foreground;
+    font-family: "Overused Grotesk", Helvetica, "Helvetica Neue", Arial,
+      sans-serif;
   }
 
   h1 {
@@ -140,14 +167,13 @@
   .article a[href^="https://"],
   .page a[href^="https://"]
   {
-    @apply font-medium text-magenta-500 hover:text-magenta-600;
+    @apply font-medium text-purple-500 hover:text-purple-400 dark:text-purple-200 dark:hover:text-purple-100;
   }
 
-  .article a[href^="/"]:not([href^="//"]),
-  .page a[href^="/"]:not([href^="//"])
+  .article a[href^="/"]:not([href^="//"])
   {
     /* before:content-["[["] after:content-["]]"] */
-    @apply font-medium text-magenta-300 hover:text-magenta-500;
+    @apply font-medium text-purple-500 hover:text-purple-400 dark:text-purple-200 dark:hover:text-purple-100;
   }
 
   h2 {

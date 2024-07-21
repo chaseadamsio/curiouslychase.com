@@ -15,7 +15,7 @@ export const IncompleteArticle = ({ slug }: { slug: string }) => {
   }, []);
 
   return (
-    <div className="mx-auto max-w-xl p-8 border border-magenta-500 rounded-xl bg-black text-center">
+    <div className="mx-auto max-w-xl p-8 border border-purple-500 dark:border-purple-300 rounded-xl bg-background text-center">
       {submitted ? (
         <>
           <h2 className="my-0 py-0 border-none">Thank you!</h2>

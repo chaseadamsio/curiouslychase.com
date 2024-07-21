@@ -118,7 +118,7 @@ export const PostSummaryList = ({
             </div>
             <Link
               href={`/posts/${post.slug}/`}
-              className="flex flex-col h-full hover:text-magenta-500 transition-all duration-300 hover:transition-all"
+              className="flex flex-col h-full hover:text-purple-500 transition-all duration-300 hover:transition-all"
             >
               <div>
                 <div className={cn("text-base mt-0")}>{post.title}</div>

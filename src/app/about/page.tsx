@@ -23,7 +23,7 @@ const WorkSection = () => (
   <main className="mt-8 max-w-5xl mx-auto">
     <div className="pb-4">
       <h2 className="uppercase my-0 text-3xl font-bold">At Work</h2>
-      <span className="block pt-4 lead">
+      <span className="block pt-4 text-lg">
         I've been building better software and better teams for 15 years.
       </span>
     </div>

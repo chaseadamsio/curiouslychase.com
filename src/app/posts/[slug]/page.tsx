@@ -126,7 +126,7 @@ export default async function Post({
           <ShareLinkOnTwitter title={article.title} />
           <a
             href="https://useplumb.com"
-            className="block hover:text-magenta-500"
+            className="block hover:text-purple-500 dark:hover:text-purple-200"
           >
             <Image
               className=" rounded-md border"
