@@ -21,7 +21,7 @@ export default function AboutPage() {
         We are at the beginning of a new era in human productivity and
         potential.
       </p>
-      <p className="">
+      <p>
         The future of work is not just about doing more; it's about unlocking
         the extraordinary within every individual and organization.
       </p>
@@ -32,7 +32,7 @@ export default function AboutPage() {
         need principles to help guide me.
       </p>
       <p>What follows are principles that guide my work.</p>
-      <div className="pt-4 [&>h3]:pb-3 [&>p]:pb-1">
+      <div className="pt-4 [&>p]:py-2">
         <h2>Principles for Magic</h2>
         <h3>1. The Power of AI Alchemy</h3>
         <p>I believe in the transformative power of artificial intelligence.</p>
