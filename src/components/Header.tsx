@@ -18,6 +18,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import { log } from "@/utils/logger";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
 
@@ -51,7 +52,13 @@ export const Header = () => {
             "flex flex-col md:my-0 md:flex-row justify-center md:justify-start"
           )}
         >
-          <span className="lowercase duration-300">Chase Adams</span>
+          <Image
+            src="/img/magic-512x512.png"
+            alt="Chase Adams"
+            width={20}
+            height={20}
+          />
+          <span className="lowercase duration-30">Chase Adams</span>
         </Link>
       </div>
       <div
