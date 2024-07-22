@@ -1,3 +1,4 @@
+import { getHostname } from "@/utils/getHostname";
 import { Metadata } from "next";
 
 export const metadataBasic = {
@@ -14,6 +15,7 @@ export const metadataBasic = {
 export const metadata: Metadata = {
   title: metadataBasic.title,
   description: metadataBasic.description,
+  metadataBase: getHostname(),
   openGraph: {
     title: metadataBasic.title,
     description: metadataBasic.description,
