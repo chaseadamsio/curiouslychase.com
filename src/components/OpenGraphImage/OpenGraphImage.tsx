@@ -49,7 +49,7 @@ export const OpenGraphImageResponse = async (params: {
             bottom: "-10%",
             right: "-10%",
             transform: "scale(1.75)",
-            opacity: ".05",
+            opacity: ".1",
           }}
           src={`${hostname}/img/magic-512x512.png`}
           width={512}
