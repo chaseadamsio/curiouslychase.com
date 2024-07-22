@@ -27,6 +27,10 @@ export const metadata: Metadata = {
   },
 };
 
+export const generateMetadata = async () => {
+  return metadata;
+};
+
 export default function AboutPage() {
   return (
     <div className="page">
