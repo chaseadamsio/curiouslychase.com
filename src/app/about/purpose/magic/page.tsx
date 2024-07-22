@@ -8,11 +8,13 @@ export const metadata: Metadata = {
     description:
       "To unlock extraordinary human potential in the future of work.",
     images: ["/img/work-purpose.png"],
+    type: "article",
   },
   twitter: {
     title: "Crafting AI-Powered Magic",
     description:
       "To unlock extraordinary human potential in the future of work.",
+    card: "summary_large_image",
   },
 };
 
