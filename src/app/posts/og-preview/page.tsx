@@ -12,7 +12,7 @@ export default async function Posts() {
         <span className="block pt-4 lead">Articles I've Written</span>
       </div>
       <section>
-        {posts.slice(101, 150).map((post) => (
+        {posts.slice(101, 110).map((post) => (
           <div className={cn("w-full", "flex", "gap-2")} key={post.slug}>
             <div className={cn("mt-auto", "w-1/2")}>
               <img src={`/posts/${post.slug}/opengraph-image`} />

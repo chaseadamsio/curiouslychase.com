@@ -1,19 +1,28 @@
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadataBasic = {
   title: "Crafting AI-Powered Magic",
-  description: "To unlock extraordinary human potential in the future of work.",
+  description:
+    "Empowering you to achieve the extraordinary in the evolving world of work",
+  preTitle: () => (
+    <div style={{ fontWeight: "bold", fontFamily: "Ovureused Grotesk" }}>
+      ABOUT / PURPOSE / VOCATION
+    </div>
+  ),
+};
+
+export const metadata: Metadata = {
+  title: metadataBasic.title,
+  description: metadataBasic.description,
   openGraph: {
-    title: "Crafting AI-Powered Magic",
-    description:
-      "To unlock extraordinary human potential in the future of work.",
+    title: metadataBasic.title,
+    description: metadataBasic.description,
     images: ["/img/work-purpose.png"],
     type: "article",
   },
   twitter: {
-    title: "Crafting AI-Powered Magic",
-    description:
-      "To unlock extraordinary human potential in the future of work.",
+    title: metadataBasic.title,
+    description: metadataBasic.description,
     card: "summary_large_image",
   },
 };
