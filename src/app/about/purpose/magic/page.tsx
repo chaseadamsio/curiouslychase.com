@@ -17,7 +17,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: metadataBasic.title,
     description: metadataBasic.description,
-    images: ["/img/work-purpose.png"],
     type: "article",
   },
   twitter: {
