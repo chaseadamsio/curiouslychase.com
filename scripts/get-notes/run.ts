@@ -1,16 +1,16 @@
 #!/usr/bin/env ts-node
 
-import fs from "fs";
-import os from "os";
-import matter from "gray-matter";
 import { format, parseISO } from "date-fns";
+import fs from "fs";
+import matter from "gray-matter";
+import os from "os";
 import slugify from "slugify";
 
 const EMBED_LINK_REGEX = /!\[\[([a-zA-ZÀ-ÿ0-9-'?%.():&,+/€_! ]+)\]\]/g;
 
 const notesDir = `${os.homedir}/Documents/vault`;
 
-const imagesDir = `${notesDir}/00 - Meta/02 - Media`;
+const imagesDir = `${notesDir}/01 - Meta/03 - Media`;
 
 const copied = {
   notes: 0,

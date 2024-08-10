@@ -15,7 +15,7 @@ export const IncompleteArticle = ({ slug }: { slug: string }) => {
   }, []);
 
   return (
-    <div className="mx-auto max-w-xl p-8 border border-purple-500 dark:border-purple-300 rounded-xl bg-background text-center">
+    <div className="mt-10 mb-3 w-full p-8 border border-purple-500 dark:border-purple-300 rounded-xl bg-background text-center">
       {submitted ? (
         <>
           <h2 className="my-0 py-0 border-none">Thank you!</h2>
@@ -32,11 +32,10 @@ export const IncompleteArticle = ({ slug }: { slug: string }) => {
             This post is a work in progress and not yet complete. If you're
             interested in reading the full article, let me know!
           </p>
-          <h3 className="text-lg">Want to Read It?</h3>
           <p className="text-sm">
-            Your interest helps me prioritize which articles to finish first.
-            Click below to tell me you want to read this article when it's
-            complete.
+            <strong>Want to Read It?</strong> Your interest helps me prioritize
+            which articles to finish first. Click below to tell me you want to
+            read this article when it's complete.
           </p>
           <div className="pt-4 flex justify-center items-center">
             <Button onClick={handleSubmit} variant="outline">

@@ -3,14 +3,14 @@
 
 import * as React from "react";
 
-import { TableOfContents } from "@/lib/toc";
-import { cn } from "@/lib/utils";
-import { useMounted } from "@/hooks/use-mounted";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import { useMounted } from "@/hooks/use-mounted";
+import { TableOfContents } from "@/lib/toc";
+import { cn } from "@/lib/utils";
 
 interface TocProps {
   toc: TableOfContents;
@@ -88,7 +88,7 @@ export function TableOfContents({ toc }: TocProps) {
       onOpenChange={setOpen}
       className={cn(
         "inline-flex",
-        "z-100 bg-fixed bg-gradient-to-b from-bg-from to-bg-to pl-6 pr-8 py-3 text-sm border border-magenta-900",
+        "z-100 bg-background pl-6 pr-8 py-3 text-sm border border-magenta-900",
         open ? "rounded-md flex-col w-full p-3" : "rounded-full"
       )}
     >

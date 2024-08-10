@@ -137,9 +137,9 @@ export default async function Post({
                 height: "auto",
               }}
             />
-            <span className="text-sm block pt-1 text-center">
-              Check out Plumb
-            </span>
+            <div className="text-sm block pt-1 text-center">
+              Type your workflows into existence. <strong>Use Plumb.</strong>
+            </div>
           </a>
         </div>
       </div>
