@@ -105,7 +105,7 @@ export const Header = () => {
 
             <NavigationMenuItem>
               <NavigationMenuLink
-                href="https://crca.news"
+                href="https://www.thefuturefluent.com"
                 className={cn(
                   navigationMenuTriggerStyle({ active: false })(),
                   "pr-0"
