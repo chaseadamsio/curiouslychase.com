@@ -111,7 +111,7 @@ export const Header = () => {
                   "pr-0"
                 )}
               >
-                Newsletter
+                The Future Fluent
               </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
