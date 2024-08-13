@@ -6,7 +6,7 @@
   :root {
     --yellow-500: 52 99%, 65%;
     --blue-500: 248, 100% 52%;
-    --magic-purple-50: 266, 100%, 95%;
+    --magic-purple-50: 266, 22%, 96%;
     --magic-purple-100: 266, 100%, 85%;
     --magic-purple-200: 266, 100%, 75%;
     --magic-purple-300: 266, 100%, 65%;
@@ -84,7 +84,7 @@
     --bg-from: var(--ultraviolet-990);
     --bg-to: var(--black);
 
-    --background: var(--white-50);
+    --background: var(--magic-purple-50);
     --foreground: var(--black);
 
     --primary: var(--ultraviolet-950);
