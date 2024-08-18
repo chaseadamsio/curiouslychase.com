@@ -8,7 +8,7 @@ import slugify from "slugify";
 
 const EMBED_LINK_REGEX = /!\[\[([a-zA-ZÀ-ÿ0-9-'?%.():&,+/€_! ]+)\]\]/g;
 
-const notesDir = `${os.homedir}/Documents/vault`;
+const notesDir = `${os.homedir}/vault`;
 
 const imagesDir = `${notesDir}/01 - Meta/03 - Media`;
 
