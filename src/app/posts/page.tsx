@@ -1,12 +1,15 @@
 import { PageHeading } from "@/components/PageHeading";
 import { PostSummaryList } from "@/components/PostSummaryList";
 import { getArticles } from "@/utils/content/getArticles";
+import { getHostname } from "@/utils/getHostname";
 import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
+  const hostname = getHostname();
   return {
     title: "The Blog",
     description: "The Blog",
+    metadataBase: hostname,
     alternates: {
       canonical: "/posts",
     },

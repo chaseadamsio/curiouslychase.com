@@ -1,5 +1,6 @@
 import { OnlineFrequent } from "@/components/Content/OnlineFrequent";
 import { What } from "@/components/Content/What";
+import { getHostname } from "@/utils/getHostname";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -21,9 +22,11 @@ const activities = [
 ];
 
 export async function generateMetadata(): Promise<Metadata> {
+  const hostname = getHostname();
   return {
     title: "About Chase Adams",
     description: "About Chase Adams",
+    metadataBase: hostname,
     alternates: {
       canonical: "/about",
     },
