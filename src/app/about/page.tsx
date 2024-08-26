@@ -1,5 +1,6 @@
 import { OnlineFrequent } from "@/components/Content/OnlineFrequent";
 import { What } from "@/components/Content/What";
+import { Metadata } from "next";
 import Link from "next/link";
 
 const activities = [
@@ -18,6 +19,16 @@ const activities = [
       "I love to communicate my ideas with doodles, scribbles, diagrams and arrows.",
   },
 ];
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "About Chase Adams",
+    description: "About Chase Adams",
+    alternates: {
+      canonical: "/about",
+    },
+  };
+}
 
 const WorkSection = () => (
   <main className="mt-8 max-w-5xl mx-auto">

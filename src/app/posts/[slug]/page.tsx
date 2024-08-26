@@ -33,6 +33,9 @@ export async function generateMetadata({
   return {
     title: article.title,
     description: article.description,
+    alternates: {
+      canonical: `/posts/${slug}`,
+    },
     metadataBase: hostname,
     twitter: {
       card: "summary_large_image",
