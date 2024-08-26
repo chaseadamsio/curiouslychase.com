@@ -58,7 +58,9 @@ async function getDirContents(directory: string) {
         }
 
         result.data.updatedDate =
-          result.data.modified ?? format(filestat.mtime, "yyyy-MM-dd");
+          result.data.modified ??
+          result.data.pubDate ??
+          format(filestat.mtime, "yyyy-MM-dd");
 
         if (result.data.pubDate === result.data.updatedDate) {
           delete result.data.updatedDate;

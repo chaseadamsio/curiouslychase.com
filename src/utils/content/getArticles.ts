@@ -41,7 +41,11 @@ export const getArticles = async (args?: {
       featured: !!post.data.featured,
       date: post.data.date ?? Date.now(),
       pubDate: post.data.pubDate ?? Date.now(),
-      updatedDate: post.data.updatedDate ?? Date.now(),
+      updatedDate:
+        post.data.updatedDate ??
+        post.data.pubDate ??
+        post.data.date ??
+        Date.now(),
       ...(post.data.thumbnail && { thumbnail: post.data.thumbnail }),
       title: post.data.title,
       stage: post.data.stage,
