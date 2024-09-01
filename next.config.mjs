@@ -12,6 +12,10 @@ const nextConfig = {
         has: [
           {
             type: "host",
+            value: "www.curiouslychase.com",
+          },
+          {
+            type: "host",
             value: "curiouslychase.com",
           },
         ],
