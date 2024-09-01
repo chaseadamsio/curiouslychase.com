@@ -1,8 +1,8 @@
 [submodule "public"]
 	path = public
-	url = git@github.com:curiouslychase/public.git
+	url = git@github.com:chaseadamsio/public.git
 	branch = main
 [submodule "content"]
 	path = content
-	url = git@github.com:curiouslychase/content.git
+	url = git@github.com:chaseadamsio/content.git
 	branch = main

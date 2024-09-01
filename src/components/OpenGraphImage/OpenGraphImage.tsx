@@ -76,7 +76,7 @@ export const OpenGraphImageResponse = async (params: {
               fontWeight: "bold",
             }}
           >
-            curiouslychase.com
+            chaseadams.io
           </div>
         </div>
 

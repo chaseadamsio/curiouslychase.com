@@ -1,7 +1,7 @@
 import { getArticles } from "@/utils/content/getArticles";
 import { MetadataRoute } from "next";
 
-const HOSTNAME = "https://curiouslychase.com";
+const HOSTNAME = "https://chaseadams.io";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const articles = await getArticles();
   return [

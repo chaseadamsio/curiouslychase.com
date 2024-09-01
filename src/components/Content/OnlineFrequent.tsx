@@ -7,7 +7,7 @@ export const OnlineFrequent = () => {
       <div className="pb-4">
         <h2 className="uppercase mb-4 my-0 text-3xl font-bold">Online</h2>
         <span className="block text-lg">
-          I'm on almost all social media as <strong>@curiouslychase</strong>.
+          I'm on almost all social media as <strong>@chaseadamsio</strong>.
         </span>
       </div>
       <section>
@@ -35,22 +35,22 @@ export const OnlineFrequent = () => {
 export const social = [
   {
     network: "Twitter",
-    username: "curiouslychase",
-    link: "https://twitter.com/curiouslychase",
+    username: "chaseadamsio",
+    link: "https://twitter.com/chaseadamsio",
     type: "frequent",
     icon: <Twitter width="20" />,
   },
   {
     network: "GitHub",
-    username: "curiouslychase",
-    link: "https://github.com/curiouslychase",
+    username: "chaseadamsio",
+    link: "https://github.com/chaseadamsio",
     type: "frequent",
     icon: <Github width="20" />,
   },
   {
     network: "YouTube",
-    username: "curiouslychase",
-    link: "https://www.youtube.com/@curiouslychase",
+    username: "chaseadamsio",
+    link: "https://www.youtube.com/@chaseadamsio",
     type: "often",
     icon: <Youtube width="20" />,
   },
@@ -62,15 +62,15 @@ export const social = [
   },
   {
     network: "LinkedIn",
-    username: "curiouslychase",
-    link: "https://www.linkedin.com/in/curiouslychase",
+    username: "chaseadamsio",
+    link: "https://www.linkedin.com/in/chaseadamsio",
     type: "often",
     icon: <Linkedin width="20" />,
   },
   {
     network: "Mastodon",
-    username: "curiouslychase@indieweb.social",
-    link: "https://indieweb.social/@curiouslychase",
+    username: "chaseadamsio@indieweb.social",
+    link: "https://indieweb.social/@chaseadamsio",
     type: "occasional",
   },
   {
@@ -81,8 +81,8 @@ export const social = [
   },
   {
     network: "Facebook",
-    username: "curiouslychase",
-    link: "https://facebook.com/curiouslychase",
+    username: "chaseadamsio",
+    link: "https://facebook.com/chaseadamsio",
     type: "occasional",
   },
 ] as Array<SocialNetwork>;

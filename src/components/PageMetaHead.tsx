@@ -23,13 +23,13 @@ export const PageMetaHead = async ({ page }: Props) => {
       <title>{page.title}</title>
 
       <link rel="icon" href="/favicon-196x196.png" />
-      <link rel="canonical" href={`https://curiouslychase.com${page.slug}`} />
+      <link rel="canonical" href={`https://chaseadams.io${page.slug}`} />
 
       <meta name="og:title" content={page.title} />
       <meta name="og:type" content="website" />
       <meta name="og:image" content={imageUrl} />
       <meta name="twitter:card" content={cardType} />
-      <meta name="twitter:creator" content="@curiouslychase" />
+      <meta name="twitter:creator" content="@chaseadamsio" />
       <meta name="twitter:title" content={page.title} />
       <meta name="twitter:image" content={imageUrl} />
       {description ? (

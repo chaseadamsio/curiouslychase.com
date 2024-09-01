@@ -1,12 +1,12 @@
 import { getArticles } from "@/utils/content/getArticles";
 import RSS from "rss";
 
-const HOSTNAME = "https://curiouslychase.com";
+const HOSTNAME = "https://chaseadams.io";
 export async function GET() {
   const feed = new RSS({
     title: "Curiously Chase",
-    site_url: "https://curiouslychase.com",
-    feed_url: "https://curiouslychase.com/rss.xml",
+    site_url: "https://chaseadams.io",
+    feed_url: "https://chaseadams.io/rss.xml",
     description: "The Personal Website of Chase Adams",
   });
   const articles = await getArticles();

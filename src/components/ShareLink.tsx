@@ -27,7 +27,7 @@ export const ShareLinkOnTwitter: FC<ShareLinkProps> = ({ title }) => {
 
     const encodedURL = `url=${encodeURIComponent(url)}`;
     const encodedTitle = `text=Check out ${encodeURIComponent(`"${title}"`)}`;
-    const via = "via=curiouslychase";
+    const via = "via=chaseadamsio";
 
     window.open(
       `https://twitter.com/intent/tweet?${encodedTitle}&${encodedURL}&${via}`,
