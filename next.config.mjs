@@ -20,6 +20,7 @@ const nextConfig = {
           },
         ],
         destination: "https://chaseadams.io/:path*",
+        basePath: false,
         permanent: true,
       },
     ];
