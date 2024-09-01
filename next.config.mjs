@@ -12,11 +12,19 @@ const nextConfig = {
         has: [
           {
             type: "host",
-            value: "www.curiouslychase.com",
+            value: "curiouslychase.com",
           },
+        ],
+        destination: "https://chaseadams.io/:path*",
+        basePath: false,
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [
           {
             type: "host",
-            value: "curiouslychase.com",
+            value: "www.curiouslychase.com",
           },
         ],
         destination: "https://chaseadams.io/:path*",
